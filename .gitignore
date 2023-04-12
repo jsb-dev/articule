@@ -1,5 +1,5 @@
 # server environment
 .env
 
-# server node_modules
+# node_modules
 node_modules

@@ -1,0 +1,1322 @@
+[
+  {
+    "id": "con001",
+    "category": "Content",
+    "topic": "Content type",
+    "q1": "What types of content resonate most with your target audience?",
+    "q2": "How can you diversify your content offerings to cater to different audience segments?",
+    "q3": "What unique content formats can you explore to differentiate your brand from others in your niche?"
+  },
+  {
+    "id": "con002",
+    "category": "Content",
+    "topic": "Content platforms",
+    "q1": "Which platforms are most popular among your target audience, and how can you leverage them to reach more fans?",
+    "q2": "How can you tailor your content to suit the unique characteristics of each platform?",
+    "q3": "What strategies can you use to drive traffic from one platform to another and increase your overall reach?"
+  },
+  {
+    "id": "con003",
+    "category": "Content",
+    "topic": "Content variants",
+    "q1": "How can you repurpose a single piece of content into multiple formats (e.g., blog posts, videos, podcasts)?",
+    "q2": "What spin-off content can you create from your main content to keep your audience engaged?",
+    "q3": "How can you incorporate user feedback to improve and iterate on your content offerings?"
+  },
+  {
+    "id": "con004",
+    "category": "Content",
+    "topic": "Content frequency",
+    "q1": "How often should you publish content to keep your audience engaged without overwhelming them?",
+    "q2": "What is the ideal balance between quantity and quality in your content strategy?",
+    "q3": "How can you create a content calendar that aligns with your brand goals and audience expectations?"
+  },
+  {
+    "id": "con005",
+    "category": "Content",
+    "topic": "Content themes",
+    "q1": "What are the core themes that define your brand and resonate with your audience?",
+    "q2": "How can you incorporate these themes into your content consistently?",
+    "q3": "Can you identify any trending topics or emerging themes that you can capitalize on?"
+  },
+  {
+    "id": "con006",
+    "category": "Content",
+    "topic": "Content style",
+    "q1": "What tone, voice, and style best represent your brand and resonate with your audience?",
+    "q2": "How can you ensure consistency in your content's style across different formats and platforms?",
+    "q3": "Are there any influencers or creators whose content style can serve as inspiration for your brand?"
+  },
+  {
+    "id": "con007",
+    "category": "Content",
+    "topic": "Collaborations and partnerships",
+    "q1": "How can partnering with other artists or influencers expand your reach and add value to your content?",
+    "q2": "What types of collaborations can help you tap into new audience segments?",
+    "q3": "How can you leverage your network to create mutually beneficial partnerships and collaborations?"
+  },
+  {
+    "id": "con008",
+    "category": "Content",
+    "topic": "Content curation",
+    "q1": "How can you curate relevant and valuable content from other sources to supplement your original content?",
+    "q2": "What tools and strategies can you use to find high-quality content that aligns with your brand values?",
+    "q3": "How can you add your unique perspective to curated content to make it more engaging for your audience?"
+  },
+  {
+    "id": "con009",
+    "category": "Content",
+    "topic": "Engaging and interactive content",
+    "q1": "How can you create content that encourages audience interaction and fosters a sense of community?",
+    "q2": "What types of interactive content (e.g., polls, quizzes, live streams) can you incorporate into your strategy?",
+    "q3": "How can you use audience feedback and input to shape future content?"
+  },
+  {
+    "id": "con010",
+    "category": "Content",
+    "topic": "Quality and production value",
+    "q1": "How can you ensure consistent quality and production value in your content, regardless of format or platform?",
+    "q2": "What resources and tools can you invest in to elevate your content's production value?",
+    "q3": "How can you strike a balance between high-quality content and efficient content creation?"
+  },
+  {
+    "id": "con011",
+    "category": "Content",
+    "topic": "Use of multimedia (images, videos, audio)",
+    "q1": "How can you effectively incorporate different media types into your content strategy to create a more immersive experience for your audience?",
+    "q2": "What tools and resources can you use to create high-quality multimedia content?",
+    "q3": "How can you ensure a consistent visual and auditory identity across all your multimedia content?"
+  },
+  {
+    "id": "con012",
+    "category": "Content",
+    "topic": "Brand consistency in content",
+    "q1": "How can you maintain a consistent brand identity across all your content, platforms, and formats?",
+    "q2": "What brand elements (e.g., colors, fonts, visuals) should be present in all your content to ensure consistency?",
+    "q3": "How can you create a brand style guide to help you and your team maintain brand consistency in all content?"
+  },
+  {
+    "id": "con013",
+    "category": "Content",
+    "topic": "User-generated content",
+    "q1": "How can you encourage your audience to create and share content related to your brand?",
+    "q2": "What types of user-generated content campaigns (e.g., contests, hashtag challenges) can you implement to increase engagement?",
+    "q3": "How can you showcase and reward the best user-generated content to foster a sense of community and loyalty among your fans?"
+  },
+  {
+    "id": "con014",
+    "category": "Content",
+    "topic": "Content analytics and performance tracking",
+    "q1": "What key performance indicators (KPIs) should you track to measure the success of your content strategy?",
+    "q2": "How can you use analytics to identify content trends, patterns, and areas for improvement?",
+    "q3": "What tools and platforms can you use to track and analyze your content's performance across different channels?"
+  },
+  {
+    "id": "con015",
+    "category": "Content",
+    "topic": "Legal and copyright considerations",
+    "q1": "How can you ensure that your content complies with copyright laws and regulations?",
+    "q2": "What steps can you take to protect your intellectual property and avoid potential legal issues?",
+    "q3": "How can you educate yourself and your team on the legal aspects of content creation and sharing, including fair use, licensing, and permissions?"
+  },
+  {
+    "id": "aud001",
+    "category": "Audience",
+    "topic": "Audience Avatar",
+    "q1": "What are the key characteristics and traits of your ideal audience member?",
+    "q2": "How can you create a detailed audience persona to help guide your content and marketing strategies?",
+    "q3": "In what ways can understanding your audience avatar improve your brand messaging and connection with your target audience?"
+  },
+  {
+    "id": "aud002",
+    "category": "Audience",
+    "topic": "Audience categories",
+    "q1": "What are the different categories or segments within your target audience?",
+    "q2": "How can you tailor your content and messaging to appeal to these different audience segments?",
+    "q3": "What strategies can you use to reach and engage with each audience category effectively?"
+  },
+  {
+    "id": "aud003",
+    "category": "Audience",
+    "topic": "Audience issues (problems that you might be able to solve)",
+    "q1": "What are the common challenges or problems your target audience faces that your content or brand can help address?",
+    "q2": "How can you demonstrate your understanding of these issues through your content and brand messaging?",
+    "q3": "What solutions can you offer to help your audience overcome these challenges or problems?"
+  },
+  {
+    "id": "aud004",
+    "category": "Audience",
+    "topic": "Audience demographics",
+    "q1": "What are the key demographic factors (age, gender, location, etc.) of your target audience?",
+    "q2": "How can you use demographic data to inform your content strategy and marketing efforts?",
+    "q3": "What tools and resources can you use to gather and analyze demographic information about your audience?"
+  },
+  {
+    "id": "aud005",
+    "category": "Audience",
+    "topic": "Audience psychographics",
+    "q1": "What are the key psychographic factors (interests, values, attitudes, etc.) of your target audience?",
+    "q2": "How can you use psychographic data to create content that resonates with your audience on a deeper level?",
+    "q3": "What tools and resources can you use to gather and analyze psychographic information about your audience?"
+  },
+  {
+    "id": "aud006",
+    "category": "Audience",
+    "topic": "Targeting and segmentation",
+    "q1": "How can you segment your audience based on their demographics, psychographics, and behavior patterns?",
+    "q2": "What strategies can you use to target your content and marketing efforts to specific audience segments?",
+    "q3": "How can you measure the effectiveness of your targeting and segmentation efforts?"
+  },
+  {
+    "id": "aud007",
+    "category": "Audience",
+    "topic": "Building a community",
+    "q1": "What strategies can you use to create a sense of community and belonging among your audience?",
+    "q2": "How can you encourage your audience to engage with and support one another?",
+    "q3": "What platforms and tools can you use to facilitate community-building efforts?"
+  },
+  {
+    "id": "aud008",
+    "category": "Audience",
+    "topic": "Nurturing loyalty and trust",
+    "q1": "How can you consistently deliver value to your audience to foster loyalty and trust?",
+    "q2": "What strategies can you use to demonstrate your commitment to your audience's needs and interests?",
+    "q3": "How can you encourage repeat engagement and build long-term relationships with your audience?"
+  },
+  {
+    "id": "aud009",
+    "category": "Audience",
+    "topic": "Audience feedback and communication channels",
+    "q1": "What channels can you use to gather feedback and communicate with your audience?",
+    "q2": "How can you create opportunities for your audience to share their opinions, ideas, and concerns with you?",
+    "q3": "How can you use audience feedback to inform and improve your content strategy and brand development?"
+  },
+  {
+    "id": "aud010",
+    "category": "Audience",
+    "topic": "Addressing audience concerns and objections",
+    "q1": "What common concerns or objections might your audience have about your brand or content?",
+    "q2": "How can you address these concerns and objections in a way that demonstrates empathy and understanding?",
+    "q3": "What strategies can you use to overcome audience skepticism and build trust?"
+  },
+  {
+    "id": "aud011",
+    "category": "Audience",
+    "topic": "Advocacy and word-of-mouth promotion",
+    "q1": "How can you encourage your audience to advocate for your brand and share your content with others?",
+    "q2": "What incentives or rewards can you offer to motivate audience members to promote your brand?",
+    "q3": "How can you track and measure the impact of word-of-mouth promotion on your audience growth and engagement?"
+  },
+  {
+    "id": "aud012",
+    "category": "Audience",
+    "topic": "Expanding audience reach",
+    "q1": "What strategies can you use to reach new audience members and grow your fan base?",
+    "q2": "How can you leverage different platforms and channels to maximize your audience reach?",
+    "q3": "What partnerships or collaborations can help you expand your audience and increase brand visibility?"
+  },
+  {
+    "id": "aud013",
+    "category": "Audience",
+    "topic": "Collaboration with influencers or niche communities",
+    "q1": "How can you identify and engage with influencers or niche communities relevant to your target audience?",
+    "q2": "What strategies can you use to collaborate with these influencers or communities to increase your brand exposure and reach new audience members?",
+    "q3": "How can you measure the impact of these collaborations on your audience growth and engagement?"
+  },
+  {
+    "id": "aud014",
+    "category": "Audience",
+    "topic": "Audience retention strategies",
+    "q1": "What strategies can you use to keep your audience engaged and coming back for more?",
+    "q2": "How can you consistently deliver fresh, relevant, and valuable content to maintain your audience's interest?",
+    "q3": "How can you monitor audience engagement and identify opportunities to improve your retention efforts?"
+  },
+  {
+    "id": "aud015",
+    "category": "Audience",
+    "topic": "Measuring audience growth and engagement",
+    "q1": "What key performance indicators (KPIs) can you use to track and measure your audience growth and engagement?",
+    "q2": "How can you use data and analytics to inform your audience development strategies and optimize your content and marketing efforts?",
+    "q3": "What tools and resources can you use to collect, analyze, and interpret audience data to help drive your brand's success?"
+  },
+  {
+    "id": "mon001",
+    "category": "Monetisation",
+    "topic": "Product offerings",
+    "q1": "What unique products or services can you create that align with your brand and resonate with your audience?",
+    "q2": "How can you differentiate your product offerings from competitors in your niche?",
+    "q3": "What marketing strategies can you use to promote your products and drive sales?"
+  },
+  {
+    "id": "mon002",
+    "category": "Monetisation",
+    "topic": "Affiliate marketing",
+    "q1": "How can you identify and join relevant affiliate programs that align with your audience's interests and needs?",
+    "q2": "What strategies can you use to promote affiliate products effectively without compromising your brand's authenticity?",
+    "q3": "How can you track and optimize your affiliate marketing efforts to maximize revenue?"
+  },
+  {
+    "id": "mon003",
+    "category": "Monetisation",
+    "topic": "Sponsorships and brand partnerships",
+    "q1": "How can you identify and approach potential sponsors or brand partners that align with your brand values and target audience?",
+    "q2": "What types of collaborations or partnerships can help you generate revenue while providing value to both parties?",
+    "q3": "How can you ensure that sponsored content or partnerships maintain your brand's integrity and authenticity?"
+  },
+  {
+    "id": "mon004",
+    "category": "Monetisation",
+    "topic": "Donations and fan funding",
+    "q1": "What platforms can you use to facilitate donations or fan funding from your audience?",
+    "q2": "How can you effectively communicate the value of supporting your brand and encourage your audience to contribute?",
+    "q3": "What incentives or rewards can you offer your audience in exchange for their support?"
+  },
+  {
+    "id": "mon005",
+    "category": "Monetisation",
+    "topic": "Premium content and memberships",
+    "q1": "What types of premium content or exclusive membership perks can you offer to incentivize your audience to subscribe or pay for access?",
+    "q2": "How can you ensure that your premium offerings provide enough value to justify the cost for your audience?",
+    "q3": "What platforms or tools can you use to manage premium content or membership programs?"
+  },
+  {
+    "id": "mon006",
+    "category": "Monetisation",
+    "topic": "Advertising revenue",
+    "q1": "What advertising platforms or networks can you use to generate revenue from your content?",
+    "q2": "How can you optimize your content to maximize ad revenue without sacrificing user experience or content quality?",
+    "q3": "What strategies can you use to attract advertisers or negotiate better ad rates?"
+  },
+  {
+    "id": "mon007",
+    "category": "Monetisation",
+    "topic": "Merchandise sales",
+    "q1": "What types of merchandise can you create that reflect your brand and resonate with your audience?",
+    "q2": "How can you effectively market and sell your merchandise to maximize revenue?",
+    "q3": "What platforms or tools can you use to manage inventory, sales, and fulfillment?"
+  },
+  {
+    "id": "mon008",
+    "category": "Monetisation",
+    "topic": "Online courses and workshops",
+    "q1": "What topics or skills can you teachthrough online courses or workshops that your audience would be interested in learning?",
+    "q2": "How can you structure and price your courses or workshops to maximize revenue and provide value to your audience?",
+    "q3": "What platforms or tools can you use to create, market, and deliver your online courses or workshops?"
+  },
+  {
+    "id": "mon009",
+    "category": "Monetisation",
+    "topic": "Paid live events and performances",
+    "q1": "What types of live events or performances can you offer that your audience would be willing to pay for?",
+    "q2": "How can you market and promote your events to attract attendees and maximize ticket sales?",
+    "q3": "What platforms or tools can you use to manage ticketing, event logistics, and revenue collection?"
+  },
+  {
+    "id": "mon010",
+    "category": "Monetisation",
+    "topic": "Licensing and royalties",
+    "q1": "What types of content or intellectual property can you license to generate revenue from royalties?",
+    "q2": "How can you negotiate favorable licensing deals to maximize revenue while protecting your brand and creative control?",
+    "q3": "What legal considerations and protections should you be aware of when licensing your content?"
+  },
+  {
+    "id": "mon011",
+    "category": "Monetisation",
+    "topic": "Subscription-based services",
+    "q1": "What subscription-based services can you offer that provide ongoing value to your audience?",
+    "q2": "How can you structure and price your subscription offerings to maximize revenue and retain subscribers?",
+    "q3": "What platforms or tools can you use to manage your subscription services and payments?"
+  },
+  {
+    "id": "mon012",
+    "category": "Monetisation",
+    "topic": "Crowdfunding campaigns",
+    "q1": "What types of projects or initiatives can you use crowdfunding to support or fund?",
+    "q2": "How can you effectively market and promote your crowdfunding campaign to maximize contributions?",
+    "q3": "What platforms or tools can you use to manage your crowdfunding campaign and distribute rewards to backers?"
+  },
+  {
+    "id": "mon013",
+    "category": "Monetisation",
+    "topic": "Consultation services",
+    "q1": "What types of consultation services can you offer that leverage your expertise and appeal to your audience or clients?",
+    "q2": "How can you effectively market and promote your consultation services to attract clients and generate revenue?",
+    "q3": "What tools or platforms can you use to manage your consultation services, scheduling, and payments?"
+  },
+  {
+    "id": "mon014",
+    "category": "Monetisation",
+    "topic": "Cross-promotion opportunities",
+    "q1": "How can you identify and partner with other artists, brands, or influencers to create cross-promotion opportunities that benefit both parties?",
+    "q2": "What types of cross-promotional content or collaborations can help you reach new audiences and generate revenue?",
+    "q3": "How can you track the success of cross-promotion efforts and optimize future partnerships for maximum impact?"
+  },
+  {
+    "id": "mon015",
+    "category": "Monetisation",
+    "topic": "Diversifying income streams",
+    "q1": "What additional income streams can you explore to diversify your revenue and reduce dependence on a single source of income?",
+    "q2": "How can you evaluate the potential of new income streams to ensure they align with your brand and target audience?",
+    "q3": "What strategies can you use to manage multiple income streams effectively and maintain a balanced focus on each revenue-generating activity?"
+  },
+  {
+    "id": "stg001",
+    "category": "Short-term Goals",
+    "topic": "Content creation milestones",
+    "q1": "What are the specific content creation milestones you want to achieve in the short-term (e.g., number of posts, videos, or podcasts)?",
+    "q2": "How can you break down your content creation milestones into smaller, achievable tasks and set deadlines for them?",
+    "q3": "How will you measure your progress toward achieving these content creation milestones and adjust your strategy if needed?"
+  },
+  {
+    "id": "stg002",
+    "category": "Short-term Goals",
+    "topic": "Audience growth targets",
+    "q1": "What are your short-term audience growth targets for each of your platforms (e.g., follower count, subscribers, or email list)?",
+    "q2": "What strategies will you implement to achieve these audience growth targets, and how will you track their effectiveness?",
+    "q3": "How can you leverage existing audience members to help reach your growth targets (e.g., through referrals, testimonials, or shares)?"
+  },
+  {
+    "id": "stg003",
+    "category": "Short-term Goals",
+    "topic": "Engagement rate improvement",
+    "q1": "What are your short-term goals for improving engagement rates (e.g., likes, comments, or shares) on your content?",
+    "q2": "What tactics can you employ to encourage more audience engagement, and how will you measure their success?",
+    "q3": "How can you use audience feedback and engagement data to inform and optimize your content strategy?"
+  },
+  {
+    "id": "stg004",
+    "category": "Short-term Goals",
+    "topic": "Platform-specific goals",
+    "q1": "What are your short-term goals for each platform you use, and how do they align with your overall brand strategy?",
+    "q2": "How can you tailor your content and approach to each platform to maximize growth and engagement?",
+    "q3": "What tools or resources can you leverage to help you achieve your platform-specific goals more efficiently?"
+  },
+  {
+    "id": "stg005",
+    "category": "Short-term Goals",
+    "topic": "Collaboration and partnership targets",
+    "q1": "What are your short-term goals for collaborating with other artists, influencers, or brands, and how can these partnerships benefit your brand?",
+    "q2": "How can you identify and approach potential collaboration partners that align with your brand values and target audience?",
+    "q3": "What specific projects or initiatives can you collaborate on to achieve mutual benefits and expand your reach?"
+  },
+  {
+    "id": "stg006",
+    "category": "Short-term Goals",
+    "topic": "Monetisation and revenue goals",
+    "q1": "What are your short-term revenue goals, and how do they align with your long-term financial objectives?",
+    "q2": "What strategies can you implement to achieve your monetisation and revenue goals more quickly?",
+    "q3": "How can you leverage your existing audience, content, and brand assets to generate additional revenue streams?"
+  },
+  {
+    "id": "stg007",
+    "category": "Short-term Goals",
+    "topic": "Personal branding objectives",
+    "q1": "What specific aspects of your personal brand do you want to develop or improve in the short term?",
+    "q2": "How can you leverage your unique strengths, experiences, and personality traits to create a compelling personal brand?",
+    "q3": "What steps can you take to consistently communicate your personal brand across all platforms and content?"
+  },
+  {
+    "id": "stg008",
+    "category": "Short-term Goals",
+    "topic": "Skill development goals",
+    "q1": "What specific skills or knowledge areas do you want to develop or improve in the short term to support your brand growth?",
+    "q2": "How can you access the resources, training, or mentorship needed to achieve your skill development goals?",
+    "q3": "How can you track your progress and apply your new skills to your content creation and brand strategy?"
+  },
+  {
+    "id": "stg009",
+    "category": "Short-term Goals",
+    "topic": "Networking and industry connections",
+    "q1": "What short-term networking goals can help you expand your industry connections and increase your brand visibility?",
+    "q2": "How can you leverage industry events, social media, and other networking opportunities to connect with influential peers and potential collaborators?",
+    "q3": "How can you nurture and maintain these connections to support your brand's growth and success?"
+  },
+  {
+    "id": "stg010",
+    "category": "Short-term Goals",
+    "topic": "Online presence and visibility",
+    "q1": "What short-term goals can help you improve your online presence and visibility across various platforms and search engines?",
+    "q2": "How can you optimize your content, website, and social media profiles to enhance your online discoverability?",
+    "q3": "What strategies can you use to drive more organic traffic and increase your brand's exposure to your target audience?"
+  },
+  {
+    "id": "stg011",
+    "category": "Short-term Goals",
+    "topic": "First product launch",
+    "q1": "How can you create a compelling and unique selling proposition for your first product that will resonate with your target audience and differentiate it from competitors?",
+    "q2": "What are your short-term goals for building anticipation and excitement around your first product launch, such as through teasers, content marketing, or influencer partnerships?",
+    "q3": "What strategies can you use to gather feedback from early adopters and integrate it into your product development process to ensure your first product meets the needs and expectations of your audience?"
+  },
+  {
+    "id": "stg012",
+    "category": "Short-term Goals",
+    "topic": "Event participation",
+    "q1": "What are your short-term goals for participating in events, such as conferences, workshops, or performances, to increase your brand visibility and make valuable connections?",
+    "q2": "How can you identify and select the most relevant and impactful events for your brand and target audience?",
+    "q3": "What strategies can you use to maximize the benefits of event participation, such as networking, content creation, or promotion?"
+  },
+  {
+    "id": "stg013",
+    "category": "Short-term Goals",
+    "topic": "Awards and recognition",
+    "q1": "What are your short-term goals for earning awards or recognition within your industry or niche that can elevate your brand's credibility and prestige?",
+    "q2": "How can you identify suitable award opportunities and tailor your content or projects to meet their criteria?",
+    "q3": "What strategies can you use to promote your awards and recognition to enhance your brand image and attract new audiences?"
+  },
+  {
+    "id": "stg014",
+    "category": "Short-term Goals",
+    "topic": "Experimenting with new content formats",
+    "q1": "What are your short-term goals for experimenting with new content formats or platforms to keep your content fresh and engaging?",
+    "q2": "How can you assess the potential of new content formats and determine which ones are most likely to resonate with your audience?",
+    "q3": "What steps can you take to effectively integrate new content formats into your existing content strategy and measure their success?"
+  },
+  {
+    "id": "stg015",
+    "category": "Short-term Goals",
+    "topic": "Time management and productivity",
+    "q1": "What are your short-term goals for improving your time management and productivity to ensure you can consistently create high-quality content and meet your other brand objectives?",
+    "q2": "How can you prioritize your tasks, set realistic deadlines, and establish a sustainable workflow to optimize your productivity?",
+    "q3": "What tools, resources, or strategies can you implement to help you stay organized, focused, and accountable as you work towards your short-term goals?"
+  },
+  {
+    "id": "ltg001",
+    "category": "Long-term Goals",
+    "topic": "Establishing a brand identity",
+    "q1": "What core values, visual elements and messaging do you want to consistently communicate to your audience to create a strong and memorable brand identity?",
+    "q2": "How can you ensure that your brand identity evolves over time while remaining true to your core values and mission?",
+    "q3": "In what ways can you leverage your unique personality and experiences to create an authentic and relatable brand identity?"
+  },
+  {
+    "id": "ltg002",
+    "category": "Long-term Goals",
+    "topic": "Building a loyal fan base",
+    "q1": "What strategies can you employ to continuously engage, nurture, and reward your existing audience to foster loyalty and advocacy?",
+    "q2": "How can you identify and target your most dedicated fans to create a community of brand ambassadors who actively promote your work?",
+    "q3": "What exclusive benefits or experiences can you provide to your most loyal fans to strengthen their emotional connection to your brand?"
+  },
+  {
+    "id": "ltg003",
+    "category": "Long-term Goals",
+    "topic": "Consistent revenue generation",
+    "q1": "How can you create a diverse range of income streams to ensure consistent revenue generation even during periods of industry fluctuation or changes in audience preferences?",
+    "q2": "What steps can you take to optimize your existing monetization strategies and identify new opportunities for long-term financial growth?",
+    "q3": "How can you invest in your brand's future by reinvesting a portion of your revenue into areas like marketing, product development, or skill enhancement?"
+  },
+  {
+    "id": "ltg004",
+    "category": "Long-term Goals",
+    "topic": "Expanding content offerings",
+    "q1": "What new content formats or platforms can you explore to reach a wider audience and keep your existing fans engaged?",
+    "q2": "How can you collaborate with other creators or industry professionals to expand your content offerings and grow your brand?",
+    "q3": "What resources or tools can you leverage to continuously innovate and experiment with your content while maintaining your brand identity?"
+  },
+  {
+    "id": "ltg005",
+    "category": "Long-term Goals",
+    "topic": "Becoming an authority or influencer in the niche",
+    "q1": "How can you establish yourself as a thought leader in your niche by sharing valuable insights, expert opinions, and thought-provoking content?",
+    "q2": "What steps can you take to build credibility and trust within your niche, such as through collaborations, speaking engagements, or published works?",
+    "q3": "How can you leverage your growing influence to create positive change within your niche or support the growth of fellow creators?"
+  },
+  {
+    "id": "ltg006",
+    "category": "Long-term Goals",
+    "topic": "Diversifying into other entertainment mediums",
+    "q1": "What other entertainment mediums can you explore to showcase your talents and expand your creative portfolio, such as film, television, or podcasting?",
+    "q2": "How can you leverage your existing brand and audience to support your expansion into new mediums or creative ventures?",
+    "q3": "What skills or resources do you need to acquire in order to successfully diversify into other entertainment mediums and ensure long-term success?"
+  },
+  {
+    "id": "ltg007",
+    "category": "Long-term Goals",
+    "topic": "Building a team or support network",
+    "q1": "What roles or expertise do you need to incorporate into your team to support your long-term goals and growth as an artist?",
+    "q2": "How can you create a positive and collaborative work environment that attracts and retains top talent to support your brand?",
+    "q3": "What steps can you take to build a strong support network of peers, mentors, and industry professionals to help guide and advise you throughout your career?"
+  },
+  {
+    "id": "ltg008",
+    "category": "Long-term Goals",
+    "topic": "Giving back to the community",
+    "q1": "How can you use your influence and resources to positively impact your community, such as through charitable initiatives, mentorship, or advocacy?",
+    "q2": "What causes or issues are most important to you and your audience, and how can you integrate them into your brand's mission and actions?",
+    "q3": "How can you inspire your audience to join you in giving back to the community and creating positive change?"
+  },
+  {
+    "id": "ltg009",
+    "category": "Long-term Goals",
+    "topic": "Establishing a sustainable work-life balance",
+    "q1": "How can you set boundaries and prioritize self-care to ensure a healthy work-life balance while still achieving your long-term goals?",
+    "q2": "What strategies can you employ to improve your time management, productivity, and focus to maximize your creative output while maintaining balance?",
+    "q3": "How can you ensure that your personal relationships and well-being remain a priority as your brand and career continue to grow?"
+  },
+  {
+    "id": "ltg010",
+    "category": "Long-term Goals",
+    "topic": "Creating long-lasting partnerships",
+    "q1": "How can you identify and approach potential partners who share your values, goals, and complementary skill sets to create mutually beneficial relationships?",
+    "q2": "What strategies can you use to nurture and maintain successful partnerships over the long term, such as regular communication, joint projects, and shared goals?",
+    "q3": "How can you leverage your partnerships to help each other grow and achieve greater success together?"
+  },
+  {
+    "id": "ltg011",
+    "category": "Long-term Goals",
+    "topic": "Industry recognition and awards",
+    "q1": "What industry awards or recognitions can you strive for that would bring credibility and prestige to your brand?",
+    "q2": "How can you create content or engage in projects that demonstrate your expertise, creativity, and dedication to excellence in your niche?",
+    "q3": "What steps can you take to network with industry professionals and organizations to increase your chances of being recognized and celebrated for your work?"
+  },
+  {
+    "id": "ltg012",
+    "category": "Long-term Goals",
+    "topic": "Consistently upgrading skills and knowledge",
+    "q1": "What new skills or areas of expertise do you need to develop to stay relevant, competitive, and successful in your niche?",
+    "q2": "How can you commit to continuous learning and improvement through resources like courses, workshops, mentorships, or self-study?",
+    "q3": "How can you integrate the knowledge and skills you acquire into your brand and content to ensure ongoing growth and evolution?"
+  },
+  {
+    "id": "ltg013",
+    "category": "Long-term Goals",
+    "topic": "Developing a unique selling proposition (USP)",
+    "q1": "What sets you apart from other artists in your niche, and how can you communicate and capitalize on your unique selling proposition?",
+    "q2": "How can you consistently refine and reinforce your USP through your content, messaging, and brand identity to stand out from the competition?",
+    "q3": "What strategies can you employ to ensure that your USP remains compelling and relevant as your niche and audience evolve over time?"
+  },
+  {
+    "id": "ltg014",
+    "category": "Long-term Goals",
+    "topic": "Exploring global opportunities",
+    "q1": "How can you adapt your content, brand, or products to appeal to a global audience and capitalize on international opportunities?",
+    "q2": "What steps can you take to network with industry professionals, creators, and fans from different countries and cultures to expand your reach and influence?",
+    "q3": "How can you leverage your success in your home market to build credibility and gain traction in new international markets?"
+  },
+  {
+    "id": "ltg015",
+    "category": "Long-term Goals",
+    "topic": "Leaving a legacy",
+    "q1": "What lasting impact do you want your brand and career to have on your audience, your niche, and the broader creative community?",
+    "q2": "How can you ensure that your work continues to inspire and influence future generations of artists and fans, even after your career has ended?",
+    "q3": "What steps can you take to preserve and share your knowledge, experiences, and creative contributions to ensure a legacy?"
+  },
+  {
+    "id": "ski001",
+    "category": "Skills Development",
+    "topic": "Content creation skills (writing, filming, editing)",
+    "q1": "What specific content creation skills do you need to develop to create high-quality content that resonates with your audience?",
+    "q2": "How can you leverage available resources like online courses, tutorials, or mentorships to improve your writing, filming, and editing skills?",
+    "q3": "How can you consistently practice and refine your content creation skills to keep up with evolving trends and audience preferences?"
+  },
+  {
+    "id": "ski002",
+    "category": "Skills Development",
+    "topic": "Social media platform-specific skills",
+    "q1": "Which social media platforms are most relevant to your audience, and what specific skills do you need to excel on those platforms?",
+    "q2": "How can you learn and stay updated on each platform's best practices, algorithms, and unique features to optimize your content and engagement?",
+    "q3": "How can you adapt your content and strategies to take advantage of each platform's strengths and opportunities while minimizing its limitations?"
+  },
+  {
+    "id": "ski003",
+    "category": "Skills Development",
+    "topic": "Public speaking and presentation",
+    "q1": "What aspects of your public speaking and presentation skills need improvement to engage and captivate your audience effectively?",
+    "q2": "How can you use resources like public speaking courses, workshops, or practice sessions to refine your delivery, tone, body language, and storytelling abilities?",
+    "q3": "How can you leverage your improved public speaking skills in various contexts, such as live events, interviews, podcasts, or video content?"
+  },
+  {
+    "id": "ski004",
+    "category": "Skills Development",
+    "topic": "Graphic design and visual branding",
+    "q1": "How can you develop a strong visual identity for your brand by improving your graphic design skills and understanding of design principles?",
+    "q2": "What resources, like design courses, software tutorials, or collaboration with other designers, can help you enhance your graphic design abilities?",
+    "q3": "How can you apply your design skills to create visually appealing and consistent content across all your platforms and marketing materials?"
+  },
+  {
+    "id": "ski005",
+    "category": "Skills Development",
+    "topic": "Storytelling and narrative techniques",
+    "q1": "How can you use storytelling and narrative techniques to create more engaging and emotionally resonant content for your audience?",
+    "q2": "What resources, like creative writing workshops or storytelling courses, can help you develop your storytelling skills and narrative techniques?",
+    "q3": "How can you apply storytelling principles to various content formats, such as written posts, videos, podcasts, or live events?"
+  },
+  {
+    "id": "ski006",
+    "category": "Skills Development",
+    "topic": "Marketing and promotion strategies",
+    "q1": "What marketing and promotion strategies do you need to learn and implement to increase your brand's visibility and attract more fans?",
+    "q2": "How can you utilize resources like marketing courses, mentorships, or industry research to develop a strong understanding of effective marketing techniques?",
+    "q3": "How can you consistently test, analyze, and refine your marketing and promotion strategies to ensure ongoing growth and success?"
+  },
+  {
+    "id": "ski007",
+    "category": "Skills Development",
+    "topic": "Networking and relationship building",
+    "q1": "What networking skills do you need to develop to establish meaningful connections and relationships within your industry?",
+    "q2": "How can you leverage resources like networking events, industry conferences, or online communities to practice and improve your networking abilities?",
+    "q3": "How can you nurture and maintain your professional relationships to create long-term partnerships, collaborations, or support networks?"
+  },
+  {
+    "id": "ski008",
+    "category": "Skills Development",
+    "topic": "Time management and productivity",
+    "q1": "What time management and productivity techniques can help you optimize your schedule and work more efficiently on your creative projects?",
+    "q2": "How can you use resources like productivity courses, time management tools, or self-reflection exercises to improve your ability to prioritize and stay focused?",
+    "q3": "How can you consistently evaluate and adjust your time management strategies to maintain a sustainable work-life balance?"
+  },
+  {
+    "id": "ski009",
+    "category": "Skills Development",
+    "topic": "Emotional intelligence and empathy",
+    "q1": "How can you develop your emotional intelligence and empathy to better understand your audience's needs, preferences, and emotional drivers?",
+    "q2": "What resources, like emotional intelligence workshops or self-awareness exercises, can help you enhance your ability to connect and empathize with others?",
+    "q3": "How can you apply your emotional intelligence and empathy skills to create more meaningful, engaging, and impactful content for your audience?"
+  },
+  {
+    "id": "ski010",
+    "category": "Skills Development",
+    "topic": "Analytics and data-driven decision making",
+    "q1": "What specific analytics skills do you need to develop to better understand your audience's behavior, preferences, and engagement patterns?",
+    "q2": "How can you leverage resources like online courses, industry reports, or mentorships to improve your ability to analyze data and make informed decisions?",
+    "q3": "How can you consistently use data and analytics to optimize your content, marketing strategies, and audience engagement efforts?"
+  },
+  {
+    "id": "ski011",
+    "category": "Skills Development",
+    "topic": "Customer service and community management",
+    "q1": "What customer service and community management skills do you need to develop to effectively manage and support your audience and foster a positive community?",
+    "q2": "How can you utilize resources like customer service courses, industry best practices, or feedback from your audience to improve your community management skills?",
+    "q3": "How can you apply your customer service and community management skills to address audience concerns, foster loyalty, and create a welcoming environment for your fans?"
+  },
+  {
+    "id": "ski012",
+    "category": "Skills Development",
+    "topic": "Technical skills (SEO, web development, etc.)",
+    "q1": "What technical skills, such as SEO or web development, are important for your brand's online presence and discoverability, and how can you acquire them?",
+    "q2": "How can you use resources like online courses, tutorials, or collaboration with experts to develop and stay updated on relevant technical skills?",
+    "q3": "How can you apply your technical skills to enhance your content, optimize your online presence, and reach a larger audience?"
+  },
+  {
+    "id": "ski013",
+    "category": "Skills Development",
+    "topic": "Negotiation and persuasion techniques",
+    "q1": "What negotiation and persuasion techniques do you need to develop to secure better deals, partnerships, or collaborations within your industry?",
+    "q2": "How can you use resources like negotiation courses, books, or role-play exercises to improve your negotiation and persuasion skills?",
+    "q3": "How can you apply your negotiation and persuasion techniques to various contexts, such as brand partnerships, contract negotiations, or influencer collaborations?"
+  },
+  {
+    "id": "ski014",
+    "category": "Skills Development",
+    "topic": "Creative problem-solving",
+    "q1": "How can you develop your creative problem-solving skills to overcome challenges and find innovative solutions for your brand's growth and success?",
+    "q2": "What resources, like brainstorming sessions, creativity workshops, or mentorships, can help you enhance your creative problem-solving abilities?",
+    "q3": "How can you consistently apply your creative problem-solving skills to identify new opportunities, optimize your strategies, and adapt to changing circumstances?"
+  },
+  {
+    "id": "ski015",
+    "category": "Skills Development",
+    "topic": "Adaptability and resilience",
+    "q1": "How can you develop your adaptability and resilience to navigate the uncertainties and setbacks that come with building a brand and growing an audience?",
+    "q2": "What resources, like personal development courses, mindfulness practices, or supportive networks, can help you build your adaptability and resilience skills?",
+    "q3": "How can you consistently apply your adaptability and resilience skills to stay motivated, learn from challenges, and continue pursuing your long-term goals?"
+  },
+  {
+    "id": "vis001",
+    "category": "Visual Identity",
+    "topic": "Logo design and variations",
+    "q1": "How can you create a memorable and unique logo design that represents your brand's identity and values?",
+    "q2": "In what ways can you create variations of your logo design for different contexts and platforms without losing the essence of your brand?",
+    "q3": "What resources, such as designers or design tools, can you utilize to develop an effective logo and its variations?"
+  },
+  {
+    "id": "vis002",
+    "category": "Visual Identity",
+    "topic": "Colour palette",
+    "q1": "How can you choose a color palette that represents your brand's personality, values, and target audience preferences?",
+    "q2": "How can you use color psychology and industry research to inform your color palette choices?",
+    "q3": "How can you ensure that your color palette remains consistent across all platforms and communication materials?"
+  },
+  {
+    "id": "vis003",
+    "category": "Visual Identity",
+    "topic": "Typography and font choices",
+    "q1": "What typography and font choices can best represent your brand's personality and values while maintaining readability and accessibility?",
+    "q2": "How can you create a balance between creative and functional typography choices for various applications?",
+    "q3": "How can you ensure that your font choices remain consistent across all platforms and communication materials?"
+  },
+  {
+    "id": "vis004",
+    "category": "Visual Identity",
+    "topic": "Image and photography style",
+    "q1": "How can you develop a unique image and photography style that reflects your brand's personality and values?",
+    "q2": "What resources, such as photographers, stock image libraries, or editing tools, can you utilize to maintain a consistent image style?",
+    "q3": "How can you adapt your image and photography style for different platforms, formats, and campaigns without losing your brand's identity?"
+  },
+  {
+    "id": "vis005",
+    "category": "Visual Identity",
+    "topic": "Iconography and illustrations",
+    "q1": "How can you create a set of custom icons and illustrations that complement your brand's visual identity and help communicate complex ideas or concepts?",
+    "q2": "What resources, such as designers or design tools, can you utilize to develop a consistent set of icons and illustrations for your brand?",
+    "q3": "How can you ensure that your iconography and illustrations remain consistent across all platforms and communication materials?"
+  },
+  {
+    "id": "vis006",
+    "category": "Visual Identity",
+    "topic": "Social media profile assets",
+    "q1": "How can you design social media profile assets, such as profile pictures, cover images, and story templates, that effectively communicate your brand's visual identity?",
+    "q2": "How can you adapt your visual identity elements to fit the specific requirements and limitations of each social media platform?",
+    "q3": "How can you maintain consistency in your social media profile assets while allowing for creative freedom and platform-specific adaptations?"
+  },
+  {
+    "id": "vis007",
+    "category": "Visual Identity",
+    "topic": "Web design and user experience",
+    "q1": "How can you design a user-friendly and visually appealing website that showcases your brand's visual identity and effectively communicates your message?",
+    "q2": "What resources, such as web designers, developers, or UX experts, can you utilize to create a cohesive web design and user experience?",
+    "q3": "How can you ensure that your website remains visually consistent with your brand identity while adapting to technological advancements and user expectations?"
+  },
+  {
+    "id": "vis008",
+    "category": "Visual Identity",
+    "topic": "Print materials and collateral",
+    "q1": "How can you design print materials and collateral, such as business cards, brochures, and posters, that effectively showcase your brand's visual identity?",
+    "q2": "What resources, such as designers or print services, can you utilize to create visually consistent and high-quality print materials?",
+    "q3": "How can you ensure that your print materials maintain a consistent visual identity with your digital assets and communication materials?"
+  },
+  {
+    "id": "vis009",
+    "category": "Visual Identity",
+    "topic": "Video and audio branding elements",
+    "q1": "How can you create video and audio branding elements, such as intros, outros, and soundtracks, that enhance your brand's visual identity and create a memorable user experience?",
+    "q2": "What resources, such as video editors, animators, or sound designers, can you utilize to develop consistent video and audio branding elements?",
+    "q3": "How can you adapt your video and audio branding elements for different platforms, formats, and campaigns without losing your brand's identity?"
+  },
+  {
+    "id": "vis010",
+    "category": "Visual Identity",
+    "topic": "Content templates and themes",
+    "q1": "How can you create content templates and themes that showcase your brand's visual identity while maintaining flexibility for various content types and formats?",
+    "q2": "How can you ensure that your content templates and themes are easily adaptable for various platforms and communication materials?",
+    "q3": "What resources, such as design tools or templates, can you utilize to create visually consistent content templates and themes?"
+  },
+  {
+    "id": "vis011",
+    "category": "Visual Identity",
+    "topic": "Consistency across platforms",
+    "q1": "How can you maintain a consistent visual identity across various platforms, such as websites, social media, print materials, and video content?",
+    "q2": "What strategies can you implement to ensure all team members and collaborators adhere to your brand's visual guidelines?",
+    "q3": "How can you create a system for regularly reviewing and updating your visual assets to maintain consistency?"
+  },
+  {
+    "id": "vis012",
+    "category": "Visual Identity",
+    "topic": "Brand guidelines documentation",
+    "q1": "How can you develop a comprehensive brand guidelines document that outlines your visual identity, including logo usage, color palette, typography, and more?",
+    "q2": "How can you ensure that all team members and collaborators have access to and follow your brand guidelines?",
+    "q3": "What process can you establish for updating your brand guidelines as your visual identity evolves over time?"
+  },
+  {
+    "id": "vis013",
+    "category": "Visual Identity",
+    "topic": "Accessibility considerations",
+    "q1": "How can you incorporate accessibility considerations into your visual identity, such as color contrast, font size, and alt text for images?",
+    "q2": "What resources or tools can you use to assess and improve the accessibility of your visual assets?",
+    "q3": "How can you educate your team members and collaborators on the importance of accessibility in design and ensure that they prioritize it in their work?"
+  },
+  {
+    "id": "vis014",
+    "category": "Visual Identity",
+    "topic": "Evolving the visual identity over time",
+    "q1": "How can you evaluate when it's time to evolve or refresh your brand's visual identity to stay relevant and appealing to your target audience?",
+    "q2": "What strategies can you use to gather feedback from your audience and stakeholders to inform your visual identity updates?",
+    "q3": "How can you communicate and manage the transition to an updated visual identity while maintaining brand recognition and consistency?"
+  },
+  {
+    "id": "vis015",
+    "category": "Visual Identity",
+    "topic": "Protecting and trademarking visual assets",
+    "q1": "How can you protect your brand's visual assets, such as logos, icons, and illustrations, from unauthorized use or infringement?",
+    "q2": "What steps can you take to register trademarks for your most valuable visual assets?",
+    "q3": "How can you monitor and enforce your brand's visual identity protection to maintain your brand's integrity and reputation?"
+  },
+  {
+    "id": "soc001",
+    "category": "Social Media Strategy",
+    "topic": "Platform selection and prioritization",
+    "q1": "How can you determine which social media platforms are most relevant and valuable for your target audience and content type?",
+    "q2": "What factors should you consider when prioritizing and allocating resources for different social media platforms?",
+    "q3": "How can you stay informed about emerging social media platforms that could be beneficial for your brand?"
+  },
+  {
+    "id": "soc002",
+    "category": "Social Media Strategy",
+    "topic": "Content calendar planning",
+    "q1": "How can you develop a content calendar that effectively balances promotional, educational, and entertaining content across your social media platforms?",
+    "q2": "What tools or strategies can you use to streamline your content planning and scheduling process?",
+    "q3": "How can you incorporate holidays, seasonal events, and industry-specific dates into your content calendar to maximize engagement?"
+  },
+  {
+    "id": "soc003",
+    "category": "Social Media Strategy",
+    "topic": "Platform-specific content formats",
+    "q1": "How can you tailor your content to take advantage of the unique features and formats available on each social media platform?",
+    "q2": "What strategies can you use to repurpose your content for different platforms while maintaining brand consistency and messaging?",
+    "q3": "How can you stay up-to-date on new content formats and features introduced by social media platforms?"
+  },
+  {
+    "id": "soc004",
+    "category": "Social Media Strategy",
+    "topic": "Cross-platform promotion and repurposing",
+    "q1": "How can you effectively cross-promote your content on different social media platforms to maximize reach and engagement?",
+    "q2": "What techniques can you use to repurpose your existing content for different platforms and audiences?",
+    "q3": "How can you create a cohesive and consistent brand experience across all your social media channels?"
+  },
+  {
+    "id": "soc005",
+    "category": "Social Media Strategy",
+    "topic": "Community management and engagement",
+    "q1": "What strategies can you implement to encourage engagement and conversation among your social media followers?",
+    "q2": "How can you effectively manage and respond to comments, questions, and messages from your audience?",
+    "q3": "What tools or resources can you use to streamline your community management efforts and ensure timely responses?"
+  },
+  {
+    "id": "soc006",
+    "category": "Social Media Strategy",
+    "topic": "Social media analytics and performance tracking",
+    "q1": "How can you use social media analytics to track and measure the performance of your content and campaigns?",
+    "q2": "What key performance indicators (KPIs) should you focus on to evaluate the success of your social media strategy?",
+    "q3": "How can you use data and insights from your analytics to inform and optimize your future content and campaigns?"
+  },
+  {
+    "id": "soc007",
+    "category": "Social Media Strategy",
+    "topic": "Hashtag strategy and trends",
+    "q1": "How can you develop a hashtag strategy that effectively increases the visibility and reach of your content on social media platforms?",
+    "q2": "What tools or resources can you use to identify trending hashtags and topics relevant to your brand and audience?",
+    "q3": "How can you balance the use of popular and niche hashtags to maximize your content's exposure?"
+  },
+  {
+    "id": "soc008",
+    "category": "Social Media Strategy",
+    "topic": "Contests and giveaways",
+    "q1": "How can you design and execute contests and giveaways that effectively engage your social media audience and promote your brand?",
+    "q2": "What rules and guidelines should you consider when running a contest or giveaway on social media platforms?",
+    "q3": "How can you leverage user-generated content and social sharing to increase the reach and impact of your contests and giveaways?"
+  },
+  {
+    "id": "soc009",
+    "category": "Social Media Strategy",
+    "topic": "Influencer collaborations and shout-outs",
+    "q1": "How can you identify and connect with influencers and content creators who align with your brand values and target audience?",
+    "q2": "What strategies can you use to collaborate with influencers on mutually beneficial content and campaigns?",
+    "q3": "How can you leverage influencer shout-outs and endorsements to increase your brand's credibility and reach?"
+  },
+  {
+    "id": "soc010",
+    "category": "Social Media Strategy",
+    "topic": "Real-time content and event coverage",
+    "q1": "How can you create and share real-time content, such as live streams, stories, and event coverage, to engage your social media audience?",
+    "q2": "What tools and resources can you use to effectively capture and share real-time content on various social media platforms?",
+    "q3": "How can you plan and prepare for real-time content opportunities, such as industry events, product launches, and trending topics?"
+  },
+  {
+    "id": "soc011",
+    "category": "Social Media Strategy",
+    "topic": "User-generated content and testimonials",
+    "q1": "How can you encourage your audience to create and share user-generated content featuring your brand or products?",
+    "q2": "What strategies can you implement to curate and showcase user-generated content on your social media channels?",
+    "q3": "How can you leverage testimonials and positive feedback from your audience to build trust and credibility for your brand?"
+  },
+  {
+    "id": "soc012",
+    "category": "Social Media Strategy",
+    "topic": "Crisis management and response",
+    "q1": "How can you prepare for and effectively manage potential crises or negative situations that may arise on social media?",
+    "q2": "What guidelines and protocols should you establish for responding to negative comments, reviews, or situations on social media?",
+    "q3": "How can you use social media listening and monitoring tools to stay informed about potential issues and respond proactively?"
+  },
+  {
+    "id": "soc013",
+    "category": "Social Media Strategy",
+    "topic": "Paid advertising and targeting",
+    "q1": "How can you incorporate paid advertising into your social media strategy to increase reach and engagement?",
+    "q2": "What targeting options and techniques can you use to ensure your paid social media campaigns reach your desired audience?",
+    "q3": "How can you effectively allocate your advertising budget across different social media platforms and campaigns?"
+  },
+  {
+    "id": "soc014",
+    "category": "Social Media Strategy",
+    "topic": "Brand advocacy and loyalty programs",
+    "q1": "How can you develop and implement loyalty programs or initiatives that encourage your audience to become brand advocates on social media?",
+    "q2": "What incentives or rewards can you offer to motivate your audience to share and promote your brand or products?",
+    "q3": "How can you track and measure the success of your brand advocacy and loyalty efforts on social media?"
+  },
+  {
+    "id": "soc015",
+    "category": "Social Media Strategy",
+    "topic": "Platform-specific algorithm optimization",
+    "q1": "How can you optimize your content and posting strategy to align with platform-specific algorithms and increase your content's visibility?",
+    "q2": "What techniques can you use to stay informed about algorithm changes and updates on various social media platforms?",
+    "q3": "How can you adapt your content and strategy to perform well within the constraints of each platform's algorithm?"
+  },
+  {
+    "id": "net001",
+    "category": "Networking and Industry Relations",
+    "topic": "Identifying key industry players and influencers",
+    "q1": "How can you research and identify the most influential people in your industry or niche?",
+    "q2": "What tools or resources can you use to stay informed about industry trends and the individuals shaping them?",
+    "q3": "How can you leverage your network to make connections with these key industry players and influencers?"
+  },
+  {
+    "id": "net002",
+    "category": "Networking and Industry Relations",
+    "topic": "Building genuine relationships",
+    "q1": "What strategies can you implement to build meaningful and genuine relationships with industry peers and influencers?",
+    "q2": "How can you maintain and nurture these relationships over time?",
+    "q3": "How can you ensure that your networking efforts are mutually beneficial for both you and your connections?"
+  },
+  {
+    "id": "net003",
+    "category": "Networking and Industry Relations",
+    "topic": "Networking events and conferences",
+    "q1": "How can you find and attend relevant networking events and conferences within your industry?",
+    "q2": "What techniques can you use to make a memorable impression and forge connections at these events?",
+    "q3": "How can you effectively follow up with new connections after an event or conference?"
+  },
+  {
+    "id": "net004",
+    "category": "Networking and Industry Relations",
+    "topic": "Online communities and forums",
+    "q1": "How can you identify and participate in relevant online communities and forums related to your industry or niche?",
+    "q2": "What strategies can you use to engage with and contribute value to these online communities?",
+    "q3": "How can you leverage your participation in these communities to expand your network and build relationships?"
+  },
+  {
+    "id": "net005",
+    "category": "Networking and Industry Relations",
+    "topic": "Collaborative projects and partnerships",
+    "q1": "How can you identify opportunities for collaboration or partnerships with other industry professionals or influencers?",
+    "q2": "What criteria should you consider when selecting potential collaborators or partners?",
+    "q3": "How can you ensure a successful and mutually beneficial collaboration or partnership?"
+  },
+  {
+    "id": "net006",
+    "category": "Networking and Industry Relations",
+    "topic": "Guest appearances and interviews",
+    "q1": "How can you seek out and secure guest appearances on podcasts, interviews, or other media platforms within your industry?",
+    "q2": "How can you prepare for these appearances to ensure you effectively represent your brand and make a lasting impression?",
+    "q3": "How can you leverage these guest appearances to expand your network and reach a broader audience?"
+  },
+  {
+    "id": "net007",
+    "category": "Networking and Industry Relations",
+    "topic": "Mentoring and peer support",
+    "q1": "How can you find and establish mentoring relationships within your industry, either as a mentor or mentee?",
+    "q2": "What benefits can peer support and mentoring provide for your personal and professional growth?",
+    "q3": "How can you contribute to the growth and development of others within your industry?"
+  },
+  {
+    "id": "net008",
+    "category": "Networking and Industry Relations",
+    "topic": "Sharing knowledge and expertise",
+    "q1": "How can you share your knowledge and expertise with others in your industry, both online and in-person?",
+    "q2": "What formats or platforms can you use to showcase your expertise and provide value to your network?",
+    "q3": "How can sharing your knowledge help build your reputation and credibility within your industry?"
+  },
+  {
+    "id": "net009",
+    "category": "Networking and Industry Relations",
+    "topic": "Recognizing and celebrating others' achievements",
+    "q1": "How can you acknowledge and celebrate the achievements of others in your industry?",
+    "q2": "How can recognizing others' accomplishments contribute to building and maintaining relationships?",
+    "q3": "What are some creative ways you can show appreciation for the success of your peers and connections?"
+  },
+  {
+    "id": "net010",
+    "category": "Networking and Industry Relations",
+    "topic": "Establishing credibility and trust",
+    "q1": "What actions can you take to establish credibility and trust within your industry?",
+    "q2": "How can you consistently demonstrate your expertise and professionalism to your network and audience?",
+    "q3": "How can building trust and credibility impact your networking and industry relations efforts?"
+  },
+  {
+    "id": "net011",
+    "category": "Networking and Industry Relations",
+    "topic": "Cross-promotion and co-marketing opportunities",
+    "q1": "How can you identify and pursue cross-promotion or co-marketing opportunities with other professionals in your industry?",
+    "q2": "What benefits can cross-promotion and co-marketing provide for your brand and network?",
+    "q3": "How can you ensure these opportunities are aligned with your brand values and goals?"
+  },
+  {
+    "id": "net012",
+    "category": "Networking and Industry Relations",
+    "topic": "Advocating for industry issues and causes",
+    "q1": "How can you use your platform to advocate for important issues and causes within your industry?",
+    "q2": "How can championing these issues impact your reputation and relationships within your industry?",
+    "q3": "How can you collaborate with others in your industry to create positive change and address pressing issues?"
+  },
+  {
+    "id": "net013",
+    "category": "Networking and Industry Relations",
+    "topic": "Navigating competition and rivalry",
+    "q1": "How can you maintain a healthy perspective on competition within your industry?",
+    "q2": "What strategies can you implement to differentiate yourself from competitors while still fostering positive relationships?",
+    "q3": "How can you navigate potential rivalries in a professional and constructive manner?"
+  },
+  {
+    "id": "net014",
+    "category": "Networking and Industry Relations",
+    "topic": "Building a reputation as a thought leader",
+    "q1": "What steps can you take to establish yourself as a thought leader within your industry?",
+    "q2": "How can you consistently share valuable insights and perspectives that contribute to your reputation as an expert?",
+    "q3": "What channels or platforms can you utilize to amplify your voice and establish your thought leadership?"
+  },
+  {
+    "id": "net015",
+    "category": "Networking and Industry Relations",
+    "topic": "Industry awards and recognitions",
+    "q1": "How can you identify relevant industry awards and recognitions to pursue?",
+    "q2": "What strategies can you implement to increase your chances of winning or being recognized for these awards?",
+    "q3": "How can you leverage industry awards and recognitions to enhance your reputation and network within your industry?"
+  },
+  {
+    "id": "leg001",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Intellectual property protection and trademarks",
+    "q1": "What steps can you take to protect your intellectual property, such as securing trademarks or registering copyrights?",
+    "q2": "How can you ensure your brand's assets, such as logos and slogans, are legally protected?",
+    "q3": "How can you monitor for potential infringement of your intellectual property and take appropriate action if necessary?"
+  },
+  {
+    "id": "leg002",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Copyright and fair use",
+    "q1": "How can you ensure your content adheres to copyright laws and respects the intellectual property of others?",
+    "q2": "Under what circumstances can you use copyrighted material under the fair use doctrine?",
+    "q3": "How can you educate yourself on the nuances of copyright laws in the creative industry?"
+  },
+  {
+    "id": "leg003",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Privacy policies and data protection",
+    "q1": "What measures should you take to protect the privacy and data of your audience and customers?",
+    "q2": "How can you create a transparent and comprehensive privacy policy for your brand?",
+    "q3": "What legal requirements do you need to meet regarding data collection, storage, and usage?"
+  },
+  {
+    "id": "leg004",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Compliance with platform-specific policies",
+    "q1": "How can you ensure your content adheres to the policies and guidelines of each platform you use?",
+    "q2": "How can you stay up-to-date on changes to platform policies and adjust your content strategy accordingly?",
+    "q3": "What steps can you take to address potential policy violations and prevent future issues?"
+  },
+  {
+    "id": "leg005",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Accessibility and inclusivity",
+    "q1": "How can you make your content and brand more accessible and inclusive to a diverse audience?",
+    "q2": "What steps can you take to educate yourself on accessibility best practices and implement them in your work?",
+    "q3": "How can you ensure your content is compliant with accessibility laws and guidelines?"
+  },
+  {
+    "id": "leg006",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Advertising and sponsorship disclosures",
+    "q1": "How can you properly disclose advertising and sponsorship relationships in your content?",
+    "q2": "What legal and ethical guidelines should you follow when working with advertisers or sponsors?",
+    "q3": "How can you maintain transparency and trust with your audience while collaborating with brands?"
+  },
+  {
+    "id": "leg007",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Community guidelines and moderation",
+    "q1": "How can you establish clear community guidelines for your audience and ensure they are enforced?",
+    "q2": "What strategies can you implement to moderate comments, messages, or other interactions with your audience?",
+    "q3": "How can you promote a positive, inclusive, and respectful environment within your community?"
+  },
+  {
+    "id": "leg008",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Contracts and negotiations",
+    "q1": "What key elements should you consider when reviewing contracts or negotiating deals within your industry?",
+    "q2": "How can you protect your interests and maintain positive relationships during negotiations?",
+    "q3": "What resources or professionals can you consult for legal advice or representation?"
+  },
+  {
+    "id": "leg009",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Crisis management and public relations",
+    "q1": "How can you prepare for potential crises or controversies that may arise within your brand or industry?",
+    "q2": "What strategies can you implement to address and manage negative situations effectively and professionally?",
+    "q3": "How can you maintain transparency and rebuild trust with your audience during and after a crisis?"
+  },
+  {
+    "id": "leg010",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Defamation and reputation management",
+    "q1": "How can you ensure your content and communications do not defame or harm others' reputations?",
+    "q2": "What steps can you take to monitor and manage your brand's reputation online?",
+    "q3": "How can you address any false or damaging information about your brand in a legal and ethical manner?"
+  },
+  {
+    "id": "leg011",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Cultural sensitivity and avoiding appropriation",
+    "q1": "How can you educate yourself on cultural sensitivities and ensure your content respects different cultures and backgrounds?",
+    "q2": "How can you avoid cultural appropriation and create content that is inclusive and respectful?",
+    "q3": "What resources or perspectives can you consult to broaden your understanding of cultural issues within your industry?"
+  },
+  {
+    "id": "leg012",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Sensitive and controversial topics",
+    "q1": "How can you approach sensitive or controversial topics in your content in a thoughtful and responsible manner?",
+    "q2": "What guidelines should you establish for discussing controversial issues within your brand or community?",
+    "q3": "How can you maintain open dialogue and foster understanding while navigating sensitive subjects?"
+  },
+  {
+    "id": "leg013",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Employee rights and working conditions",
+    "q1": "How can you ensure your employees' rights are respected and maintained within your business operations?",
+    "q2": "What steps can you take to create a safe, inclusive, and equitable working environment for your team members?",
+    "q3": "How can you stay informed about labor laws and regulations that apply to your industry and business?"
+  },
+  {
+    "id": "leg014",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Environmental and social responsibility",
+    "q1": "How can you incorporate environmental and social responsibility into your brand and business practices?",
+    "q2": "What initiatives can you implement to reduce your brand's environmental footprint and promote sustainability?",
+    "q3": "How can you use your platform to advocate for social causes and contribute to positive change within your industry or community?"
+  },
+  {
+    "id": "leg015",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Ethical decision-making and values alignment",
+    "q1": "How can you ensure your brand's actions and decisions align with your core values and ethical principles?",
+    "q2": "What strategies can you use to navigate ethical dilemmas and make informed decisions that uphold your brand's integrity?",
+    "q3": "How can you promote a culture of ethical decision-making and accountability within your team or organization?"
+  },
+  {
+    "id": "ana001",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Key performance indicators (KPIs) and metrics",
+    "q1": "What KPIs and metrics are most relevant to your brand's goals, and how can you consistently track them?",
+    "q2": "How can you use these KPIs and metrics to measure your brand's success and growth?",
+    "q3": "Are there any industry-specific KPIs and metrics you should be aware of and track for your brand?"
+  },
+  {
+    "id": "ana002",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Platform-specific analytics tools",
+    "q1": "What analytics tools are available for each social media platform you use, and how can they help you track your performance?",
+    "q2": "How can you customize the use of platform-specific analytics tools to suit your brand's unique needs?",
+    "q3": "What are the limitations of platform-specific analytics tools, and how can you address them?"
+  },
+  {
+    "id": "ana003",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Third-party analytics software",
+    "q1": "What third-party analytics software options are available, and how do they compare in terms of features, pricing, and ease of use?",
+    "q2": "How can third-party analytics software help you consolidate data from multiple platforms for a more comprehensive view of your brand's performance?",
+    "q3": "What factors should you consider when choosing a third-party analytics software for your brand?"
+  },
+  {
+    "id": "ana004",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Data-driven decision making",
+    "q1": "How can you incorporate data-driven decision making into your content strategy and overall brand management?",
+    "q2": "What types of data are most valuable for informing your brand's decisions and direction?",
+    "q3": "How can you ensure that your decision-making process remains agile and adaptable as new data becomes available?"
+  },
+  {
+    "id": "ana005",
+    "category": "Legal and Ethical Considerations",
+    "topic": "A/B testing and optimization",
+    "q1": "How can you use A/B testing to optimize your content and marketing strategies for better performance?",
+    "q2": "What elements of your content and marketing efforts should you prioritize for A/B testing?",
+    "q3": "How can you analyze and interpret A/B testing results to make informed decisions for your brand?"
+  },
+  {
+    "id": "ana006",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Audience insights and behaviour",
+    "q1": "How can you use audience insights to better understand your target audience's preferences, needs, and behaviours?",
+    "q2": "What types of audience data should you prioritize for analysis and action?",
+    "q3": "How can you leverage audience insights to create more relevant, engaging, and effective content?"
+  },
+  {
+    "id": "ana007",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Content performance and engagement",
+    "q1": "What metrics should you monitor to assess content performance and engagement across various platforms?",
+    "q2": "How can you use content performance data to inform future content creation and strategy?",
+    "q3": "How can you optimize content for better engagement and visibility, based on performance data?"
+  },
+  {
+    "id": "ana008",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Social media reach and growth",
+    "q1": "How can you track your brand's social media reach and growth across different platforms?",
+    "q2": "What strategies can you implement to accelerate your brand's growth on social media?",
+    "q3": "How can you leverage your growth data to identify opportunities and challenges within your social media strategy?"
+  },
+  {
+    "id": "ana009",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Monetization and revenue tracking",
+    "q1": "How can you track and analyze your brand's revenue streams and monetization efforts?",
+    "q2": "What metrics and KPIs should you monitor to assess the success of your monetization strategies?",
+    "q3": "How can you optimize your monetization efforts based on performance data and insights?"
+  },
+  {
+    "id": "ana010",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Competitor analysis and benchmarking",
+    "q1": "How can you effectively analyze and benchmark your brand's performance against competitors within your niche?",
+    "q2": "What insights can you gain from competitor analysis to inform your brand's strategy and growth?",
+    "q3": "How can you use competitor data to identify opportunities for differentiation and innovation within your market?"
+  },
+  {
+    "id": "ana011",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Goal setting and progress tracking",
+    "q1": "How can you set realistic and achievable goals for your brand's growth and performance?",
+    "q2": "What strategies and tools can you use to track your progress towards these goals?",
+    "q3": "How can you adjust your brand's strategy and tactics based on your progress towards goals and new insights?"
+  },
+  {
+    "id": "ana012",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Reporting and data visualization",
+    "q1": "How can you create effective and visually appealing reports that communicate your brand’s performance and insights to stakeholders?",
+    "q2": "What data visualization tools and techniques can you use to make your reports more engaging and informative?",
+    "q3": "How can you ensure that your reports are clear, concise, and actionable for your team and stakeholders?"
+  },
+  {
+    "id": "ana013",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Attribution modelling and ROI calculation",
+    "q1": "How can you develop an attribution model that accurately reflects the impact of your marketing efforts on your brand's performance?",
+    "q2": "What methods can you use to calculate the return on investment (ROI) for various marketing channels and campaigns?",
+    "q3": "How can you use attribution and ROI data to optimize your marketing budget allocation and strategy?"
+  },
+  {
+    "id": "ana014",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Predictive analytics and forecasting",
+    "q1": "How can you leverage predictive analytics to forecast your brand's performance and make more informed decisions about your strategy?",
+    "q2": "What types of data and tools should you prioritize for predictive analytics and forecasting efforts?",
+    "q3": "How can you validate and refine your forecasts based on actual performance data and insights?"
+  },
+  {
+    "id": "ana015",
+    "category": "Legal and Ethical Considerations",
+    "topic": "Privacy and data security considerations",
+    "q1": "What steps should you take to ensure that your brand's data collection, storage, and analysis practices comply with privacy regulations and best practices?",
+    "q2": "How can you protect your brand's data and customer information from security threats and breaches?",
+    "q3": "What policies and procedures should you implement to maintain transparency and trust with your audience regarding data privacy and security?"
+  }
+]

@@ -1,4 +1,0 @@
-# Backend Access - Set this to the URL of the backend directory (Heroku url for production, localhost for development)
-REACT_APP_API_URL=http://localhost:5000/
-
-# Change this file name to .env when ready
