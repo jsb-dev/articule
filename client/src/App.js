@@ -1,7 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import env from 'react-dotenv';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Root from './pages/Root';
+import Dashboard from './pages/Dashboard';
+
+import './styles.css';
 
 function App() {
   const { REACT_APP_API_URL } = env;
@@ -20,11 +23,12 @@ function App() {
   connect();
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Root />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

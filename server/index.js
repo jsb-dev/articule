@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connection from './database/database.js';
-import connectRouter from './api/routers/connect.js';
+import accountRouter from './api/routers/account.js';
 /*
 import populateCategories from './database/populate/populateCategories.js';
 import populateSurveys from './database/populate/populateSurveys.js';
@@ -26,13 +26,13 @@ populateTopicCollections();
 
 // CORS
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: true,
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
 // Routers
-app.use('/connect', connectRouter);
+// app.use('/account', accountRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
