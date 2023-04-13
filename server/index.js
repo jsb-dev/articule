@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connection from './database/database.js';
 import connectRouter from './api/routers/connect.js';
+/*
+import populateCategories from './database/populate/populateCategories.js';
+import populateSurveys from './database/populate/populateSurveys.js';
+import populateTopicCollections from './database/populate/populateTopicCollections.js';
+*/
 
 dotenv.config();
 
@@ -10,10 +15,14 @@ dotenv.config();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.json());
 
 // Database
 connection;
+/*
+populateCategories();
+populateSurveys();
+populateTopicCollections();
+*/
 
 // CORS
 const corsOptions = {
