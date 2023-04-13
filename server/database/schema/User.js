@@ -8,21 +8,6 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
-  artistName: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  primaryContent: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  artistSummary: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   diagram: [
     {
       type: mongoose.Schema.Types.Mixed,

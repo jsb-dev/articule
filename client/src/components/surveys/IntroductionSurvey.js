@@ -37,38 +37,26 @@ function IntroductionSurvey({ email }) {
     async (sender) => {
       const results = sender.data;
 
-      // Create an object with the required fields and email (prop)
       const data = {
         email,
-        artistName: results.artistName,
-        primaryContent: results.primaryContent,
-        artistSummary: results.artistSummary,
-        diagram: [], // Set this to an empty array or any default value you need
+        diagram: [
+          {
+            id: 'rootNode',
+            type: 'rootNode',
+            position: {
+              x: 0,
+              y: 0,
+            },
+            data: {
+              artistName: results.artistName,
+              primaryContent: results.primaryContent,
+              artistSummary: results.artistSummary,
+            },
+          },
+        ],
       };
 
-      console.log('Survey data:', data);
-
-      /*
-    // Send the data to the server at the ${REACT_APP_API_URL}account/create endpoint
-    try {
-      const response = await fetch(`${REACT_APP_API_URL}account/create`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log('Account created successfully:', responseData);
-      } else {
-        console.error('Error creating account:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error sending survey data to server:', error);
-    }
-    */
+      // Send the data to the server at the ${REACT_APP_API_URL}account/create endpoint
     },
     [email, REACT_APP_API_URL]
   );

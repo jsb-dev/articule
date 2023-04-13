@@ -19,8 +19,9 @@ function RootNode({
         background: 'white',
       }}
     >
-      <h1>{data.name}</h1>
-      <p>{data.brief}</p>
+      <h1>{data.artistName}</h1>
+      <p>{data.primaryContent}</p>
+      <p>{data.artistSummary}</p>
       <Handle
         id="top"
         type={topType}

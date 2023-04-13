@@ -3,15 +3,14 @@
 // The controller will extract the email from the request body and search the database for an account with that email
 // If an account with that email is found, the controller will return a 409 Conflict response
 // If an account with that email is not found, the controller will create a new account using the User schema from "../../../database/schema/User.js"
-// The required fields are email, artistName, primaryContent, artistSummary, and diagram
+// The required fields are email and diagram
 // All these values can be found in the request body
 
 import User from '../../../database/schema/User.js';
 
 const createAccount = async (req, res) => {
   try {
-    const { email, artistName, primaryContent, artistSummary, diagram } =
-      req.body;
+    const { email, diagram } = req.body;
 
     const existingUser = await User.findOne({ email });
 
@@ -23,9 +22,6 @@ const createAccount = async (req, res) => {
 
     const newUser = new User({
       email,
-      artistName,
-      primaryContent,
-      artistSummary,
       diagram,
     });
 

@@ -1,14 +1,19 @@
 import React from 'react';
 import { Handle, Position } from 'reactflow';
+import env from 'react-dotenv';
 
 function CategoryNode({
-  data,
+  categoryName,
   topType,
   rightType,
   bottomType,
   leftType,
   isConnectable,
 }) {
+  const { REACT_APP_API_URL } = env;
+
+  // send get request to the `${REACT_APP_API_URL}diagram/category/${data.categoryName}` endpoint
+
   return (
     <div
       style={{
@@ -19,8 +24,16 @@ function CategoryNode({
         background: 'white',
       }}
     >
-      <h1>{data.category}</h1>
-      <p>{data.brief}</p>
+      <h1>{categoryName}</h1>
+      <p>
+        {
+          // categoryBrief (in the response from the get request)
+        }
+      </p>
+      {
+        // List all the ids from the category TopicCollection surveys array here
+        // (in the response from the get request)
+      }
       <Handle
         id="top"
         type={topType}
