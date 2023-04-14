@@ -1,12 +1,4 @@
-// createAccount.js
-// This is the controller that will be called when the user makes a POST request to /account/create
-// The controller will extract the email from the request body and search the database for an account with that email
-// If an account with that email is found, the controller will return a 409 Conflict response
-// If an account with that email is not found, the controller will create a new account using the User schema from "../../../database/schema/User.js"
-// The required fields are email and diagram
-// All these values can be found in the request body
-
-import User from '../../../database/schema/User.js';
+import User from '../../../database/models/User.js';
 
 const createAccount = async (req, res) => {
   try {

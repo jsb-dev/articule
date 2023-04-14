@@ -1,11 +1,16 @@
 import mongoose from 'mongoose';
 
-const TopicCollectionSchema = new mongoose.Schema(
+const CategorySchema = new mongoose.Schema(
   {
     categoryName: {
       type: String,
       required: true,
       unique: true,
+      trim: true,
+    },
+    categoryBrief: {
+      type: String,
+      required: true,
       trim: true,
     },
     surveys: [
@@ -20,9 +25,6 @@ const TopicCollectionSchema = new mongoose.Schema(
   }
 );
 
-const TopicCollection = mongoose.model(
-  'TopicCollection',
-  TopicCollectionSchema
-);
+const Category = mongoose.model('Category', CategorySchema);
 
-export default TopicCollection;
+export default Category;

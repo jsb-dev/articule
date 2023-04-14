@@ -1,15 +1,17 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import env from 'react-dotenv';
+import UserEmailContext from '../../contexts/UserEmailContext';
 
 // Default V2 theme
-import 'survey-core/defaultV2.min.css';
+// import 'survey-core/defaultV2.min.css';
 // Modern theme
-// import 'survey-core/modern.min.css';
+import 'survey-core/modern.min.css';
 
-function IntroductionSurvey({ email }) {
+function IntroductionSurvey({ _id }) {
   const { REACT_APP_API_URL } = env;
+  const { userEmail } = useContext(UserEmailContext);
 
   const surveyJson = {
     elements: [
@@ -38,7 +40,8 @@ function IntroductionSurvey({ email }) {
       const results = sender.data;
 
       const data = {
-        email,
+        _id,
+        email: userEmail,
         diagram: [
           {
             id: 'rootNode',
@@ -58,7 +61,7 @@ function IntroductionSurvey({ email }) {
 
       // Send the data to the server at the ${REACT_APP_API_URL}account/create endpoint
     },
-    [email, REACT_APP_API_URL]
+    [userEmail, REACT_APP_API_URL]
   );
 
   const survey = new Model(surveyJson);

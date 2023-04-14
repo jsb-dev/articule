@@ -2,7 +2,7 @@ import React from 'react';
 import LoginButton from '../components/auth/LoginButton';
 import LogoutButton from '../components/auth/LogoutButton';
 
-function Root() {
+function RootPage() {
   return (
     <div>
       <h1>Login Page</h1>
@@ -12,4 +12,4 @@ function Root() {
   );
 }
 
-export default Root;
+export default RootPage;

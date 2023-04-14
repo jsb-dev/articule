@@ -26,7 +26,7 @@ window.env = {
   "PATH": "/home/dev/WebDev/articule/client/node_modules/.bin:/home/dev/WebDev/articule/node_modules/.bin:/home/dev/WebDev/node_modules/.bin:/home/dev/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Player/bin/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/Git/cmd:/mnt/c/msys64/home/jbbro/.splashkit:/mnt/c/msys64/home/jbbro/.splashkit/lib/win64:/mnt/c/msys64/home/jbbro/.splashkit/lib:/mnt/c/Windows/System32:/mnt/c/Users/jbbro/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/jbbro/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/jbbro/.dotnet/tools:/mnt/c/Program Files/JetBrains/PyCharm Community Edition 2022.3.3/bin:/snap/bin",
   "NODE": "/usr/local/bin/node",
   "npm_package_name": "client",
-  "WT_SESSION": "ab63aa16-df91-44f1-95cb-d742f2b99090",
+  "WT_SESSION": "c210a34e-1200-4bb6-b879-93eaa1da82ac",
   "XDG_RUNTIME_DIR": "/mnt/wslg/runtime-dir",
   "DISPLAY": ":0",
   "LANG": "C.UTF-8",
@@ -49,5 +49,5 @@ window.env = {
   "REACT_APP_API_URL": "http://localhost:5000/",
   "AUTH0_DOMAIN": "dev-sgk8wxow1als17zm.us.auth0.com",
   "AUTH0_CLIENT_ID": "X2cSkSWNvavI4pQHuhqnyOCLgQse45FO",
-  "AUTH0_REDIRECT_URI": "http://localhost:3000/dashboard"
+  "AUTH0_REDIRECT_URI": "http://localhost:3000/checkpoint"
 };

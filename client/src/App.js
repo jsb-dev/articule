@@ -1,30 +1,34 @@
 import React from 'react';
-import env from 'react-dotenv';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Root from './pages/Root';
-import Dashboard from './pages/Dashboard';
-import Flow from './components/diagram/Flow';
+import UserEmailContext from './contexts/UserEmailContext';
+import RootPage from './pages/RootPage';
+import CheckpointPage from './pages/CheckpointPage';
+import DashboardPage from './pages/DashboardPage';
+import SurveyPage from './pages/SurveyPage';
+import IntroductionSurveyPage from './pages/IntroductionSurveyPage';
 
 import './styles.css';
 
 function App() {
+  const [userEmail, setUserEmail] = React.useState(null);
+
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-      }}
-    >
-      <Flow />
-    </div>
-    /*
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Root />} />
-        <Route exact path="/dashboard" element={<Dashboard />} />
-      </Routes>
+      <UserEmailContext.Provider value={{ userEmail, setUserEmail }}>
+        <Routes>
+          <Route path="/" element={<RootPage />} />
+          <Route path="/checkpoint" element={<CheckpointPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          {
+            // <Route exact path="/survey" element={<SurveyPage />} />
+          }
+          <Route
+            path="/survey/introduction"
+            element={<IntroductionSurveyPage />}
+          />
+        </Routes>
+      </UserEmailContext.Provider>
     </BrowserRouter>
-    */
   );
 }
 
