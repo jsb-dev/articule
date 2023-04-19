@@ -1,9 +1,9 @@
 import User from '../../../database/models/User.js';
 
 const checkAccountEmail = async (req, res) => {
-  try {
-    const { email } = req.params;
+  const { email } = req.query;
 
+  try {
     const user = await User.findOne({ email });
 
     if (user) {

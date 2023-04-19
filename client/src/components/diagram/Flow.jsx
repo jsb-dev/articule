@@ -6,45 +6,52 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import TopicNode from './nodes/topics/TopicNode';
-import CategoryNode from './nodes/categories/CategoryNode';
+import {
+  ContentNode,
+  AudienceNode,
+  MonetisationNode,
+  StgNode,
+  LtgNode,
+  SkillsNode,
+  VisualIdentityNode,
+  SocialMediaNode,
+  NetworkingNode,
+  LegalNode,
+  AnalyticsNode,
+} from './nodes/categories/Categories';
 import RootNode from './nodes/RootNode';
 
 const rfStyle = {
   backgroundColor: '#B8CEFF',
 };
 
-const initialNodes = [
-  // This is where the user's nodes will be fetched from the server
-  // For now there is just an example for syntax
-  /*
-  {
-    id: '1',
-    type: 'rootNode',
-    position: { x: 0, y: 0 },
-    data: {
-      artistName: 'This is the artist name',
-      primaryContent: 'This is the primary content',
-      artistSummary: 'This is the artist summary',
-    },
-  },
-  */
-];
-
+/*
 const initialEdges = [
   // This is where the user's nodes will be fetched from the server
   // For now, there's just an example for syntax
   // { id: 'edge-1', source: 'node-1', target: 'node-2', sourceHandle: 'a' },
 ];
+*/
 
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
 const nodeTypes = {
   topicNode: TopicNode,
-  categoryNode: CategoryNode,
+  contentNode: ContentNode,
+  audienceNode: AudienceNode,
+  monetisationNode: MonetisationNode,
+  stgNode: StgNode,
+  ltgNode: LtgNode,
+  skillsNode: SkillsNode,
+  visualIdentityNode: VisualIdentityNode,
+  socialMediaNode: SocialMediaNode,
+  networkingNode: NetworkingNode,
+  legalNode: LegalNode,
+  analyticsNode: AnalyticsNode,
   rootNode: RootNode,
 };
 
-function Flow() {
+function Flow({ initialNodes, initialEdges }) {
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 

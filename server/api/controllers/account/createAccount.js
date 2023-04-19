@@ -1,32 +1,34 @@
+import mongoose from 'mongoose';
 import User from '../../../database/models/User.js';
 
 const createAccount = async (req, res) => {
+  const { _id, email, diagram } = req.body;
+
+  if (!_id || !email || !diagram) {
+    return res.status(400).json({ message: 'Missing required fields' });
+  }
+
   try {
-    const { email, diagram } = req.body;
-
-    const existingUser = await User.findOne({ email });
-
+    const existingUser = await User.findOne({ email: email });
     if (existingUser) {
       return res
         .status(409)
-        .json({ error: 'An account with this email already exists.' });
+        .json({ message: 'User with this email already exists' });
     }
 
     const newUser = new User({
-      email,
-      diagram,
+      _id: new mongoose.Types.ObjectId(_id),
+      email: email,
+      diagram: diagram,
     });
 
     await newUser.save();
+    console.log('New user created:', newUser);
 
-    return res
-      .status(201)
-      .json({ message: 'Account created successfully.', user: newUser });
+    res.status(201).json(newUser);
   } catch (error) {
-    console.error('Error in createAccount controller:', error);
-    return res
-      .status(500)
-      .json({ error: 'An error occurred while creating the account.' });
+    console.error('Error creating user:', error);
+    res.status(500).json({ message: 'Error creating user' });
   }
 };
 

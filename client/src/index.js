@@ -14,6 +14,7 @@ root.render(
   <Auth0Provider
     domain={AUTH0_DOMAIN}
     clientId={AUTH0_CLIENT_ID}
+    scope="openid profile email"
     authorizationParams={{
       redirect_uri: AUTH0_REDIRECT_URI,
     }}

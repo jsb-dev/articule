@@ -19,9 +19,7 @@ function App() {
           <Route path="/" element={<RootPage />} />
           <Route path="/checkpoint" element={<CheckpointPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          {
-            // <Route exact path="/survey" element={<SurveyPage />} />
-          }
+          <Route path="/survey" element={<SurveyPage />} />
           <Route
             path="/survey/introduction"
             element={<IntroductionSurveyPage />}
