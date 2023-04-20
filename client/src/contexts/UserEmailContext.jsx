@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const UserEmailContext = createContext(null);
+const UserIdContext = createContext(null);
 
-export default UserEmailContext;
+export default UserIdContext;

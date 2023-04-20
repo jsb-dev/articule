@@ -1,8 +1,7 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import env from 'react-dotenv';
-import UserEmailContext from '../../contexts/UserEmailContext';
 import { useNavigate } from 'react-router-dom';
 
 // Default V2 theme
@@ -10,10 +9,12 @@ import { useNavigate } from 'react-router-dom';
 // Modern theme
 import 'survey-core/modern.min.css';
 
-function IntroductionSurvey({ _id }) {
+function IntroductionSurvey({ _id, userEmail }) {
   const { REACT_APP_API_URL } = env;
-  const { userEmail } = useContext(UserEmailContext);
   const navigate = useNavigate();
+
+  console.log('userEmail:', userEmail);
+  console.log('_id on component:', _id);
 
   const surveyJson = {
     showCompletedPage: false,
@@ -63,9 +64,9 @@ function IntroductionSurvey({ _id }) {
       const data = {
         _id,
         email: userEmail,
-        diagram: [
-          [
-            ({
+        diagram: {
+          nodes: [
+            {
               id: 'rootNode',
               type: 'rootNode',
               position: {
@@ -187,15 +188,19 @@ function IntroductionSurvey({ _id }) {
                 categoryBrief:
                   'What’s often missed in the early (and therefore most important) stages of creative careers is the fact that success can, and should, be measured. This isn’t just through achieving your goals, but also in numerical, mathematical observations. At the end of the day, it’s a game of numbers. If your numbers are high enough, you’ll have no problem making a living doing what you love.',
               },
-            }),
+            },
           ],
-          [{}],
-        ],
+          edges: [
+            {
+              // edges
+            },
+          ],
+        },
       };
 
       await sendDataToServer(data);
 
-      navigate(`/dashboard?id=${_id}`);
+      navigate(`/dashboard?_id=${_id}`);
     },
     [userEmail, REACT_APP_API_URL, navigate]
   );

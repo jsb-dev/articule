@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connection from './database/database.js';
 import accountRouter from './api/routers/account.js';
-import populateCategories from './database/utils/populateCategories.js';
+import diagramRouter from './api/routers/diagram.js';
+// import populateCategories from './database/utils/populateCategories.js';
 // import populateSurveys from './database/utils/populateSurveys.js';
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(cors(corsOptions));
 
 // Routers
 app.use('/account', accountRouter);
+app.use('/diagram', diagramRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));

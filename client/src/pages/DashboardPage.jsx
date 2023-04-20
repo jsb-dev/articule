@@ -1,26 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Flow from '../components/diagram/Flow';
 import { useAuth0 } from '@auth0/auth0-react';
-import { useNavigate } from 'react-router-dom';
+import env from 'react-dotenv';
 
 function DashboardPage() {
-  const { isAuthenticated } = useAuth0();
-  const navigate = useNavigate();
+  const { isAuthenticated, isLoading } = useAuth0();
+  const [initialNodes, setInitialNodes] = useState([]);
+  const [initialEdges, setInitialEdges] = useState([]);
 
-  // Get the user's diagram data from the database
-  // set initialNodes and initialEdges based on what's returned
+  const { REACT_APP_API_URL } = env;
+  const _id = new URLSearchParams(window.location.search).get('_id');
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      navigate('/');
-    }
-  }, [isAuthenticated, navigate]);
+    const fetchDiagramData = async () => {
+      try {
+        const response = await fetch(
+          `${REACT_APP_API_URL}diagram/get?_id=${_id}`
+        );
+        const data = await response.json();
+        setInitialNodes(data.nodes);
+        setInitialEdges(data.edges);
+      } catch (error) {
+        console.error('Error fetching diagram data:', error);
+      }
 
-  return (
+      console.log('initialNodes:', initialNodes);
+      console.log('initialEdges:', initialEdges);
+    };
+
+    fetchDiagramData();
+  }, [isAuthenticated, _id, REACT_APP_API_URL]);
+
+  return isLoading ? (
+    <div>Loading...</div>
+  ) : (
     isAuthenticated && (
       <div>
         <section>
-          <h1>Dashboard Page</h1>
+          <header>
+            <h1>Dashboard</h1>
+            <p>This is the dashboard page</p>
+          </header>
         </section>
         <section
           style={{
@@ -28,9 +48,7 @@ function DashboardPage() {
             height: '80vh',
           }}
         >
-          {
-            // <Flow intialNodes={} initialEdges={}/>
-          }
+          <Flow initialNodes={initialNodes} initialEdges={initialEdges} />
         </section>
       </div>
     )

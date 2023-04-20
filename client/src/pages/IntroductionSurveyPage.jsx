@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import IntroductionSurvey from '../components/surveys/IntroductionSurvey';
 
 function IntroductionSurveyPage() {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+  const [email, setEmail] = useState(null);
+
   const _id = new URLSearchParams(window.location.search).get('_id');
+  console.log('_id on page:', _id);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setEmail(user?.email);
+      console.log('email:', email);
+    }
+  }, [isLoading, user]);
 
   return (
     <section>
@@ -13,7 +25,9 @@ function IntroductionSurveyPage() {
           better.
         </p>
       </article>
-      <IntroductionSurvey _id={_id} />
+      {!isLoading && email && (
+        <IntroductionSurvey _id={_id} userEmail={email} />
+      )}
     </section>
   );
 }

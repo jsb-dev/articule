@@ -1,7 +1,7 @@
 import User from '../../../database/models/User.js';
 
 const checkAccountId = async (req, res) => {
-  const { _id } = req.params;
+  const { _id } = req.query;
 
   try {
     const user = await User.findById(_id);

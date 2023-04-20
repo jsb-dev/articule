@@ -14,7 +14,7 @@ const generateRandomId = () => {
 const checkIdAvailability = async (generatedId) => {
   try {
     const response = await fetch(
-      `${REACT_APP_API_URL}account/check/id/${generatedId}`
+      `${REACT_APP_API_URL}account/check/id?id=${generatedId}`
     );
     const data = await response.json();
     if (data.exists === false) {
@@ -37,10 +37,5 @@ const generateId = async () => {
     throw error;
   }
 };
-
-// Usage example
-// generateId((id) => {
-//   console.log('Generated ID:', id);
-// });
 
 export default generateId;

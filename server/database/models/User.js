@@ -12,12 +12,20 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
-  diagram: [
-    {
-      type: mongoose.Schema.Types.Mixed,
-      default: {},
-    },
-  ],
+  diagram: {
+    nodes: [
+      {
+        type: mongoose.Schema.Types.Mixed,
+        default: {},
+      },
+    ],
+    edges: [
+      {
+        type: mongoose.Schema.Types.Mixed,
+        default: {},
+      },
+    ],
+  },
 });
 
 const User = mongoose.model('User', UserSchema);

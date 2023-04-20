@@ -3,6 +3,7 @@ import User from '../../../database/models/User.js';
 
 const createAccount = async (req, res) => {
   const { _id, email, diagram } = req.body;
+  console.log('Creating account:', req.body);
 
   if (!_id || !email || !diagram) {
     return res.status(400).json({ message: 'Missing required fields' });

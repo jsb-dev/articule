@@ -7,6 +7,6 @@ const accountRouter = express.Router();
 
 accountRouter.post('/create', createAccount);
 accountRouter.get('/check/email', checkAccount);
-accountRouter.get('/check/id/:_id', checkAccountId);
+accountRouter.get('/check/id', checkAccountId);
 
 export default accountRouter;
