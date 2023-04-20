@@ -5,19 +5,22 @@ import CheckpointPage from './pages/CheckpointPage';
 import DashboardPage from './pages/DashboardPage';
 import SurveyPage from './pages/SurveyPage';
 import IntroductionSurveyPage from './pages/IntroductionSurveyPage';
+import { UserProvider } from './contexts/UserContext';
 
 import './styles.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RootPage />} />
-        <Route path="/checkpoint" element={<CheckpointPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/survey" element={<SurveyPage />} />
-        <Route path="/introduction" element={<IntroductionSurveyPage />} />
-      </Routes>
+      <UserProvider>
+        <Routes>
+          <Route path="/" element={<RootPage />} />
+          <Route path="/checkpoint" element={<CheckpointPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/survey" element={<SurveyPage />} />
+          <Route path="/introduction" element={<IntroductionSurveyPage />} />
+        </Routes>
+      </UserProvider>
     </BrowserRouter>
   );
 }

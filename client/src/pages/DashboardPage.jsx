@@ -2,30 +2,49 @@ import React, { useEffect, useState } from 'react';
 import Flow from '../components/diagram/Flow';
 import { useAuth0 } from '@auth0/auth0-react';
 import env from 'react-dotenv';
+import { useUserContext } from '../contexts/UserContext';
 
 function DashboardPage() {
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const [isAuthChecked, setIsAuthChecked] = useState(false);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  const { userId } = useUserContext();
   const [initialNodes, setInitialNodes] = useState([]);
   const [initialEdges, setInitialEdges] = useState([]);
 
   const { REACT_APP_API_URL } = env;
-  const _id = new URLSearchParams(window.location.search).get('_id');
+  const _id = userId;
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      if (isLoading) return;
+      if (!isAuthenticated) {
+        await loginWithRedirect();
+      } else {
+        setIsAuthChecked(true);
+      }
+    };
+
+    checkAuthentication();
+  }, [isAuthenticated, isLoading, loginWithRedirect]);
 
   useEffect(() => {
     const fetchDiagramData = async () => {
-      try {
-        const response = await fetch(
-          `${REACT_APP_API_URL}diagram/get?_id=${_id}`
-        );
-        const data = await response.json();
-        setInitialNodes(data.nodes);
-        setInitialEdges(data.edges);
-      } catch (error) {
-        console.error('Error fetching diagram data:', error);
+      console.log('fetchDiagramData() called');
+      if (isAuthenticated) {
+        try {
+          const response = await fetch(
+            `${REACT_APP_API_URL}diagram/get?_id=${_id}`
+          );
+          const data = await response.json();
+          setInitialNodes(data.nodes);
+          setInitialEdges(data.edges);
+          setIsDataLoaded(true);
+        } catch (error) {
+          console.error('Error fetching diagram data:', error);
+        }
       }
-
-      console.log('initialNodes:', initialNodes);
-      console.log('initialEdges:', initialEdges);
     };
 
     fetchDiagramData();
@@ -34,7 +53,7 @@ function DashboardPage() {
   return isLoading ? (
     <div>Loading...</div>
   ) : (
-    isAuthenticated && (
+    isAuthChecked && (
       <div>
         <section>
           <header>
@@ -48,7 +67,11 @@ function DashboardPage() {
             height: '80vh',
           }}
         >
-          <Flow initialNodes={initialNodes} initialEdges={initialEdges} />
+          {isDataLoaded ? (
+            <Flow initialNodes={initialNodes} initialEdges={initialEdges} />
+          ) : (
+            <div>Loading diagram data...</div>
+          )}
         </section>
       </div>
     )

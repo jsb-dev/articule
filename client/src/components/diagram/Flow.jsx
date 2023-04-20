@@ -57,19 +57,25 @@ function Flow({ initialNodes, initialEdges }) {
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    [setNodes]
+    [setNodes],
+    console.log(nodes)
     // send nodes to server
   );
   const onEdgesChange = useCallback(
     (changes) => setEdges((eds) => applyEdgeChanges(changes, eds)),
-    [setEdges]
+    [setEdges],
+    console.log(edges)
     // send edges to server
   );
   const onConnect = useCallback(
     (connection) => setEdges((eds) => addEdge(connection, eds)),
-    [setEdges]
+    [setEdges],
+    console.log(edges)
     // send edges to server
   );
+
+  console.log('nodes:', nodes);
+  console.log('edges:', edges);
 
   return (
     <ReactFlow

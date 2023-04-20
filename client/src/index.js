@@ -6,17 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 import env from 'react-dotenv';
 
-const { AUTH0_DOMAIN, AUTH0_CLIENT_ID, AUTH0_REDIRECT_URI } = env;
+const {
+  REACT_APP_AUTH0_DOMAIN,
+  REACT_APP_AUTH0_CLIENT_ID,
+  REACT_APP_AUTH0_REDIRECT_URI,
+} = env;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Auth0Provider
-    domain={AUTH0_DOMAIN}
-    clientId={AUTH0_CLIENT_ID}
+    domain={REACT_APP_AUTH0_DOMAIN}
+    clientId={REACT_APP_AUTH0_CLIENT_ID}
     scope="openid profile email"
     authorizationParams={{
-      redirect_uri: AUTH0_REDIRECT_URI,
+      redirect_uri: REACT_APP_AUTH0_REDIRECT_URI,
     }}
   >
     <App />

@@ -7,7 +7,7 @@ export function ContentNode() {
       categoryName="Content"
       topType="source"
       rightType="source"
-      bottomType="source"
+      bottomType="target"
       leftType="source"
       isConnectable="true"
     />
@@ -20,7 +20,7 @@ export function AudienceNode() {
       categoryName="Audience"
       topType="source"
       rightType="source"
-      bottomType="source"
+      bottomType="target"
       leftType="source"
       isConnectable="true"
     />
@@ -34,7 +34,7 @@ export function MonetisationNode() {
       topType="source"
       rightType="source"
       bottomType="source"
-      leftType="source"
+      leftType="target"
       isConnectable="true"
     />
   );
@@ -47,7 +47,7 @@ export function StgNode() {
       topType="source"
       rightType="source"
       bottomType="source"
-      leftType="source"
+      leftType="target"
       isConnectable="true"
     />
   );
@@ -58,7 +58,7 @@ export function LtgNode() {
     <CategoryNode
       categoryName="Long-term Goals"
       topType="source"
-      rightType="source"
+      rightType="target"
       bottomType="source"
       leftType="source"
       isConnectable="true"
@@ -71,7 +71,7 @@ export function SkillsNode() {
     <CategoryNode
       categoryName="Skills Development"
       topType="source"
-      rightType="source"
+      rightType="target"
       bottomType="source"
       leftType="source"
       isConnectable="true"
@@ -84,7 +84,7 @@ export function VisualIdentityNode() {
     <CategoryNode
       categoryName="Visual Identity"
       topType="source"
-      rightType="source"
+      rightType="target"
       bottomType="source"
       leftType="source"
       isConnectable="true"
@@ -99,7 +99,7 @@ export function SocialMediaNode() {
       topType="source"
       rightType="source"
       bottomType="source"
-      leftType="source"
+      leftType="target"
       isConnectable="true"
     />
   );
@@ -112,7 +112,7 @@ export function NetworkingNode() {
       topType="source"
       rightType="source"
       bottomType="source"
-      leftType="source"
+      leftType="target"
       isConnectable="true"
     />
   );
@@ -122,7 +122,7 @@ export function LegalNode() {
   return (
     <CategoryNode
       categoryName="Legal and Ethical Considerations"
-      topType="source"
+      topType="target"
       rightType="source"
       bottomType="source"
       leftType="source"
@@ -136,7 +136,7 @@ export function AnalyticsNode() {
     <CategoryNode
       categoryName="Analytics and Performance Tracking"
       topType="source"
-      rightType="source"
+      rightType="target"
       bottomType="source"
       leftType="source"
       isConnectable="true"

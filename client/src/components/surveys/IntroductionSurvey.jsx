@@ -13,9 +13,6 @@ function IntroductionSurvey({ _id, userEmail }) {
   const { REACT_APP_API_URL } = env;
   const navigate = useNavigate();
 
-  console.log('userEmail:', userEmail);
-  console.log('_id on component:', _id);
-
   const surveyJson = {
     showCompletedPage: false,
     elements: [
@@ -82,7 +79,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'contentNode',
               type: 'contentNode',
-              position: { x: 0, y: 100 },
+              position: { x: 60, y: -310 },
               data: {
                 categoryName: 'Content',
                 categoryBrief:
@@ -92,7 +89,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'audienceNode',
               type: 'audienceNode',
-              position: { x: 50, y: 50 },
+              position: { x: -150, y: -310 },
               data: {
                 categoryName: 'Audience',
                 categoryBrief:
@@ -102,7 +99,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'monetisationNode',
               type: 'monetisationNode',
-              position: { x: 100, y: 0 },
+              position: { x: 480, y: -50 },
               data: {
                 categoryName: 'Monetisation',
                 categoryBrief:
@@ -112,7 +109,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'stgNode',
               type: 'stgNode',
-              position: { x: 100, y: -50 },
+              position: { x: 230, y: -200 },
               data: {
                 categoryName: 'Short-term Goals',
                 categoryBrief:
@@ -122,7 +119,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'ltgNode',
               type: 'ltgNode',
-              position: { x: 0, y: -100 },
+              position: { x: -410, y: -200 },
               data: {
                 categoryName: 'Long-term Goals',
                 categoryBrief:
@@ -132,7 +129,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'skillsNode',
               type: 'skillsNode',
-              position: { x: -50, y: -50 },
+              position: { x: -440, y: 280 },
               data: {
                 categoryName: 'Skills Development',
                 categoryBrief:
@@ -142,7 +139,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'visualIdentityNode',
               type: 'visualIdentityNode',
-              position: { x: -50, y: -50 },
+              position: { x: -620, y: -40 },
               data: {
                 categoryName: 'Visual Identity',
                 categoryBrief:
@@ -152,7 +149,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'socialMediaNode',
               type: 'socialMediaNode',
-              position: { x: -50, y: -50 },
+              position: { x: 230, y: 280 },
               data: {
                 categoryName: 'Social Media Strategy',
                 categoryBrief:
@@ -162,7 +159,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'networkingNode',
               type: 'networkingNode',
-              position: { x: -50, y: -50 },
+              position: { x: 350, y: 130 },
               data: {
                 categoryName: 'Networking and Industry Relations',
                 categoryBrief:
@@ -172,7 +169,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'legalNode',
               type: 'legalNode',
-              position: { x: -50, y: -50 },
+              position: { x: -180, y: 430 },
               data: {
                 categoryName: 'Legal and Ethical Considerations',
                 categoryBrief:
@@ -182,7 +179,7 @@ function IntroductionSurvey({ _id, userEmail }) {
             {
               id: 'analyticsNode',
               type: 'analyticsNode',
-              position: { x: -50, y: -50 },
+              position: { x: -750, y: 130 },
               data: {
                 categoryName: 'Analytics and Performance Tracking',
                 categoryBrief:

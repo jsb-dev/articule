@@ -1,34 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import IntroductionSurvey from '../components/surveys/IntroductionSurvey';
+import { useUserContext } from '../contexts/UserContext';
 
 function IntroductionSurveyPage() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-  const [email, setEmail] = useState(null);
-
-  const _id = new URLSearchParams(window.location.search).get('_id');
-  console.log('_id on page:', _id);
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const { userId, userEmail } = useUserContext();
+  const [isAuthChecked, setIsAuthChecked] = useState(false);
 
   useEffect(() => {
-    if (!isLoading) {
-      setEmail(user?.email);
-      console.log('email:', email);
-    }
-  }, [isLoading, user]);
+    const checkAuthentication = async () => {
+      if (isLoading) return;
+      if (!isAuthenticated) {
+        await loginWithRedirect();
+      } else {
+        setIsAuthChecked(true);
+      }
+    };
+
+    checkAuthentication();
+  }, [isAuthenticated, isLoading, loginWithRedirect]);
 
   return (
-    <section>
-      <article>
-        <h1>Introduction Survey</h1>
-        <p>
-          It looks like it's your first time here. Let's get to know you a bit
-          better.
-        </p>
-      </article>
-      {!isLoading && email && (
-        <IntroductionSurvey _id={_id} userEmail={email} />
-      )}
-    </section>
+    isAuthChecked && (
+      <section>
+        <article>
+          <h1>Introduction Survey</h1>
+          <p>
+            It looks like it's your first time here. Let's get to know you a bit
+            better.
+          </p>
+        </article>
+        <IntroductionSurvey _id={userId} userEmail={userEmail} />
+      </section>
+    )
   );
 }
 

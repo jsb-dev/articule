@@ -1,20 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../contexts/UserContext';
 import generateId from '../utils/generateId';
 import checkAccountEmail from '../utils/checkAccountEmail';
 
 function CheckpointPage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  const { setUserEmail, setUserId } = useUserContext();
   const [accountData, setAccountData] = useState(null);
   const [accountCheckLoading, setAccountCheckLoading] = useState(true);
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    fetchAccountData();
+  }, [isLoading, user]);
+
+  useEffect(() => {
+    if (!accountCheckLoading) {
+      redirect();
+    }
+  }, [accountCheckLoading, accountData]);
+
   const getSurveyUrl = async () => {
     try {
       const _id = await generateId();
-      console.log('_id generated:', _id);
+      setUserEmail(user.email);
+      setUserId(_id);
       return `/introduction?_id=${_id}`;
     } catch (error) {
       console.error('Error:', error);
@@ -23,18 +36,19 @@ function CheckpointPage() {
   };
 
   const getDashboardUrl = () => {
+    setUserEmail(accountData.email);
+    setUserId(accountData._id);
+
     return `/dashboard?_id=${accountData._id}`;
   };
 
   const redirect = async () => {
-    if (!accountCheckLoading) {
-      if (accountData) {
-        const dashboardUrl = getDashboardUrl();
-        navigate(dashboardUrl);
-      } else {
-        const surveyUrl = await getSurveyUrl();
-        navigate(surveyUrl);
-      }
+    if (accountData) {
+      const dashboardUrl = getDashboardUrl();
+      navigate(dashboardUrl);
+    } else {
+      const surveyUrl = await getSurveyUrl();
+      navigate(surveyUrl);
     }
   };
 
@@ -46,16 +60,9 @@ function CheckpointPage() {
       } catch (error) {
         console.error('Error checking account:', error);
       }
+      setAccountCheckLoading(false);
     }
-
-    setAccountCheckLoading(false);
-
-    redirect();
   };
-
-  useEffect(() => {
-    fetchAccountData();
-  }, [isLoading, user]);
 
   return isLoading || accountCheckLoading ? (
     <section>
