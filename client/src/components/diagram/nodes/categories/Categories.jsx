@@ -1,7 +1,7 @@
 import React from 'react';
 import CategoryNode from './CategoryNode';
 
-export function ContentNode() {
+export function ContentNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Content"
@@ -10,11 +10,13 @@ export function ContentNode() {
       bottomType="target"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function AudienceNode() {
+export function AudienceNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Audience"
@@ -23,11 +25,13 @@ export function AudienceNode() {
       bottomType="target"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function MonetisationNode() {
+export function MonetisationNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Monetisation"
@@ -36,11 +40,13 @@ export function MonetisationNode() {
       bottomType="source"
       leftType="target"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function StgNode() {
+export function StgNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Short-term Goals"
@@ -49,11 +55,13 @@ export function StgNode() {
       bottomType="target"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function LtgNode() {
+export function LtgNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Long-term Goals"
@@ -62,11 +70,13 @@ export function LtgNode() {
       bottomType="target"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function SkillsNode() {
+export function SkillsNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Skills Development"
@@ -75,11 +85,13 @@ export function SkillsNode() {
       bottomType="source"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function VisualIdentityNode() {
+export function VisualIdentityNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Visual Identity"
@@ -88,11 +100,13 @@ export function VisualIdentityNode() {
       bottomType="source"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function SocialMediaNode() {
+export function SocialMediaNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Social Media Strategy"
@@ -101,11 +115,13 @@ export function SocialMediaNode() {
       bottomType="source"
       leftType="target"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function NetworkingNode() {
+export function NetworkingNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Networking and Industry Relations"
@@ -114,11 +130,13 @@ export function NetworkingNode() {
       bottomType="source"
       leftType="target"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function LegalNode() {
+export function LegalNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Legal and Ethical Considerations"
@@ -127,11 +145,13 @@ export function LegalNode() {
       bottomType="source"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }
 
-export function AnalyticsNode() {
+export function AnalyticsNode({ categoryBrief, surveys }) {
   return (
     <CategoryNode
       categoryName="Analytics and Performance Tracking"
@@ -140,6 +160,8 @@ export function AnalyticsNode() {
       bottomType="source"
       leftType="source"
       isConnectable="true"
+      categoryBrief={categoryBrief}
+      surveys={surveys}
     />
   );
 }

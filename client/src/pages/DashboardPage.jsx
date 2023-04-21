@@ -3,19 +3,27 @@ import Flow from '../components/diagram/Flow';
 import { useAuth0 } from '@auth0/auth0-react';
 import env from 'react-dotenv';
 import { useUserContext } from '../contexts/UserContext';
+import RootNode from '../components/diagram/nodes/RootNode';
+import TopicNode from '../components/diagram/nodes/TopicNode';
+import CreateCategoryNodes from '../components/diagram/nodes/categories/CreateCategoryNodes';
 // import defaultDiagram from '../components/diagram/DefaultDiagram';
 
 function DashboardPage() {
-  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
-  const [isAuthChecked, setIsAuthChecked] = useState(false);
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const { REACT_APP_API_URL } = env;
 
+  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
   const { userId } = useUserContext();
+  const _id = userId;
+
+  const [isAuthChecked, setIsAuthChecked] = useState(false);
+  const [isDiagramLoaded, setIsDiagramLoaded] = useState(false);
+  const [isCategoryListLoaded, setIsCategoryListLoaded] = useState(false);
+  const [isDataReady, setIsDataReady] = useState(false);
+
   const [initialNodes, setInitialNodes] = useState([]);
   const [initialEdges, setInitialEdges] = useState([]);
-
-  const { REACT_APP_API_URL } = env;
-  const _id = userId;
+  const [categoryData, setCategoryData] = useState([]);
+  const [nodeTypes, setNodeTypes] = useState({});
 
   useEffect(() => {
     const checkAuthentication = async () => {
@@ -40,7 +48,7 @@ function DashboardPage() {
           const data = await response.json();
           setInitialNodes(data.nodes);
           setInitialEdges(data.edges);
-          setIsDataLoaded(true);
+          setIsDiagramLoaded(true);
         } catch (error) {
           console.error('Error fetching diagram data:', error);
         }
@@ -50,31 +58,65 @@ function DashboardPage() {
     fetchDiagramData();
   }, [isAuthenticated, _id, REACT_APP_API_URL]);
 
-  return isLoading ? (
-    <div>Loading...</div>
+  useEffect(() => {
+    const fetchCategoryData = async () => {
+      if (isAuthenticated) {
+        try {
+          const response = await fetch(
+            `${REACT_APP_API_URL}diagram/get/categories`
+          );
+          const data = await response.json();
+          setCategoryData(data.data);
+        } catch (error) {
+          console.error('Error fetching category data:', error);
+        }
+      }
+    };
+
+    fetchCategoryData();
+  }, [isAuthenticated, REACT_APP_API_URL]);
+
+  useEffect(() => {
+    if (isAuthenticated && categoryData.length > 0) {
+      const categoryNodes = CreateCategoryNodes(categoryData);
+      setNodeTypes({
+        rootNode: RootNode,
+        topicNode: TopicNode,
+        ...categoryNodes,
+      });
+      setIsCategoryListLoaded(true);
+    }
+  }, [categoryData]);
+
+  useEffect(() => {
+    if (isAuthenticated && isDiagramLoaded && isCategoryListLoaded) {
+      setIsDataReady(true);
+    }
+  }, [isAuthenticated, isDiagramLoaded, isCategoryListLoaded]);
+
+  return isLoading && !isAuthChecked ? (
+    <div>
+      <section>
+        <p>Loading... </p>
+      </section>
+    </div>
   ) : (
-    isAuthChecked && (
-      <div>
-        <section>
-          <header>
-            <h1>Dashboard</h1>
-            <p>This is the dashboard page</p>
-          </header>
-        </section>
-        <section
-          style={{
-            width: '100vw',
-            height: '100vh',
-          }}
-        >
-          {isDataLoaded ? (
-            <Flow initialNodes={initialNodes} initialEdges={initialEdges} />
-          ) : (
-            <div>Loading diagram data...</div>
-          )}
-        </section>
-      </div>
-    )
+    <div>
+      <section
+        style={{
+          width: '100vw',
+          height: '100vh',
+        }}
+      >
+        {isDataReady && (
+          <Flow
+            initialNodes={initialNodes}
+            initialEdges={initialEdges}
+            nodeTypes={nodeTypes}
+          />
+        )}
+      </section>
+    </div>
   );
 }
 

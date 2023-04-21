@@ -1,0 +1,194 @@
+import React from 'react';
+import CategoryNode from './CategoryNode';
+
+const CreateCategoryNodes = (categories) => {
+  const categoryNodes = {};
+
+  categories.forEach((category) => {
+    const { categoryName, categoryBrief, surveys } = category;
+
+    switch (categoryName) {
+      case 'Content':
+        categoryNodes.contentNode = function ContentNode() {
+          return (
+            <CategoryNode
+              categoryName="Content"
+              topType="source"
+              rightType="source"
+              bottomType="target"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Audience':
+        categoryNodes.audienceNode = function AudienceNode() {
+          return (
+            <CategoryNode
+              categoryName="Audience"
+              topType="source"
+              rightType="source"
+              bottomType="target"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Monetisation':
+        categoryNodes.monetisationNode = function MonetisationNode() {
+          return (
+            <CategoryNode
+              categoryName="Monetisation"
+              topType="source"
+              rightType="source"
+              bottomType="source"
+              leftType="target"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Short-term Goals':
+        categoryNodes.stgNode = function StgNode() {
+          return (
+            <CategoryNode
+              categoryName="Short-term Goals"
+              topType="source"
+              rightType="source"
+              bottomType="target"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Long-term Goals':
+        categoryNodes.ltgNode = function LtgNode() {
+          return (
+            <CategoryNode
+              categoryName="Long-term Goals"
+              topType="source"
+              rightType="source"
+              bottomType="target"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Skills Development':
+        categoryNodes.skillsNode = function SkillsNode() {
+          return (
+            <CategoryNode
+              categoryName="Skills Development"
+              topType="source"
+              rightType="target"
+              bottomType="source"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Visual Identity':
+        categoryNodes.visualIdentityNode = function VisualIdentityNode() {
+          return (
+            <CategoryNode
+              categoryName="Visual Identity"
+              topType="source"
+              rightType="target"
+              bottomType="source"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Social Media Strategy':
+        categoryNodes.socialMediaNode = function SocialMediaNode() {
+          return (
+            <CategoryNode
+              categoryName="Social Media Strategy"
+              topType="source"
+              rightType="source"
+              bottomType="source"
+              leftType="target"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Networking and Industry Relations':
+        categoryNodes.networkingNode = function NetworkingNode() {
+          return (
+            <CategoryNode
+              categoryName="Networking and Industry Relations"
+              topType="source"
+              rightType="source"
+              bottomType="source"
+              leftType="target"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Legal and Ethical Considerations':
+        categoryNodes.legalNode = function LegalNode() {
+          return (
+            <CategoryNode
+              categoryName="Legal and Ethical Considerations"
+              topType="target"
+              rightType="source"
+              bottomType="source"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      case 'Analytics and Performance Tracking':
+        categoryNodes.analyticsNode = function AnalyticsNode() {
+          return (
+            <CategoryNode
+              categoryName="Analytics and Performance Tracking"
+              topType="source"
+              rightType="target"
+              bottomType="source"
+              leftType="source"
+              isConnectable="true"
+              categoryBrief={categoryBrief}
+              surveys={surveys}
+            />
+          );
+        };
+        break;
+      default:
+        break;
+    }
+  });
+  return categoryNodes;
+};
+
+export default CreateCategoryNodes;

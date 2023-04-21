@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Handle, Position } from 'reactflow';
-import env from 'react-dotenv';
-
 function CategoryNode({
   categoryName,
   topType,
@@ -9,37 +7,14 @@ function CategoryNode({
   bottomType,
   leftType,
   isConnectable,
+  categoryBrief,
+  surveys,
 }) {
-  const { REACT_APP_API_URL } = env;
-  const [categoryBrief, setCategoryBrief] = useState('');
-  const [surveys, setSurveys] = useState([]);
-
-  const category = categoryName.replace(/\s+/g, '');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `${REACT_APP_API_URL}diagram/get/category?category=${category}`
-        );
-        const data = await response.json();
-        setCategoryBrief(data.categoryBrief);
-        setSurveys(data.surveys);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, [category, REACT_APP_API_URL]);
-
-  console.log('categoryBrief:', categoryBrief);
-  console.log('surveys:', surveys);
-
   return (
     <div
       style={{
         height: 'auto',
+        width: 450,
         border: '1px solid #eee',
         padding: '5px',
         borderRadius: '5px',

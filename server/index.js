@@ -16,8 +16,8 @@ app.use(express.json());
 
 // Database
 connection;
-// populateCategories();
 // populateSurveys();
+// populateCategories();
 
 // CORS
 const corsOptions = {
