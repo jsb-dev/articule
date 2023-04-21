@@ -25,17 +25,10 @@ const rfStyle = {
   backgroundColor: '#B8CEFF',
 };
 
-/*
-const initialEdges = [
-  // This is where the user's nodes will be fetched from the server
-  // For now, there's just an example for syntax
-  // { id: 'edge-1', source: 'node-1', target: 'node-2', sourceHandle: 'a' },
-];
-*/
-
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
 const nodeTypes = {
+  rootNode: RootNode,
   topicNode: TopicNode,
   contentNode: ContentNode,
   audienceNode: AudienceNode,
@@ -48,7 +41,6 @@ const nodeTypes = {
   networkingNode: NetworkingNode,
   legalNode: LegalNode,
   analyticsNode: AnalyticsNode,
-  rootNode: RootNode,
 };
 
 function Flow({ initialNodes, initialEdges }) {

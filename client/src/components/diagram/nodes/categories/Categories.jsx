@@ -46,8 +46,8 @@ export function StgNode() {
       categoryName="Short-term Goals"
       topType="source"
       rightType="source"
-      bottomType="source"
-      leftType="target"
+      bottomType="target"
+      leftType="source"
       isConnectable="true"
     />
   );
@@ -58,8 +58,8 @@ export function LtgNode() {
     <CategoryNode
       categoryName="Long-term Goals"
       topType="source"
-      rightType="target"
-      bottomType="source"
+      rightType="source"
+      bottomType="target"
       leftType="source"
       isConnectable="true"
     />

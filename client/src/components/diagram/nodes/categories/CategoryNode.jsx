@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Handle, Position } from 'reactflow';
 import env from 'react-dotenv';
 
@@ -11,8 +11,30 @@ function CategoryNode({
   isConnectable,
 }) {
   const { REACT_APP_API_URL } = env;
+  const [categoryBrief, setCategoryBrief] = useState('');
+  const [surveys, setSurveys] = useState([]);
 
-  // send get request to the `${REACT_APP_API_URL}diagram/category/${data.categoryName}` endpoint
+  const category = categoryName.replace(/\s+/g, '');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${REACT_APP_API_URL}diagram/get/category?category=${category}`
+        );
+        const data = await response.json();
+        setCategoryBrief(data.categoryBrief);
+        setSurveys(data.surveys);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [category, REACT_APP_API_URL]);
+
+  console.log('categoryBrief:', categoryBrief);
+  console.log('surveys:', surveys);
 
   return (
     <div
@@ -25,15 +47,12 @@ function CategoryNode({
       }}
     >
       <h1>{categoryName}</h1>
-      <p>
-        {
-          // categoryBrief (in the response from the get request)
-        }
-      </p>
-      {
-        // List all the ids from the category TopicCollection surveys array here
-        // (in the response from the get request)
-      }
+      <p>{categoryBrief}</p>
+      <ul>
+        {surveys.map((survey) => (
+          <li key={survey}>{survey}</li>
+        ))}
+      </ul>
       <Handle
         id="top"
         type={topType}

@@ -1,18 +1,12 @@
 import React from 'react';
 import { Handle, Position } from 'reactflow';
 
-function RootNode({
-  data,
-  topType,
-  rightType,
-  bottomType,
-  leftType,
-  isConnectable,
-}) {
+function RootNode({ data }) {
   return (
     <div
       style={{
         height: 'auto',
+        width: 450,
         border: '1px solid #eee',
         padding: '5px',
         borderRadius: '5px',
@@ -24,27 +18,27 @@ function RootNode({
       <p>{data.artistSummary}</p>
       <Handle
         id="top"
-        type={topType}
+        type="source"
         position={Position.Top}
-        isConnectable={isConnectable}
+        isConnectable="true"
       />
       <Handle
         id="bottom"
-        type={bottomType}
+        type="source"
         position={Position.Bottom}
-        isConnectable={isConnectable}
+        isConnectable="true"
       />
       <Handle
         id="left"
-        type={leftType}
+        type="source"
         position={Position.Left}
-        isConnectable={isConnectable}
+        isConnectable="true"
       />
       <Handle
-        id={rightType}
-        type="target"
+        id="right"
+        type="source"
         position={Position.Right}
-        isConnectable={isConnectable}
+        isConnectable="true"
       />
     </div>
   );

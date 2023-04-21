@@ -3,6 +3,7 @@ import Flow from '../components/diagram/Flow';
 import { useAuth0 } from '@auth0/auth0-react';
 import env from 'react-dotenv';
 import { useUserContext } from '../contexts/UserContext';
+// import defaultDiagram from '../components/diagram/DefaultDiagram';
 
 function DashboardPage() {
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
@@ -31,7 +32,6 @@ function DashboardPage() {
 
   useEffect(() => {
     const fetchDiagramData = async () => {
-      console.log('fetchDiagramData() called');
       if (isAuthenticated) {
         try {
           const response = await fetch(
@@ -63,8 +63,8 @@ function DashboardPage() {
         </section>
         <section
           style={{
-            width: '80vw',
-            height: '80vh',
+            width: '100vw',
+            height: '100vh',
           }}
         >
           {isDataLoaded ? (
@@ -77,5 +77,36 @@ function DashboardPage() {
     )
   );
 }
+
+/* Use this to style the default diagram
+
+function DashboardPage() {
+  const results = {
+    artistName: 'test',
+    primaryContent: 'test',
+    artistSummary: 'test',
+  };
+  const diagram = defaultDiagram(results);
+  console.log('diagram:', diagram);
+
+  const initialEdges = diagram.edges;
+  const initialNodes = diagram.nodes;
+
+  console.log('initialNodes:', initialNodes);
+  console.log('initialEdges:', initialEdges);
+
+  return (
+    <section
+      style={{
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      <Flow initialNodes={initialNodes} initialEdges={initialEdges} />
+    </section>
+  );
+}
+
+*/
 
 export default DashboardPage;
