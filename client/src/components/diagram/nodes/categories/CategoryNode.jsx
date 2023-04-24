@@ -1,5 +1,6 @@
 import React from 'react';
 import { Handle, Position } from 'reactflow';
+import SurveyList from '../../diagram-components/SurveyList';
 function CategoryNode({
   categoryName,
   topType,
@@ -23,11 +24,7 @@ function CategoryNode({
     >
       <h1>{categoryName}</h1>
       <p>{categoryBrief}</p>
-      <ul>
-        {surveys.map((survey) => (
-          <li key={survey}>{survey}</li>
-        ))}
-      </ul>
+      <SurveyList surveys={surveys} />
       <Handle
         id="top"
         type={topType}
