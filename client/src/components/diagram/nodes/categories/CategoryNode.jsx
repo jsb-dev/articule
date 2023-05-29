@@ -1,6 +1,6 @@
 import React from 'react';
 import { Handle, Position } from 'reactflow';
-import SurveyList from '../../diagram-components/SurveyList';
+import SurveyList from '../../diagram-components/survey-list/SurveyList';
 function CategoryNode({
   categoryName,
   topType,

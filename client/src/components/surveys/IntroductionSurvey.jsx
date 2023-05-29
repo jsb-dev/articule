@@ -72,10 +72,10 @@ function IntroductionSurvey({ _id, userEmail }) {
     [userEmail, REACT_APP_API_URL, navigate]
   );
 
-  const survey = new Model(surveyJson);
-  survey.onComplete.add(surveyComplete);
+  const surveyModel = new Model(surveyJson);
+  surveyModel.onComplete.add(surveyComplete);
 
-  return <Survey model={survey} />;
+  return <Survey model={surveyModel} />;
 }
 
 export default IntroductionSurvey;
