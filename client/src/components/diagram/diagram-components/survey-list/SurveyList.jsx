@@ -3,7 +3,7 @@ import env from 'react-dotenv';
 import ToggleButton from './ToggleButton';
 import Drawer from './Drawer';
 
-function SurveyList({ surveys }) {
+function SurveyList({ surveys, id }) {
   const [fetchedSurveys, setFetchedSurveys] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +33,8 @@ function SurveyList({ surveys }) {
 
   const toggleList = () => {
     setIsOpen(!isOpen);
+    // set the value of sourceNode in NewNodeContext to the value of Id
+    // TODO: Make sure only one SurveyList is open at a time
   };
 
   return (

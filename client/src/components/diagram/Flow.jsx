@@ -1,16 +1,18 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useContext, useEffect } from 'react';
 import ReactFlow, {
   addEdge,
   applyEdgeChanges,
   applyNodeChanges,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
+import { NewNodeContext } from '../../contexts/NewNodeContext';
 
 const rfStyle = {
   backgroundColor: '#B8CEFF',
 };
 
 function Flow({ initialNodes, initialEdges, nodeTypes }) {
+  const { newNode } = useContext(NewNodeContext);
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
@@ -29,6 +31,19 @@ function Flow({ initialNodes, initialEdges, nodeTypes }) {
     [setEdges]
     // send edges to server
   );
+
+  // Listen for changes in newNode
+  useEffect(() => {
+    if (newNode) {
+      // Add new node to the nodes list
+      setNodes((currentNodes) => [...currentNodes, newNode.node]);
+
+      // Add new edge to the edges list
+      setEdges((currentEdges) => [...currentEdges, newNode.edge]);
+
+      console.log('newNode: ', newNode);
+    }
+  }, [newNode]);
 
   return (
     <ReactFlow

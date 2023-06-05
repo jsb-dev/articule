@@ -130,35 +130,4 @@ function DashboardPage() {
   );
 }
 
-/* Use this to style the default diagram
-
-function DashboardPage() {
-  const results = {
-    artistName: 'test',
-    primaryContent: 'test',
-    artistSummary: 'test',
-  };
-  const diagram = defaultDiagram(results);
-  console.log('diagram:', diagram);
-
-  const initialEdges = diagram.edges;
-  const initialNodes = diagram.nodes;
-
-  console.log('initialNodes:', initialNodes);
-  console.log('initialEdges:', initialEdges);
-
-  return (
-    <section
-      style={{
-        width: '100vw',
-        height: '100vh',
-      }}
-    >
-      <Flow initialNodes={initialNodes} initialEdges={initialEdges} />
-    </section>
-  );
-}
-
-*/
-
 export default DashboardPage;

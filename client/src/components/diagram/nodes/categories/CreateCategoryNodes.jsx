@@ -12,6 +12,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.contentNode = function ContentNode() {
           return (
             <CategoryNode
+              id="contentNode"
               categoryName="Content"
               topType="source"
               rightType="source"
@@ -28,6 +29,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.audienceNode = function AudienceNode() {
           return (
             <CategoryNode
+              id="audienceNode"
               categoryName="Audience"
               topType="source"
               rightType="source"
@@ -44,6 +46,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.monetisationNode = function MonetisationNode() {
           return (
             <CategoryNode
+              id="monetisationNode"
               categoryName="Monetisation"
               topType="source"
               rightType="source"
@@ -60,6 +63,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.stgNode = function StgNode() {
           return (
             <CategoryNode
+              id="stgNode"
               categoryName="Short-term Goals"
               topType="source"
               rightType="source"
@@ -76,6 +80,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.ltgNode = function LtgNode() {
           return (
             <CategoryNode
+              id="ltgNode"
               categoryName="Long-term Goals"
               topType="source"
               rightType="source"
@@ -92,6 +97,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.skillsNode = function SkillsNode() {
           return (
             <CategoryNode
+              id="skillsNode"
               categoryName="Skills Development"
               topType="source"
               rightType="target"
@@ -108,6 +114,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.visualIdentityNode = function VisualIdentityNode() {
           return (
             <CategoryNode
+              id="visualIdentityNode"
               categoryName="Visual Identity"
               topType="source"
               rightType="target"
@@ -124,6 +131,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.socialMediaNode = function SocialMediaNode() {
           return (
             <CategoryNode
+              id="socialMediaNode"
               categoryName="Social Media Strategy"
               topType="source"
               rightType="source"
@@ -140,6 +148,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.networkingNode = function NetworkingNode() {
           return (
             <CategoryNode
+              id="networkingNode"
               categoryName="Networking and Industry Relations"
               topType="source"
               rightType="source"
@@ -156,6 +165,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.legalNode = function LegalNode() {
           return (
             <CategoryNode
+              id="legalNode"
               categoryName="Legal and Ethical Considerations"
               topType="target"
               rightType="source"
@@ -172,6 +182,7 @@ const CreateCategoryNodes = (categories) => {
         categoryNodes.analyticsNode = function AnalyticsNode() {
           return (
             <CategoryNode
+              id="analyticsNode"
               categoryName="Analytics and Performance Tracking"
               topType="source"
               rightType="target"

@@ -8,7 +8,7 @@ const drawerStyle = (isOpen) => ({
   transition: 'max-height 0.5s ease-in-out',
 });
 
-function SurveyListContent({ loading, fetchedSurveys, isOpen }) {
+function Drawer({ loading, fetchedSurveys, isOpen }) {
   return (
     isOpen &&
     (loading ? (
@@ -29,4 +29,4 @@ function SurveyListContent({ loading, fetchedSurveys, isOpen }) {
   );
 }
 
-export default SurveyListContent;
+export default Drawer;
