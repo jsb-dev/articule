@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import env from 'react-dotenv';
 import ToggleButton from './ToggleButton';
 import Drawer from './Drawer';
+import { useContext } from 'react';
+import { SurveyListContext } from '../../../../contexts/SurveyListContext';
 
-function SurveyList({ surveys, id }) {
+function SurveyList({ surveys, nodeId }) {
   const [fetchedSurveys, setFetchedSurveys] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const { openedSurveyList, openSurveyList } = useContext(SurveyListContext);
+  const isOpen = openedSurveyList === nodeId;
 
   const { REACT_APP_API_URL } = env;
 
@@ -32,9 +35,11 @@ function SurveyList({ surveys, id }) {
   }, [surveys, isOpen]);
 
   const toggleList = () => {
-    setIsOpen(!isOpen);
-    // set the value of sourceNode in NewNodeContext to the value of Id
-    // TODO: Make sure only one SurveyList is open at a time
+    if (isOpen) {
+      openSurveyList(null);
+    } else {
+      openSurveyList(nodeId);
+    }
   };
 
   return (

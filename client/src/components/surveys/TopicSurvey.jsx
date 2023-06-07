@@ -3,6 +3,7 @@ import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { NewNodeContext } from '../../contexts/NewNodeContext';
 import { edgeStyles } from '../shared/Styles';
+import { SurveyListContext } from '../../contexts/SurveyListContext';
 
 // Default V2 theme
 // import 'survey-core/defaultV2.min.css';
@@ -10,7 +11,9 @@ import { edgeStyles } from '../shared/Styles';
 import 'survey-core/modern.min.css';
 
 function TopicSurvey({ survey }) {
-  const { addNewNode } = useContext(NewNodeContext);
+  const { addNewNode, getSourceHandle, getTargetHandle } =
+    useContext(NewNodeContext);
+  const { openedSurveyList, openSurveyList } = useContext(SurveyListContext);
   const namePrefix = survey.topic.replace(/\s/g, '');
   const elementNames = [
     `${namePrefix}-A1`,
@@ -42,19 +45,69 @@ function TopicSurvey({ survey }) {
   const nodeId = `${namePrefix}Node`;
 
   const addTopicNode = async (results) => {
-    const edge = {
-      source: '', // access the sourceNode from the NewNodeContext
-      sourceHandle: '', // requires a function in the NewNodeContext to have a running counter between 1-3 which resets
-      // the result will determine the handle as 1 = top, 2 = left || right (one of these will be invalid, so it will choose the valid one), 3 = bottom
-      // the resulting handle will be accessed here via the context for sourceHandle
-      target: nodeId,
-      targetHandle: '', // requires a function which chooses a random nunmber between 1-4
-      // the result will determine the handle as 1 = top, 2 = left, 3 = right, 4 = bottom
-      id: '', // `${namePrefix}+${sourceHandle}+${targetHandle}+${the 1-4 result * a random number between 1 and another random number between 100-1000}`,
-      deletable: 'true',
-      focusable: 'true',
-      style: edgeStyles,
+    // Separate function for edge creation to avoid code repetition
+    const createEdge = (sourceHandle) => {
+      let targetHandleValue = getTargetHandle();
+      let targetHandle;
+
+      // Convert handle counter values to corresponding handle strings
+      const handleNumberToString = (value) => {
+        switch (value) {
+          case 1:
+            return 'top';
+          case 2:
+            return 'left';
+          case 3:
+            return 'right';
+          case 4:
+            return 'bottom';
+          default:
+            // Handle default case
+            break;
+        }
+      };
+
+      targetHandle = handleNumberToString(targetHandleValue);
+
+      // Ensure that targetHandle does not equal sourceHandle
+      while (targetHandle === sourceHandle) {
+        targetHandleValue = getTargetHandle();
+        targetHandle = handleNumberToString(targetHandleValue);
+      }
+
+      return {
+        source: openedSurveyList,
+        sourceHandle,
+        target: nodeId,
+        targetHandle,
+        id: '', // concatenate openedSurveyList + sourceHandle + edgeCounter (make a context function for this)
+        deletable: 'true',
+        focusable: 'true',
+        style: edgeStyles,
+      };
     };
+
+    // Call the counter function here
+    const counterValue = getSourceHandle();
+    let sourceHandle;
+
+    switch (counterValue) {
+      case 1:
+        sourceHandle = 'top';
+        break;
+      case 2:
+        // check context for the type of handle the CategoryNode's "left" node is
+        // if the node's "left" handle is type "target", then the sourceHandle should be "right", otherwise it should be "left"
+        break;
+      case 3:
+        sourceHandle = 'bottom';
+        break;
+      default:
+        // Handle default case
+        break;
+    }
+
+    const edge = createEdge(sourceHandle);
 
     const node = {
       id: nodeId,
@@ -67,7 +120,6 @@ function TopicSurvey({ survey }) {
       },
     };
 
-    // Add the new node and edge to the context
     addNewNode({ node, edge });
   };
 
