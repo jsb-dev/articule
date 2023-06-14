@@ -11,14 +11,16 @@ const rfStyle = {
   backgroundColor: '#B8CEFF',
 };
 
-function Flow({ initialNodes, initialEdges, nodeTypes }) {
-  const { newNode } = useContext(NewNodeContext);
-  const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState(initialEdges);
+function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
+  const { newNode, addNewNode, getSourceHandle, getTargetHandle } =
+    useContext(NewNodeContext);
+  const [nodes, setNodes] = useState(diagramNodes);
+  const [edges, setEdges] = useState(diagramEdges);
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    [setNodes]
+    [setNodes],
+    console.log('nds: ', nodes)
     // send nodes to server
   );
   const onEdgesChange = useCallback(
@@ -45,17 +47,34 @@ function Flow({ initialNodes, initialEdges, nodeTypes }) {
     }
   }, [newNode]);
 
+  const getNodeLeftType = (id) => {
+    const node = nodes.find((node) => node.id === id);
+    console.log('id: ', id);
+    console.log('node: ', node);
+    return node ? node.data.leftType : null;
+  };
+
   return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onConnect={onConnect}
-      nodeTypes={nodeTypes}
-      fitView
-      style={rfStyle}
-    />
+    <NewNodeContext.Provider
+      value={{
+        newNode,
+        addNewNode,
+        getSourceHandle,
+        getTargetHandle,
+        getNodeLeftType,
+      }}
+    >
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        fitView
+        style={rfStyle}
+      />
+    </NewNodeContext.Provider>
   );
 }
 

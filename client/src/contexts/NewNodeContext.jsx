@@ -1,20 +1,64 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useContext } from 'react';
+import { HandleTypesContext } from './HandleTypesContext';
 
 const NewNodeContext = createContext();
 
 const NewNodeProvider = ({ children }) => {
   const [newNode, setNewNode] = useState(null);
   const [handleCounter, setHandleCounter] = useState(1);
+  const { handleTypes } = useContext(HandleTypesContext);
 
-  const getSourceHandle = () => {
-    const result = handleCounter;
-    setHandleCounter((prevCount) => (prevCount === 3 ? 1 : prevCount + 1));
-    return result;
+  const getSourceHandle = (nodeId) => {
+    const nodeHandleTypes = handleTypes.find(
+      (handleType) => handleType.id === nodeId
+    );
+
+    setHandleCounter((prevCount) => (prevCount === 4 ? 1 : prevCount + 1));
+    console.log('handleCounter: ', handleCounter);
+
+    switch (handleCounter) {
+      case 1:
+        if (nodeHandleTypes.topType === 'source') {
+          return 'top';
+        } else {
+          return 'bottom';
+        }
+      case 2:
+        if (nodeHandleTypes.rightType === 'source') {
+          return 'right';
+        } else {
+          return 'left';
+        }
+      case 3:
+        if (nodeHandleTypes.bottomType === 'source') {
+          return 'bottom';
+        } else {
+          return 'top';
+        }
+      case 4:
+        if (nodeHandleTypes.leftType === 'source') {
+          return 'left';
+        } else {
+          return 'right';
+        }
+      default:
+        return 'left';
+    }
   };
 
-  const getTargetHandle = () => {
-    // Returns a random number between 1 and 4
-    return Math.floor(Math.random() * 4) + 1;
+  const getTargetHandle = (sourceHandle) => {
+    switch (sourceHandle) {
+      case 'top':
+        return 'bottom';
+      case 'right':
+        return 'left';
+      case 'bottom':
+        return 'top';
+      case 'left':
+        return 'right';
+      default:
+        return 'left';
+    }
   };
 
   const addNewNode = (node) => {

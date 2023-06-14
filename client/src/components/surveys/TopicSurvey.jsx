@@ -13,7 +13,7 @@ import 'survey-core/modern.min.css';
 function TopicSurvey({ survey }) {
   const { addNewNode, getSourceHandle, getTargetHandle } =
     useContext(NewNodeContext);
-  const { openedSurveyList, openSurveyList } = useContext(SurveyListContext);
+  const { openedSurveyList } = useContext(SurveyListContext);
   const namePrefix = survey.topic.replace(/\s/g, '');
   const elementNames = [
     `${namePrefix}-A1`,
@@ -43,72 +43,7 @@ function TopicSurvey({ survey }) {
   };
 
   const nodeId = `${namePrefix}Node`;
-
   const addTopicNode = async (results) => {
-    // Separate function for edge creation to avoid code repetition
-    const createEdge = (sourceHandle) => {
-      let targetHandleValue = getTargetHandle();
-      let targetHandle;
-
-      // Convert handle counter values to corresponding handle strings
-      const handleNumberToString = (value) => {
-        switch (value) {
-          case 1:
-            return 'top';
-          case 2:
-            return 'left';
-          case 3:
-            return 'right';
-          case 4:
-            return 'bottom';
-          default:
-            // Handle default case
-            break;
-        }
-      };
-
-      targetHandle = handleNumberToString(targetHandleValue);
-
-      // Ensure that targetHandle does not equal sourceHandle
-      while (targetHandle === sourceHandle) {
-        targetHandleValue = getTargetHandle();
-        targetHandle = handleNumberToString(targetHandleValue);
-      }
-
-      return {
-        source: openedSurveyList,
-        sourceHandle,
-        target: nodeId,
-        targetHandle,
-        id: '', // concatenate openedSurveyList + sourceHandle + edgeCounter (make a context function for this)
-        deletable: 'true',
-        focusable: 'true',
-        style: edgeStyles,
-      };
-    };
-
-    // Call the counter function here
-    const counterValue = getSourceHandle();
-    let sourceHandle;
-
-    switch (counterValue) {
-      case 1:
-        sourceHandle = 'top';
-        break;
-      case 2:
-        // check context for the type of handle the CategoryNode's "left" node is
-        // if the node's "left" handle is type "target", then the sourceHandle should be "right", otherwise it should be "left"
-        break;
-      case 3:
-        sourceHandle = 'bottom';
-        break;
-      default:
-        // Handle default case
-        break;
-    }
-
-    const edge = createEdge(sourceHandle);
-
     const node = {
       id: nodeId,
       type: 'topicNode',
@@ -118,6 +53,20 @@ function TopicSurvey({ survey }) {
         questions: [survey.q1, survey.q2, survey.q3],
         results: results,
       },
+    };
+
+    const sourceHandle = getSourceHandle(openedSurveyList);
+    const targetHandle = getTargetHandle(sourceHandle);
+
+    const edge = {
+      source: openedSurveyList,
+      sourceHandle: sourceHandle,
+      target: nodeId,
+      targetHandle: targetHandle,
+      id: `${openedSurveyList}-${sourceHandle}-to-${nodeId}-${targetHandle}`,
+      deletable: 'true',
+      focusable: 'true',
+      style: edgeStyles,
     };
 
     addNewNode({ node, edge });

@@ -4,9 +4,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 import env from 'react-dotenv';
 import { useUserContext } from '../contexts/UserContext';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
-import RootNode from '../components/diagram/nodes/RootNode';
-import TopicNode from '../components/diagram/nodes/TopicNode';
-import CreateCategoryNodes from '../components/diagram/nodes/categories/CreateCategoryNodes';
+import RootNode from '../components/diagram/diagram-components/nodes/RootNode';
+import TopicNode from '../components/diagram/diagram-components/nodes/TopicNode';
+import CreateCategoryNodes from '../components/diagram/diagram-components/nodes/categories/CreateCategoryNodes';
 // import defaultDiagram from '../components/diagram/DefaultDiagram';
 
 function DashboardPage() {
@@ -21,8 +21,8 @@ function DashboardPage() {
   const [isDataReady, setIsDataReady] = useState(false);
   const [message, setMessage] = useState('');
 
-  const [initialNodes, setInitialNodes] = useState([]);
-  const [initialEdges, setInitialEdges] = useState([]);
+  const [diagramNodes, setDiagramNodes] = useState([]);
+  const [diagramEdges, setDiagramEdges] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
   const [nodeTypes, setNodeTypes] = useState({});
 
@@ -48,8 +48,8 @@ function DashboardPage() {
             `${REACT_APP_API_URL}diagram/get?_id=${_id}`
           );
           const data = await response.json();
-          setInitialNodes(data.nodes);
-          setInitialEdges(data.edges);
+          setDiagramNodes(data.nodes);
+          setDiagramEdges(data.edges);
           setIsDiagramLoaded(true);
         } catch (error) {
           setMessage(
@@ -120,8 +120,8 @@ function DashboardPage() {
       >
         {isDataReady && (
           <Flow
-            initialNodes={initialNodes}
-            initialEdges={initialEdges}
+            diagramNodes={diagramNodes}
+            diagramEdges={diagramEdges}
             nodeTypes={nodeTypes}
           />
         )}

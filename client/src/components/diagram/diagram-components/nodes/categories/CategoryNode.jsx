@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Handle, Position } from 'reactflow';
-import SurveyList from '../../diagram-components/survey-list/SurveyList';
+import SurveyList from '../../survey-list/SurveyList';
+import { HandleTypesContext } from '../../../../../contexts/HandleTypesContext';
+
 function CategoryNode({
   id,
   categoryName,
@@ -12,6 +14,12 @@ function CategoryNode({
   categoryBrief,
   surveys,
 }) {
+  const { addHandleType } = useContext(HandleTypesContext);
+
+  useEffect(() => {
+    addHandleType(id, topType, rightType, bottomType, leftType);
+  }, [id, topType, rightType, bottomType, leftType]);
+
   return (
     <div
       style={{
@@ -45,8 +53,8 @@ function CategoryNode({
         isConnectable={isConnectable}
       />
       <Handle
-        id={rightType}
-        type="target"
+        id="right"
+        type={rightType}
         position={Position.Right}
         isConnectable={isConnectable}
       />
