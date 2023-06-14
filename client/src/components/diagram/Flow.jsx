@@ -47,13 +47,6 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
     }
   }, [newNode]);
 
-  const getNodeLeftType = (id) => {
-    const node = nodes.find((node) => node.id === id);
-    console.log('id: ', id);
-    console.log('node: ', node);
-    return node ? node.data.leftType : null;
-  };
-
   return (
     <NewNodeContext.Provider
       value={{
@@ -61,7 +54,6 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
         addNewNode,
         getSourceHandle,
         getTargetHandle,
-        getNodeLeftType,
       }}
     >
       <ReactFlow

@@ -8,7 +8,7 @@ function DefaultDiagram(results) {
         type: 'rootNode',
         position: {
           x: 0,
-          y: 0,
+          y: 30,
         },
         data: {
           artistName: results.artistName,
@@ -19,7 +19,7 @@ function DefaultDiagram(results) {
       {
         id: 'contentNode',
         type: 'contentNode',
-        position: { x: 320, y: -360 },
+        position: { x: 245, y: -630 },
         data: {
           categoryName: 'Content',
           categoryBrief:
@@ -29,7 +29,7 @@ function DefaultDiagram(results) {
       {
         id: 'audienceNode',
         type: 'audienceNode',
-        position: { x: 40, y: -360 },
+        position: { x: -180, y: -615 },
         data: {
           categoryName: 'Audience',
           categoryBrief:
@@ -39,7 +39,7 @@ function DefaultDiagram(results) {
       {
         id: 'monetisationNode',
         type: 'monetisationNode',
-        position: { x: 810, y: -40 },
+        position: { x: 795, y: -45 },
         data: {
           categoryName: 'Monetisation',
           categoryBrief:
@@ -49,7 +49,7 @@ function DefaultDiagram(results) {
       {
         id: 'stgNode',
         type: 'stgNode',
-        position: { x: 520, y: -270 },
+        position: { x: 465, y: -340 },
         data: {
           categoryName: 'Short-term Goals',
           categoryBrief:
@@ -59,7 +59,7 @@ function DefaultDiagram(results) {
       {
         id: 'ltgNode',
         type: 'ltgNode',
-        position: { x: -280, y: -280 },
+        position: { x: -405, y: -340 },
         data: {
           categoryName: 'Long-term Goals',
           categoryBrief:
@@ -69,7 +69,7 @@ function DefaultDiagram(results) {
       {
         id: 'skillsNode',
         type: 'skillsNode',
-        position: { x: -330, y: 460 },
+        position: { x: -380, y: 490 },
         data: {
           categoryName: 'Skills Development',
           categoryBrief:
@@ -79,7 +79,7 @@ function DefaultDiagram(results) {
       {
         id: 'visualIdentityNode',
         type: 'visualIdentityNode',
-        position: { x: -530, y: -50 },
+        position: { x: -680, y: -10 },
         data: {
           categoryName: 'Visual Identity',
           categoryBrief:
@@ -89,7 +89,7 @@ function DefaultDiagram(results) {
       {
         id: 'socialMediaNode',
         type: 'socialMediaNode',
-        position: { x: 530, y: 460 },
+        position: { x: 450, y: 485 },
         data: {
           categoryName: 'Social Media Strategy',
           categoryBrief:
@@ -99,7 +99,7 @@ function DefaultDiagram(results) {
       {
         id: 'networkingNode',
         type: 'networkingNode',
-        position: { x: 780, y: 230 },
+        position: { x: 895, y: 265 },
         data: {
           categoryName: 'Networking and Industry Relations',
           categoryBrief:
@@ -109,7 +109,7 @@ function DefaultDiagram(results) {
       {
         id: 'legalNode',
         type: 'legalNode',
-        position: { x: 45, y: 600 },
+        position: { x: 55, y: 705 },
         data: {
           categoryName: 'Legal and Ethical Considerations',
           categoryBrief:
@@ -119,7 +119,7 @@ function DefaultDiagram(results) {
       {
         id: 'analyticsNode',
         type: 'analyticsNode',
-        position: { x: -740, y: 240 },
+        position: { x: -845, y: 315 },
         data: {
           categoryName: 'Analytics and Performance Tracking',
           categoryBrief:

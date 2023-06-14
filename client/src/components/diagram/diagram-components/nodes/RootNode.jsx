@@ -6,16 +6,25 @@ function RootNode({ data }) {
     <div
       style={{
         height: 'auto',
-        width: 450,
+        minWidth: 450,
+        maxWidth: 600,
+        width: 'auto',
+        transform: 'scale(1vmin)',
         border: '1px solid #eee',
-        padding: '5px',
         borderRadius: '5px',
         background: 'white',
+        padding: '1rem',
       }}
     >
-      <h1>{data.artistName}</h1>
-      <p>{data.primaryContent}</p>
-      <p>{data.artistSummary}</p>
+      <section
+        style={{
+          fontSize: '1rem',
+        }}
+      >
+        <h1>{data.artistName}</h1>
+        <p>{data.primaryContent}</p>
+        <p>{data.artistSummary}</p>
+      </section>
       <Handle
         id="top"
         type="source"

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 import env from 'react-dotenv';
+import 'normalize.css';
 
 const {
   REACT_APP_AUTH0_DOMAIN,

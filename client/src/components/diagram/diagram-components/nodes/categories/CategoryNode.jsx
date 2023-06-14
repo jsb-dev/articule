@@ -24,7 +24,7 @@ function CategoryNode({
     <div
       style={{
         height: 'auto',
-        width: 450,
+        maxWidth: 450,
         border: '1px solid #eee',
         padding: '5px',
         borderRadius: '5px',

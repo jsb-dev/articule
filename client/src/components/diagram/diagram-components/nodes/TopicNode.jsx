@@ -43,28 +43,36 @@ function TopicNode({ data }) {
         background: 'white',
       }}
     >
-      <h1>{data.topic}</h1>
-      <ul
+      <section
         style={{
-          listStyleType: 'none',
+          height: 'auto',
+          width: 'auto',
+          fontSize: '1rem',
         }}
       >
-        <strong>
-          <li>{data.q1}</li>
-        </strong>
-        <ListItem keyName="a1" />
-        <br />
-        <strong>
-          <li>{data.q2}</li>
-        </strong>
-        <ListItem keyName="a2" />
-        <br />
-        <strong>
-          <li>{data.q3}</li>
-        </strong>
-        <ListItem keyName="a3" />
-        <br />
-      </ul>
+        <h1>{data.topic}</h1>
+        <ul
+          style={{
+            listStyleType: 'none',
+          }}
+        >
+          <strong>
+            <li>{data.q1}</li>
+          </strong>
+          <ListItem keyName="a1" />
+          <br />
+          <strong>
+            <li>{data.q2}</li>
+          </strong>
+          <ListItem keyName="a2" />
+          <br />
+          <strong>
+            <li>{data.q3}</li>
+          </strong>
+          <ListItem keyName="a3" />
+          <br />
+        </ul>
+      </section>
       <div>
         <Handle
           id="top"
