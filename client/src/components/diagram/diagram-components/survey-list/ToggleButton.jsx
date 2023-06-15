@@ -4,7 +4,7 @@ const buttonStyle = {
   borderRadius: '1rem',
 };
 
-function SurveyToggleButton({ isOpen, toggleList }) {
+function ToggleSurveyListButton({ isOpen, toggleList }) {
   return (
     <button style={buttonStyle} onClick={toggleList}>
       {isOpen ? 'Hide Surveys' : 'Show Surveys'}
@@ -12,4 +12,4 @@ function SurveyToggleButton({ isOpen, toggleList }) {
   );
 }
 
-export default SurveyToggleButton;
+export default ToggleSurveyListButton;
