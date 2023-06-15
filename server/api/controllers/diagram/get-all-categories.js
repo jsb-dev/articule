@@ -1,6 +1,6 @@
-import Category from '../../../database/models/Category.js';
+import Category from '../../../database/models/category-model.js';
 
-const getCategories = async (req, res) => {
+const getAllCategories = async (req, res) => {
   try {
     const categories = await Category.find().select(
       'categoryName categoryBrief surveys'
@@ -19,4 +19,4 @@ const getCategories = async (req, res) => {
   }
 };
 
-export default getCategories;
+export default getAllCategories;

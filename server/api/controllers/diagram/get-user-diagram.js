@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import User from '../../../database/models/User.js';
+import User from '../../../database/models/user-model.js';
 
-const getDiagram = async (req, res) => {
+const getUserDiagram = async (req, res) => {
   try {
     const { _id } = req.query;
 
@@ -23,4 +23,4 @@ const getDiagram = async (req, res) => {
   }
 };
 
-export default getDiagram;
+export default getUserDiagram;

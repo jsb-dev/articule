@@ -1,6 +1,6 @@
-import Survey from '../../../database/models/Survey.js';
+import Survey from '../../../database/models/survey-model.js';
 
-const getSurvey = async (req, res) => {
+const getSurveyById = async (req, res) => {
   try {
     const { _id } = req.query;
     const survey = await Survey.findById(_id);
@@ -18,4 +18,4 @@ const getSurvey = async (req, res) => {
   }
 };
 
-export default getSurvey;
+export default getSurveyById;

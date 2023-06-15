@@ -1,6 +1,6 @@
-import User from '../../../database/models/User.js';
+import User from '../../../database/models/user-model.js';
 
-const checkAccountEmail = async (req, res) => {
+const getAccountByEmail = async (req, res) => {
   const { email } = req.query;
 
   try {
@@ -19,4 +19,4 @@ const checkAccountEmail = async (req, res) => {
   }
 };
 
-export default checkAccountEmail;
+export default getAccountByEmail;

@@ -1,6 +1,6 @@
-import User from '../../../database/models/User.js';
+import User from '../../../database/models/user-model.js';
 
-const checkAccountId = async (req, res) => {
+const accountIdExists = async (req, res) => {
   const { _id } = req.query;
 
   try {
@@ -17,4 +17,4 @@ const checkAccountId = async (req, res) => {
   }
 };
 
-export default checkAccountId;
+export default accountIdExists;

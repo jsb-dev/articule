@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { NewNodeContext } from '../../contexts/NewNodeContext';
-import { edgeStyles } from '../shared/Styles';
+import { edgeStyles } from '../shared/shared-component-styles';
 import { SurveyListContext } from '../../contexts/SurveyListContext';
 
 // Default V2 theme

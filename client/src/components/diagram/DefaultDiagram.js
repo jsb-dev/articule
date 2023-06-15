@@ -1,4 +1,4 @@
-import { edgeStyles } from '../shared/Styles';
+import { edgeStyles } from '../shared/shared-component-styles';
 
 function DefaultDiagram(results) {
   const format = {

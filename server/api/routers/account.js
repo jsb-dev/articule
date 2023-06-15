@@ -1,12 +1,12 @@
-import createAccount from '../controllers/account/createAccount.js';
-import checkAccount from '../controllers/account/checkAccountEmail.js';
-import checkAccountId from '../controllers/account/checkAccountId.js';
+import createUserAccount from '../controllers/account/create-user-account.js';
+import getAccountByEmail from '../controllers/account/get-account-by-email.js';
+import accountIdExists from '../controllers/account/account-id-exists.js';
 import express from 'express';
 
 const accountRouter = express.Router();
 
-accountRouter.post('/create', createAccount);
-accountRouter.get('/check/email', checkAccount);
-accountRouter.get('/check/id', checkAccountId);
+accountRouter.post('/create', createUserAccount);
+accountRouter.get('/check/email', getAccountByEmail);
+accountRouter.get('/check/id', accountIdExists);
 
 export default accountRouter;

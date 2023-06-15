@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-import User from '../../../database/models/User.js';
+import User from '../../../database/models/user-model.js';
 
-const createAccount = async (req, res) => {
+const createUserAccount = async (req, res) => {
   const { _id, email, diagram } = req.body;
   console.log('Creating account:', req.body);
 
@@ -11,6 +11,7 @@ const createAccount = async (req, res) => {
 
   try {
     const existingUser = await User.findOne({ email: email });
+
     if (existingUser) {
       return res
         .status(409)
@@ -33,4 +34,4 @@ const createAccount = async (req, res) => {
   }
 };
 
-export default createAccount;
+export default createUserAccount;

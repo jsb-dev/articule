@@ -1,12 +1,10 @@
 import express from 'express';
-import getDiagram from '../controllers/diagram/getDiagram.js';
-import getCategories from '../controllers/diagram/getCategories.js';
-import appendTopic from '../controllers/diagram/appendTopic.js';
+import getUserDiagram from '../controllers/diagram/get-user-diagram.js';
+import getAllCategories from '../controllers/diagram/get-all-categories.js';
 
 const diagramRouter = express.Router();
 
-diagramRouter.get('/get', getDiagram);
-diagramRouter.get('/get/categories', getCategories);
-diagramRouter.post('/append/topic', appendTopic);
+diagramRouter.get('/get', getUserDiagram);
+diagramRouter.get('/get/categories', getAllCategories);
 
 export default diagramRouter;

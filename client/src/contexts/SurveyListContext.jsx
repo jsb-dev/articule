@@ -8,6 +8,8 @@ function SurveyListProvider({ children }) {
     setOpenedSurveyList(nodeId);
   }, []);
 
+  //
+
   return (
     <SurveyListContext.Provider value={{ openedSurveyList, openSurveyList }}>
       {children}

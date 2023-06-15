@@ -19,8 +19,7 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
 
   const onNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    [setNodes],
-    console.log('nds: ', nodes)
+    [setNodes]
     // send nodes to server
   );
   const onEdgesChange = useCallback(
@@ -42,8 +41,6 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
 
       // Add new edge to the edges list
       setEdges((currentEdges) => [...currentEdges, newNode.edge]);
-
-      console.log('newNode: ', newNode);
     }
   }, [newNode]);
 

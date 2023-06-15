@@ -1,8 +1,8 @@
 import express from 'express';
-import getSurvey from '../controllers/survey/getSurvey.js';
+import getSurveyById from '../controllers/survey/get-survey-by-id.js';
 
 const surveyRouter = express.Router();
 
-surveyRouter.get('/get', getSurvey);
+surveyRouter.get('/get', getSurveyById);
 
 export default surveyRouter;
