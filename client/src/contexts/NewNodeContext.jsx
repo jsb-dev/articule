@@ -14,7 +14,6 @@ const NewNodeProvider = ({ children }) => {
     );
 
     setHandleCounter((prevCount) => (prevCount === 4 ? 1 : prevCount + 1));
-    console.log('handleCounter: ', handleCounter);
 
     switch (handleCounter) {
       case 1:
