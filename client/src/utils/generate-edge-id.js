@@ -28,3 +28,7 @@ const generateEdgeId = async () => {
 };
 
 export default generateEdgeId;
+
+/*
+Refactor generate-edge-id to use a new check-edge-id-availability named export and refer to each accountData.diagram.edges.id in context
+*/
