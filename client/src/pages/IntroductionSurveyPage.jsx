@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import IntroductionSurvey from '../components/surveys/IntroductionSurvey';
 import { useUserContext } from '../contexts/UserContext';
+import { useParams } from 'react-router-dom';
+import IntroductionSurvey from '../components/surveys/IntroductionSurvey';
 
 function IntroductionSurveyPage() {
-  const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
-  const { userId, userEmail } = useUserContext();
+  const { isAuthenticated, isLoading, loginWithRedirect, user } = useAuth0();
+  const { accountData, setAccountData } = useUserContext();
+  const { id } = useParams();
+
   const [isAuthChecked, setIsAuthChecked] = useState(false);
 
   useEffect(() => {
@@ -14,12 +17,19 @@ function IntroductionSurveyPage() {
       if (!isAuthenticated) {
         await loginWithRedirect();
       } else {
+        if (user && id) {
+          setAccountData((prevData) => ({
+            ...prevData,
+            _id: id,
+            email: user.email,
+          }));
+        }
         setIsAuthChecked(true);
       }
     };
 
     checkAuthentication();
-  }, [isAuthenticated, isLoading, loginWithRedirect]);
+  }, [isAuthenticated, isLoading, loginWithRedirect, user, id, setAccountData]);
 
   return (
     isAuthChecked && (
@@ -31,7 +41,10 @@ function IntroductionSurveyPage() {
             better.
           </p>
         </article>
-        <IntroductionSurvey _id={userId} userEmail={userEmail} />
+        <IntroductionSurvey
+          _id={accountData?._id}
+          userEmail={accountData?.email}
+        />
       </section>
     )
   );

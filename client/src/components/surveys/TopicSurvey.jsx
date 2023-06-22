@@ -4,6 +4,7 @@ import { Survey } from 'survey-react-ui';
 import { NewNodeContext } from '../../contexts/NewNodeContext';
 import { SurveyListContext } from '../../contexts/SurveyListContext';
 import { edgeStyles } from '../shared/shared-component-styles';
+import generateEdgeId from '../../utils/generate-edge-id';
 
 // Modern theme
 import 'survey-core/modern.min.css';
@@ -45,7 +46,6 @@ function TopicSurvey({ survey }) {
 
   // Utility function to calculate the offset
   const calculateOffset = (targetHandle, nodePosition) => {
-    // Generate random offsets
     const smallOffsetX = Math.floor(Math.random() * 100) + 200;
     const smallOffsetY = Math.floor(Math.random() * 100) + 200;
     const largeOffsetX = Math.floor(Math.random() * 200) + 500;
@@ -100,7 +100,7 @@ function TopicSurvey({ survey }) {
     const node = {
       id: nodeId,
       type: 'topicNode',
-      position: calculateOffset(targetHandle, nodePosition), // calculate position based on targetHandle
+      position: calculateOffset(targetHandle, nodePosition),
       data: {
         topic: survey.topic,
         questions: [survey.q1, survey.q2, survey.q3],
@@ -108,12 +108,15 @@ function TopicSurvey({ survey }) {
       },
     };
 
+    const edgeId = await generateEdgeId();
+    console.log('Generated Edge ID:', edgeId);
+
     const edge = {
       source: openedSurveyList,
       sourceHandle: sourceHandle,
       target: nodeId,
       targetHandle: targetHandle,
-      id: `${openedSurveyList}-${sourceHandle}-to-${nodeId}-${targetHandle}`,
+      id: edgeId,
       deletable: 'true',
       focusable: 'true',
       style: edgeStyles,

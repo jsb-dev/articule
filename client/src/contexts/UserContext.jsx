@@ -7,37 +7,23 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const { REACT_APP_COOKIE_SECURE } = env;
 
-  const [userEmail, setUserEmail] = useState(
-    () => Cookies.get('userEmail') || ''
-  );
-  const [userId, setUserId] = useState(() => Cookies.get('userId') || '');
-
+  const [accountData, setAccountData] = useState(() => {
+    const cookie = Cookies.get('accountData');
+    return cookie ? JSON.parse(cookie) : null;
+  });
   useEffect(() => {
-    if (userEmail) {
-      Cookies.set('userEmail', userEmail, {
+    if (accountData) {
+      Cookies.set('accountData', JSON.stringify(accountData), {
         secure: REACT_APP_COOKIE_SECURE,
         sameSite: 'strict',
       });
     } else {
-      Cookies.remove('userEmail');
+      Cookies.remove('accountData');
     }
-  }, [userEmail]);
-
-  useEffect(() => {
-    if (userId) {
-      Cookies.set('userId', userId, {
-        secure: REACT_APP_COOKIE_SECURE,
-        sameSite: 'strict',
-      });
-    } else {
-      Cookies.remove('userId');
-    }
-  }, [userId]);
+  }, [accountData]);
 
   return (
-    <UserContext.Provider
-      value={{ userEmail, setUserEmail, userId, setUserId }}
-    >
+    <UserContext.Provider value={{ accountData, setAccountData }}>
       {children}
     </UserContext.Provider>
   );

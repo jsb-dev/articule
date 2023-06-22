@@ -12,15 +12,14 @@ const getAvailableId = async () => {
     if (attemptCounter > 10) {
       throw new Error('Maximum ID generation attempts exceeded.');
     }
-  } while (await checkIdAvailability(id, 'account'));
+  } while (await checkIdAvailability(id, 'edge'));
 
   return id;
 };
 
-const generateUserId = async () => {
+const generateEdgeId = async () => {
   try {
     const id = await getAvailableId();
-    console.log('Generated User ID:', id);
     return id;
   } catch (error) {
     console.error('Error generating ID:', error);
@@ -28,4 +27,4 @@ const generateUserId = async () => {
   }
 };
 
-export default generateUserId;
+export default generateEdgeId;

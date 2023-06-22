@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
 import generateUserId from '../utils/generate-user-id';
-import findAccountByEmail from '../utils/find-account-by-email';
+import getAccountByEmail from '../utils/get-account-by-email';
 
 function CheckpointPage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  const { setUserEmail, setUserId } = useUserContext();
-  const [accountData, setAccountData] = useState(null);
+  const { setAccountData } = useUserContext();
+  const [accountData, setLocalAccountData] = useState(null);
   const [accountCheckLoading, setAccountCheckLoading] = useState(true);
   const [message, setMessage] = useState('');
 
@@ -19,8 +19,8 @@ function CheckpointPage() {
     const fetchAccountData = async () => {
       if (!isLoading) {
         try {
-          const data = await findAccountByEmail(user.email);
-          setAccountData(data);
+          const data = await getAccountByEmail(user.email);
+          setLocalAccountData(data);
         } catch (error) {
           setMessage(
             `We're having trouble checking your account, please log out and try again. If the problem persists, please contact support. \n\nError Message: ${error}`
@@ -36,8 +36,6 @@ function CheckpointPage() {
   const getSurveyUrl = async () => {
     try {
       const _id = await generateUserId();
-      setUserEmail(user.email);
-      setUserId(_id);
       return `/introduction?_id=${_id}`;
     } catch (error) {
       setMessage(
@@ -47,9 +45,7 @@ function CheckpointPage() {
   };
 
   const getDashboardUrl = () => {
-    setUserEmail(accountData.email);
-    setUserId(accountData._id);
-
+    setAccountData(accountData);
     return `/dashboard?_id=${accountData._id}`;
   };
 

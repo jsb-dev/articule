@@ -13,8 +13,8 @@ function DashboardPage() {
   const { REACT_APP_API_URL } = env;
 
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
-  const { userId } = useUserContext();
-  const _id = userId;
+  const { accountData } = useUserContext(); // Retrieve accountData instead of userId
+  const _id = accountData?._id; // Using optional chaining to prevent errors when accountData is null
 
   const [isDiagramLoaded, setIsDiagramLoaded] = useState(false);
   const [isCategoryListLoaded, setIsCategoryListLoaded] = useState(false);
