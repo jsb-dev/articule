@@ -1,10 +1,10 @@
 import generateUniqueBsonId from './generate-unique-bson-id';
 
-const checkEdgeIdAvailability = (id, edgeIds) => {
-  return !edgeIds.includes(id);
+const checkNodeIdAvailability = (id, nodeIds) => {
+  return !nodeIds.includes(id);
 };
 
-const getAvailableId = async (edgeIds) => {
+const getAvailableId = async (nodeIds) => {
   let id;
   let attemptCounter = 0;
 
@@ -15,14 +15,14 @@ const getAvailableId = async (edgeIds) => {
     if (attemptCounter > 10) {
       throw new Error('Maximum ID generation attempts exceeded.');
     }
-  } while (!checkEdgeIdAvailability(id, edgeIds));
+  } while (!checkNodeIdAvailability(id, nodeIds));
 
   return id;
 };
 
-const generateEdgeId = async (edgeIds) => {
+const generateNodeId = async (nodeIds) => {
   try {
-    const id = await getAvailableId(edgeIds);
+    const id = await getAvailableId(nodeIds);
     return id;
   } catch (error) {
     console.error('Error generating ID:', error);
@@ -30,4 +30,4 @@ const generateEdgeId = async (edgeIds) => {
   }
 };
 
-export { generateEdgeId, checkEdgeIdAvailability };
+export { generateNodeId, checkNodeIdAvailability };

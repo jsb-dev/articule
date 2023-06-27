@@ -3,11 +3,10 @@ import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { NewNodeContext } from '../../contexts/NewNodeContext';
 import { SurveyListContext } from '../../contexts/SurveyListContext';
-import { useUserContext } from '../../contexts/UserContext'; // Import UserContext
+import { useUserContext } from '../../contexts/UserContext';
 import { edgeStyles } from '../shared/shared-component-styles';
 import { generateEdgeId } from '../../utils/generate-edge-id';
-
-// Modern theme
+import { generateNodeId } from '../../utils/generate-node-id';
 import 'survey-core/modern.min.css';
 
 function TopicSurvey({ survey }) {
@@ -44,23 +43,20 @@ function TopicSurvey({ survey }) {
     ],
   };
 
-  const nodeId = `${namePrefix}Node`;
-
   // Utility function to calculate the offset
-  const calculateOffset = (targetHandle, nodePosition) => {
-    const smallOffsetX = Math.floor(Math.random() * 100) + 200;
-    const smallOffsetY = Math.floor(Math.random() * 100) + 200;
-    const largeOffsetX = Math.floor(Math.random() * 200) + 500;
-    const largeOffsetY = Math.floor(Math.random() * 200) + 500;
+  const calculateOffset = (edgePosition, nodePosition) => {
+    const largeOffsetX = 200 + Math.random() * 500; // New range for x offset: 200 to 700
+    const smallOffsetX = 200 + Math.random() * 200; // New range for x offset: 200 to 400
+    const largeOffsetY = 200 + Math.random() * 500; // New range for y offset: 200 to 700
+    const smallOffsetY = 200 + Math.random() * 200; // New range for y offset: 200 to 400
+    let position;
 
-    let position = { x: 0, y: 0 };
-
-    switch (targetHandle) {
+    switch (edgePosition) {
       case 'top':
         position = {
           x:
             nodePosition.x +
-            (Math.random() < 0.5 ? -smallOffsetX : smallOffsetX),
+            (Math.random() < 0.5 ? -largeOffsetX : largeOffsetX),
           y: nodePosition.y + largeOffsetY,
         };
         break;
@@ -99,6 +95,10 @@ function TopicSurvey({ survey }) {
     const sourceHandle = getSourceHandle(openedSurveyList);
     const targetHandle = getTargetHandle(sourceHandle);
 
+    const nodeIds = accountData?.diagram?.nodes?.map((node) => node.id) || [];
+    const nodeId = await generateNodeId(nodeIds);
+    console.log('Generated Node ID:', nodeId);
+
     const node = {
       id: nodeId,
       type: 'topicNode',
@@ -110,8 +110,8 @@ function TopicSurvey({ survey }) {
       },
     };
 
-    const edgeIds = accountData?.diagram?.edges?.map((edge) => edge.id) || []; // Get current user's edge ids
-    const edgeId = await generateEdgeId(edgeIds); // Generate new edge id
+    const edgeIds = accountData?.diagram?.edges?.map((edge) => edge.id) || [];
+    const edgeId = await generateEdgeId(edgeIds);
     console.log('Generated Edge ID:', edgeId);
 
     const edge = {
@@ -127,7 +127,6 @@ function TopicSurvey({ survey }) {
 
     addNewNode({ node, edge });
   };
-
   const surveyComplete = useCallback(async (sender) => {
     const results = sender.data;
     await addTopicNode(results);
