@@ -1,7 +1,11 @@
 import generateUniqueBsonId from './generate-unique-bson-id';
-import checkIdAvailability from './check-id-availability';
 
-const getAvailableId = async () => {
+const checkEdgeIdAvailability = (id, edgeIds) => {
+  // If the edgeIds array contains the id, it is not available
+  return !edgeIds.includes(id);
+};
+
+const getAvailableId = async (edgeIds) => {
   let id;
   let attemptCounter = 0;
 
@@ -12,14 +16,14 @@ const getAvailableId = async () => {
     if (attemptCounter > 10) {
       throw new Error('Maximum ID generation attempts exceeded.');
     }
-  } while (await checkIdAvailability(id, 'edge'));
+  } while (!(await checkEdgeIdAvailability(id, edgeIds)));
 
   return id;
 };
 
-const generateEdgeId = async () => {
+const generateEdgeId = async (edgeIds) => {
   try {
-    const id = await getAvailableId();
+    const id = await getAvailableId(edgeIds);
     return id;
   } catch (error) {
     console.error('Error generating ID:', error);
@@ -27,8 +31,4 @@ const generateEdgeId = async () => {
   }
 };
 
-export default generateEdgeId;
-
-/*
-Refactor generate-edge-id to use a new check-edge-id-availability named export and refer to each accountData.diagram.edges.id in context
-*/
+export { generateEdgeId, checkEdgeIdAvailability };

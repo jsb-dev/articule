@@ -1,10 +1,11 @@
-import React, { useCallback, useContext, useState } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { Model } from 'survey-core';
 import { Survey } from 'survey-react-ui';
 import { NewNodeContext } from '../../contexts/NewNodeContext';
 import { SurveyListContext } from '../../contexts/SurveyListContext';
+import { useUserContext } from '../../contexts/UserContext'; // Import UserContext
 import { edgeStyles } from '../shared/shared-component-styles';
-import generateEdgeId from '../../utils/generate-edge-id';
+import { generateEdgeId } from '../../utils/generate-edge-id';
 
 // Modern theme
 import 'survey-core/modern.min.css';
@@ -13,6 +14,7 @@ function TopicSurvey({ survey }) {
   const { openedSurveyList, nodePosition } = useContext(SurveyListContext);
   const { addNewNode, getSourceHandle, getTargetHandle } =
     useContext(NewNodeContext);
+  const { accountData } = useUserContext();
 
   const namePrefix = survey.topic.replace(/\s/g, '');
   const elementNames = [
@@ -108,7 +110,8 @@ function TopicSurvey({ survey }) {
       },
     };
 
-    const edgeId = await generateEdgeId();
+    const edgeIds = accountData?.diagram?.edges?.map((edge) => edge.id) || []; // Get current user's edge ids
+    const edgeId = await generateEdgeId(edgeIds); // Generate new edge id
     console.log('Generated Edge ID:', edgeId);
 
     const edge = {

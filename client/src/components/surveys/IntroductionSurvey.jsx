@@ -14,6 +14,8 @@ function IntroductionSurvey({ _id, userEmail }) {
   const { REACT_APP_API_URL } = env;
   const navigate = useNavigate();
 
+  console.log('IntroductionSurvey props:', { _id, userEmail }); // Logging
+
   const surveyJson = {
     showCompletedPage: false,
     elements: [

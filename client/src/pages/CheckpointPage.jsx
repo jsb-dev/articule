@@ -56,7 +56,9 @@ function CheckpointPage() {
         navigate(dashboardUrl);
       } else {
         const surveyUrl = await getSurveyUrl();
-        navigate(surveyUrl);
+        if (surveyUrl) {
+          navigate(surveyUrl);
+        }
       }
     };
 
