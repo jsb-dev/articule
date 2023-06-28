@@ -1,11 +1,7 @@
-import env from 'react-dotenv';
-
-const { REACT_APP_API_URL } = env;
-
-const findAccountByEmail = async (userEmail) => {
+const getAccountByEmail = async (userEmail, apiUrl) => {
   try {
     const response = await fetch(
-      `${REACT_APP_API_URL}account/check/email?email=${userEmail}`
+      `${apiUrl}account/check/email?email=${userEmail}`
     );
     const data = await response.json();
     return data;
@@ -15,4 +11,4 @@ const findAccountByEmail = async (userEmail) => {
   }
 };
 
-export default findAccountByEmail;
+export default getAccountByEmail;

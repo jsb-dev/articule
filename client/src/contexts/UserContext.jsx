@@ -7,10 +7,17 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const { REACT_APP_COOKIE_SECURE } = env;
 
-  const [accountData, setAccountData] = useState(() => {
+  const [accountData, setAccountData] = useState(null);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+
+  useEffect(() => {
     const cookie = Cookies.get('accountData');
-    return cookie ? JSON.parse(cookie) : null;
-  });
+    if (cookie) {
+      setAccountData(JSON.parse(cookie));
+    }
+    setIsDataLoaded(true);
+  }, []);
+
   useEffect(() => {
     if (accountData) {
       Cookies.set('accountData', JSON.stringify(accountData), {
@@ -20,10 +27,10 @@ export const UserProvider = ({ children }) => {
     } else {
       Cookies.remove('accountData');
     }
-  }, [accountData]);
+  }, [accountData, REACT_APP_COOKIE_SECURE]);
 
   return (
-    <UserContext.Provider value={{ accountData, setAccountData }}>
+    <UserContext.Provider value={{ accountData, setAccountData, isDataLoaded }}>
       {children}
     </UserContext.Provider>
   );

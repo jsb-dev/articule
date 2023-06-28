@@ -2,19 +2,21 @@ import React, { useEffect, useState } from 'react';
 import Flow from '../components/diagram/Flow';
 import { useAuth0 } from '@auth0/auth0-react';
 import env from 'react-dotenv';
+import { useLocation } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
-import RootNode from '../components/diagram/diagram-components/nodes/RootNode';
-import TopicNode from '../components/diagram/diagram-components/nodes/TopicNode';
-import CreateCategoryNodes from '../components/diagram/diagram-components/nodes/categories/CreateCategoryNodes';
-// import defaultDiagram from '../components/diagram/DefaultDiagram';
+import {
+  fetchDiagramData,
+  fetchCategoryData,
+  generateNodeTypes,
+  checkDataReady,
+} from '../utils/prepare-dashboard';
 
 function DashboardPage() {
   const { REACT_APP_API_URL } = env;
 
   const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
-  const { accountData } = useUserContext(); // Retrieve accountData instead of userId
-  const _id = accountData?._id; // Using optional chaining to prevent errors when accountData is null
+  const { accountData, isDataLoaded } = useUserContext();
 
   const [isDiagramLoaded, setIsDiagramLoaded] = useState(false);
   const [isCategoryListLoaded, setIsCategoryListLoaded] = useState(false);
@@ -26,14 +28,14 @@ function DashboardPage() {
   const [categoryData, setCategoryData] = useState([]);
   const [nodeTypes, setNodeTypes] = useState({});
 
+  const location = useLocation();
+  const urlParams = new URLSearchParams(location.search);
+  const _id = urlParams.get('_id');
+
   useEffect(() => {
     const checkAuthentication = async () => {
-      if (!isLoading) {
-        if (!isAuthenticated) {
-          await loginWithRedirect();
-        } else {
-          return;
-        }
+      if (!isLoading && !isAuthenticated && !accountData) {
+        await loginWithRedirect();
       }
     };
 
@@ -41,74 +43,74 @@ function DashboardPage() {
   }, [isAuthenticated, isLoading, loginWithRedirect]);
 
   useEffect(() => {
-    const fetchDiagramData = async () => {
-      if (isAuthenticated) {
-        try {
-          const response = await fetch(
-            `${REACT_APP_API_URL}diagram/get?_id=${_id}`
-          );
-          const data = await response.json();
+    const fetchData = async () => {
+      try {
+        const data = await fetchDiagramData(
+          fetch,
+          REACT_APP_API_URL,
+          isAuthenticated,
+          isDataLoaded,
+          _id
+        );
+        if (data) {
           setDiagramNodes(data.nodes);
           setDiagramEdges(data.edges);
           setIsDiagramLoaded(true);
-        } catch (error) {
-          setMessage(
-            `We're having trouble recovering your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
-          );
         }
+      } catch (error) {
+        setMessage(
+          `We're having trouble recovering your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
+        );
       }
     };
 
-    fetchDiagramData();
-  }, [isAuthenticated, _id, REACT_APP_API_URL, setIsDiagramLoaded]);
+    fetchData();
+  }, [isAuthenticated, isDataLoaded, REACT_APP_API_URL, _id]);
 
   useEffect(() => {
-    const fetchCategoryData = async () => {
-      if (isAuthenticated) {
-        try {
-          const response = await fetch(
-            `${REACT_APP_API_URL}diagram/get/categories`
-          );
-          const data = await response.json();
-          setCategoryData(data.data);
-        } catch (error) {
-          setMessage(
-            `We're having trouble recovering the surveys for your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
-          );
+    const fetchData = async () => {
+      try {
+        const data = await fetchCategoryData(
+          fetch,
+          REACT_APP_API_URL,
+          isAuthenticated
+        );
+        if (data) {
+          setCategoryData(data);
         }
+      } catch (error) {
+        setMessage(
+          `We're having trouble recovering the surveys for your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
+        );
       }
     };
 
-    fetchCategoryData();
+    fetchData();
   }, [isAuthenticated, REACT_APP_API_URL]);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      if (categoryData.length > 0) {
-        try {
-          const categoryNodes = CreateCategoryNodes(categoryData);
-          setNodeTypes({
-            rootNode: RootNode,
-            topicNode: TopicNode,
-            ...categoryNodes,
-          });
+    if (isAuthenticated && categoryData.length > 0) {
+      try {
+        const newTypes = generateNodeTypes(categoryData);
+        if (newTypes) {
+          setNodeTypes(newTypes);
           setIsCategoryListLoaded(true);
-        } catch (error) {
-          setMessage(
-            `We're having trouble recovering the surveys for your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
-          );
         }
+      } catch (error) {
+        setMessage(
+          `We're having trouble recovering the surveys for your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
+        );
       }
     }
-  }, [categoryData]);
+  }, [isAuthenticated, categoryData]);
 
   useEffect(() => {
-    if (isAuthenticated && isDiagramLoaded && isCategoryListLoaded) {
-      setIsDataReady(true);
-    }
+    setIsDataReady(
+      checkDataReady(isAuthenticated, isDiagramLoaded, isCategoryListLoaded)
+    );
   }, [isAuthenticated, isDiagramLoaded, isCategoryListLoaded]);
 
-  return isLoading ? (
+  return isLoading || !isDataLoaded ? (
     <LoadingSpinner />
   ) : (
     <div>

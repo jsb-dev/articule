@@ -2,70 +2,62 @@ import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
+import env from 'react-dotenv';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
-import generateUserId from '../utils/generate-user-id';
-import getAccountByEmail from '../utils/get-account-by-email';
+import {
+  fetchAccountData,
+  getSurveyUrl,
+  getDashboardUrl,
+} from '../utils/prepare-checkpoint';
 
 function CheckpointPage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const { setAccountData } = useUserContext();
   const [accountData, setLocalAccountData] = useState(null);
-  const [accountCheckLoading, setAccountCheckLoading] = useState(true);
+  const [isAccountDataFetched, setIsAccountDataFetched] = useState(false);
   const [message, setMessage] = useState('');
 
+  const { REACT_APP_API_URL } = env;
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchAccountData = async () => {
+    const fetchAccountDataAndSetState = async () => {
       if (!isLoading) {
         try {
-          const data = await getAccountByEmail(user.email);
+          const data = await fetchAccountData(user.email, REACT_APP_API_URL);
           setLocalAccountData(data);
         } catch (error) {
           setMessage(
             `We're having trouble checking your account, please log out and try again. If the problem persists, please contact support. \n\nError Message: ${error}`
           );
         }
-        setAccountCheckLoading(false);
+        setIsAccountDataFetched(true);
       }
     };
 
-    fetchAccountData();
+    fetchAccountDataAndSetState();
   }, [isLoading, user]);
-
-  const getSurveyUrl = async () => {
-    try {
-      const _id = await generateUserId();
-      return `/introduction?_id=${_id}`;
-    } catch (error) {
-      setMessage(
-        `We're having trouble creating your account, please log out and try again. If the problem persists, please contact support. \n\nError Message: ${error}`
-      );
-    }
-  };
-
-  const getDashboardUrl = () => {
-    setAccountData(accountData);
-    return `/dashboard?_id=${accountData._id}`;
-  };
 
   useEffect(() => {
     const redirect = async () => {
-      if (accountData) {
-        const dashboardUrl = getDashboardUrl();
-        navigate(dashboardUrl);
-      } else {
-        const surveyUrl = await getSurveyUrl();
-        if (surveyUrl) {
-          navigate(surveyUrl);
+      if (isAccountDataFetched) {
+        if (accountData) {
+          const dashboardUrl = await getDashboardUrl(
+            accountData,
+            setAccountData
+          );
+          navigate(dashboardUrl);
+        } else {
+          const surveyUrl = await getSurveyUrl();
+          if (surveyUrl) {
+            navigate(surveyUrl);
+          }
         }
       }
     };
 
-    if (!accountCheckLoading) {
-      redirect();
-    }
-  }, [accountCheckLoading, accountData]);
+    redirect();
+  }, [isAccountDataFetched, accountData, navigate, setAccountData]);
 
   return isAuthenticated && <LoadingSpinner />;
 }

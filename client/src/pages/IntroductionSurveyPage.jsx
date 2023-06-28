@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useUserContext } from '../contexts/UserContext';
-import { useLocation } from 'react-router-dom'; // <--- added this import
+import { useLocation } from 'react-router-dom';
 import IntroductionSurvey from '../components/surveys/IntroductionSurvey';
 
 function IntroductionSurveyPage() {
   const { isAuthenticated, isLoading, loginWithRedirect, user } = useAuth0();
-  const { accountData, setAccountData } = useUserContext();
-  const location = useLocation(); // <--- get the current location
-
-  const query = new URLSearchParams(location.search);
-  const id = query.get('_id'); // <--- get the id from the query string
+  const { setAccountData } = useUserContext();
 
   const [isAuthChecked, setIsAuthChecked] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const id = query.get('_id');
 
   useEffect(() => {
     const checkAuthentication = async () => {
