@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Handle, Position } from 'reactflow';
 import {
   Modal,
@@ -18,14 +18,17 @@ const StyledBox = styled(Box)({
   background: 'white',
 });
 
-function TopicNode({ data }) {
+function TopicNode({ data: initialData }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [editingKey, setEditingKey] = useState(null);
   const [tempValue, setTempValue] = useState('');
+  const [data, setData] = useState(initialData); // Renamed state for data
+
+  console.log(data);
 
   const openModal = (key) => {
     setEditingKey(key);
-    setTempValue(data[key]);
+    setTempValue(data.results[key]);
     setModalIsOpen(true);
   };
 
@@ -34,13 +37,19 @@ function TopicNode({ data }) {
   };
 
   const confirmChanges = () => {
-    data[editingKey] = tempValue;
+    setData({
+      ...data,
+      results: {
+        ...data.results,
+        [editingKey]: tempValue,
+      },
+    });
     closeModal();
   };
 
   const ListItem = ({ keyName }) => (
     <ListItemText
-      primary={data[keyName]}
+      primary={data.results[keyName]}
       secondary={
         <Button size="small" onClick={() => openModal(keyName)}>
           Edit
@@ -49,22 +58,21 @@ function TopicNode({ data }) {
     />
   );
 
+  const resultKeys = Object.keys(data.results); // get keys of results
+
   return (
     <StyledBox>
       <Typography variant="h1">{data.topic}</Typography>
       <Box component="ul" sx={{ listStyleType: 'none' }}>
-        <Typography variant="h5">
-          <li>{data.q1}</li>
-        </Typography>
-        <ListItem keyName="a1" />
-        <Typography variant="h5">
-          <li>{data.q2}</li>
-        </Typography>
-        <ListItem keyName="a2" />
-        <Typography variant="h5">
-          <li>{data.q3}</li>
-        </Typography>
-        <ListItem keyName="a3" />
+        {data.questions.map((question, index) => (
+          <React.Fragment key={question}>
+            <Typography variant="h5">
+              <li>{question}</li>
+            </Typography>
+            <ListItem keyName={resultKeys[index]} />{' '}
+            {/* pass the corresponding result key */}
+          </React.Fragment>
+        ))}
       </Box>
 
       <Box>
