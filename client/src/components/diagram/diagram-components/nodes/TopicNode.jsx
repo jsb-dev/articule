@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
 import {
   Modal,
@@ -22,9 +22,7 @@ function TopicNode({ data: initialData }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [editingKey, setEditingKey] = useState(null);
   const [tempValue, setTempValue] = useState('');
-  const [data, setData] = useState(initialData); // Renamed state for data
-
-  console.log(data);
+  const [data, setData] = useState(initialData);
 
   const openModal = (key) => {
     setEditingKey(key);
@@ -51,26 +49,34 @@ function TopicNode({ data: initialData }) {
     <ListItemText
       primary={data.results[keyName]}
       secondary={
-        <Button size="small" onClick={() => openModal(keyName)}>
+        <Button
+          size="small"
+          sx={{ fontSize: '1rem' }}
+          onClick={() => openModal(keyName)}
+        >
           Edit
         </Button>
       }
     />
   );
 
-  const resultKeys = Object.keys(data.results); // get keys of results
+  const resultKeys = Object.keys(data.results);
 
   return (
     <StyledBox>
-      <Typography variant="h1">{data.topic}</Typography>
+      <Typography variant="h1" sx={{ fontSize: '2rem', fontWeight: 'bold' }}>
+        {data.topic}
+      </Typography>
       <Box component="ul" sx={{ listStyleType: 'none' }}>
         {data.questions.map((question, index) => (
           <React.Fragment key={question}>
-            <Typography variant="h5">
+            <Typography
+              variant="h5"
+              sx={{ fontSize: '1.2rem', fontWeight: 'bold' }}
+            >
               <li>{question}</li>
             </Typography>
-            <ListItem keyName={resultKeys[index]} />{' '}
-            {/* pass the corresponding result key */}
+            <ListItem keyName={resultKeys[index]} />
           </React.Fragment>
         ))}
       </Box>

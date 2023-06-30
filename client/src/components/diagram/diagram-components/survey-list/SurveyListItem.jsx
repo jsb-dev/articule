@@ -26,7 +26,7 @@ function SurveyListItem({ topic, survey }) {
       <Dialog onClose={handleClose} open={open}>
         <DialogTitle>{topic}</DialogTitle>
         <DialogContent>
-          <TopicSurvey survey={survey} />
+          <TopicSurvey survey={survey} handleClose={handleClose} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>

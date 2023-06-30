@@ -1,6 +1,9 @@
-import { edgeStyles } from '../shared/shared-component-styles';
-
 function DefaultDiagram(results) {
+  const edgeStyles = {
+    stroke: '#000000',
+    strokeWidth: 4,
+  };
+
   const format = {
     nodes: [
       {

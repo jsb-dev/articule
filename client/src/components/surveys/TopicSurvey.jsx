@@ -7,7 +7,7 @@ import { useUserContext } from '../../contexts/UserContext';
 import addTopicNode from '../../utils/add-topic-node';
 import 'survey-core/modern.min.css';
 
-function TopicSurvey({ survey }) {
+function TopicSurvey({ survey, handleClose }) {
   const { openedSurveyList, nodePosition } = useContext(SurveyListContext);
   const { addNewNode, getSourceHandle, getTargetHandle } =
     useContext(NewNodeContext);
@@ -27,16 +27,22 @@ function TopicSurvey({ survey }) {
         name: elementNames[0],
         title: `${survey.q1}`,
         type: 'text',
+        isRequired: true,
+        minLength: 1,
       },
       {
         name: elementNames[1],
         title: `${survey.q2}`,
         type: 'text',
+        isRequired: true,
+        minLength: 1,
       },
       {
         name: elementNames[2],
         title: `${survey.q3}`,
         type: 'text',
+        isRequired: true,
+        minLength: 1,
       },
     ],
   };
@@ -60,6 +66,8 @@ function TopicSurvey({ survey }) {
     );
 
     addNewNode({ node, edge });
+
+    handleClose();
   });
 
   const surveyModel = new Model(surveyJson);
