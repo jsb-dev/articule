@@ -1,5 +1,5 @@
 import generateUniqueBsonId from './generate-unique-bson-id';
-import checkIdAvailability from './check-id-availability';
+import checkUserIdAvailability from './check-user-id-availability';
 
 const getAvailableId = async () => {
   let id;
@@ -12,7 +12,7 @@ const getAvailableId = async () => {
     if (attemptCounter > 10) {
       throw new Error('Maximum ID generation attempts exceeded.');
     }
-  } while (await checkIdAvailability(id, 'account'));
+  } while (await checkUserIdAvailability(id, 'account'));
 
   return id;
 };

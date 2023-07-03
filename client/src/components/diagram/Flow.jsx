@@ -20,20 +20,6 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
   const [nodes, setNodes] = useState(diagramNodes);
   const [edges, setEdges] = useState(diagramEdges);
 
-  /*
-  const onNodesChange = useCallback(
-    (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
-    console.log('nodes', nodes),
-    [setNodes]
-
-    // a function which iterates through nodes (array of objects) to find the index where
-    // nodeId === nodeId, where nodeId is retrieved from surveyListContext and passed in as an argument,
-    // then set the x and y values from pos to the value of nodePosition in that context
-
-    // send nodes to server
-  );
-  */
-
   const getOpenedNodePosition = (updatedNodes, nodeId) => {
     // find node by nodeId
     const targetNode = updatedNodes.find((node) => node.id === nodeId);

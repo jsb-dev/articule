@@ -1,3 +1,4 @@
+import BlankNode from '../components/diagram/diagram-components/nodes/BlankNode';
 import CreateCategoryNodes from '../components/diagram/diagram-components/nodes/categories/CreateCategoryNodes';
 import RootNode from '../components/diagram/diagram-components/nodes/RootNode';
 import TopicNode from '../components/diagram/diagram-components/nodes/TopicNode';
@@ -40,6 +41,7 @@ export function generateNodeTypes(categoryData) {
     return {
       rootNode: RootNode,
       topicNode: TopicNode,
+      blankNode: BlankNode,
       ...categoryNodes,
     };
   }

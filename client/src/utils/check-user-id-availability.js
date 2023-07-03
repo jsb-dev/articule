@@ -1,18 +1,16 @@
-import env from 'react-dotenv';
 import LRU from 'lru-cache';
 
-const { REACT_APP_API_URL } = env;
 const cache = new LRU(1000);
 
-const checkIdAvailability = async (id, endpoint) => {
+const checkUserIdAvailability = async (id, endpoint) => {
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   if (cache.has(id)) {
     return cache.get(id);
   }
 
   try {
-    const response = await fetch(
-      `${REACT_APP_API_URL}${endpoint}/check/id?id=${id}`
-    );
+    const response = await fetch(`${apiUrl}${endpoint}/check/id?id=${id}`);
     const data = await response.json();
     cache.set(id, data.exists);
     return data.exists;
@@ -22,4 +20,4 @@ const checkIdAvailability = async (id, endpoint) => {
   }
 };
 
-export default checkIdAvailability;
+export default checkUserIdAvailability;
