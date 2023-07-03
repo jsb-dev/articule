@@ -13,7 +13,7 @@ import {
 function CheckpointPage() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const { setAccountData } = useUserContext();
-  const [accountData, setLocalAccountData] = useState(null);
+  const [localAccountData, setLocalAccountData] = useState(null);
   const [isAccountDataFetched, setIsAccountDataFetched] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -25,7 +25,9 @@ function CheckpointPage() {
       if (!isLoading) {
         try {
           const data = await fetchAccountData(user.email, REACT_APP_API_URL);
+          data.auth = isAuthenticated;
           setLocalAccountData(data);
+          setAccountData(data);
         } catch (error) {
           setMessage(
             `We're having trouble checking your account, please log out and try again. If the problem persists, please contact support. \n\nError Message: ${error}`
@@ -41,9 +43,9 @@ function CheckpointPage() {
   useEffect(() => {
     const redirect = async () => {
       if (isAccountDataFetched) {
-        if (accountData) {
+        if (localAccountData) {
           const dashboardUrl = await getDashboardUrl(
-            accountData,
+            localAccountData,
             setAccountData
           );
           navigate(dashboardUrl);
@@ -57,7 +59,7 @@ function CheckpointPage() {
     };
 
     redirect();
-  }, [isAccountDataFetched, accountData, navigate, setAccountData]);
+  }, [isAccountDataFetched, localAccountData, navigate, setAccountData]);
 
   return isAuthenticated && <LoadingSpinner />;
 }

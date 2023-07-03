@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import LoginButton from '../components/auth/LoginButton';
-import LogoutButton from '../components/auth/LogoutButton';
+import ComboNavBar from '../components/shared/navbar/ComboNavBar';
 
 function RootPage() {
   const [message, setMessage] = useState('');
 
   return (
     <div>
+      <ComboNavBar />
       <h1>Login Page</h1>
-      <LoginButton />
-      <LogoutButton />
     </div>
   );
 }

@@ -13,19 +13,30 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const cookie = Cookies.get('accountData');
     if (cookie) {
-      setAccountData(JSON.parse(cookie));
+      const storedAccountData = JSON.parse(cookie);
+      const diagram = localStorage.getItem('diagram');
+      if (diagram) {
+        storedAccountData.diagram = JSON.parse(diagram);
+      }
+      setAccountData(storedAccountData);
     }
     setIsDataLoaded(true);
   }, []);
 
   useEffect(() => {
     if (accountData) {
-      Cookies.set('accountData', JSON.stringify(accountData), {
+      const accountDataCopy = { ...accountData };
+      if (accountData.diagram) {
+        localStorage.setItem('diagram', JSON.stringify(accountData.diagram));
+        delete accountDataCopy.diagram;
+      }
+      Cookies.set('accountData', JSON.stringify(accountDataCopy), {
         secure: REACT_APP_COOKIE_SECURE,
-        sameSite: 'strict',
+        sameSite: 'none',
       });
     } else {
       Cookies.remove('accountData');
+      localStorage.removeItem('diagram');
     }
   }, [accountData, REACT_APP_COOKIE_SECURE]);
 

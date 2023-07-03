@@ -5,6 +5,7 @@ import env from 'react-dotenv';
 import { useLocation } from 'react-router-dom';
 import { useUserContext } from '../contexts/UserContext';
 import LoadingSpinner from '../components/shared/LoadingSpinner';
+import ComboNavBar from '../components/shared/navbar/ComboNavBar';
 import {
   fetchDiagramData,
   fetchCategoryData,
@@ -113,22 +114,25 @@ function DashboardPage() {
   return isLoading || !isDataLoaded ? (
     <LoadingSpinner />
   ) : (
-    <div>
-      <section
-        style={{
-          width: '100vw',
-          height: '100vh',
-        }}
-      >
-        {isDataReady && (
-          <Flow
-            diagramNodes={diagramNodes}
-            diagramEdges={diagramEdges}
-            nodeTypes={nodeTypes}
-          />
-        )}
-      </section>
-    </div>
+    <main>
+      <ComboNavBar />
+      <div>
+        <section
+          style={{
+            width: '100vw',
+            height: '100vh',
+          }}
+        >
+          {isDataReady && (
+            <Flow
+              diagramNodes={diagramNodes}
+              diagramEdges={diagramEdges}
+              nodeTypes={nodeTypes}
+            />
+          )}
+        </section>
+      </div>
+    </main>
   );
 }
 
