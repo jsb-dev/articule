@@ -1,6 +1,7 @@
 import React from 'react';
 import SurveyListItem from './SurveyListItem';
 import LoadingSpinner from '../../../shared/LoadingSpinner';
+import AddBlankNodeButton from '../AddBlankNodeButton';
 
 const drawerStyle = (isOpen) => ({
   maxHeight: isOpen ? '1000px' : '0',
@@ -24,6 +25,7 @@ function Drawer({ loading, fetchedSurveys, isOpen }) {
             survey={survey}
           />
         ))}
+        <AddBlankNodeButton />
       </div>
     ))
   );

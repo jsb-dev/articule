@@ -22,7 +22,7 @@ function CheckpointPage() {
 
   useEffect(() => {
     const fetchAccountDataAndSetState = async () => {
-      if (!isLoading) {
+      if (!isLoading && isAuthenticated) {
         try {
           const data = await fetchAccountData(user.email, REACT_APP_API_URL);
           data.auth = isAuthenticated;
@@ -38,7 +38,7 @@ function CheckpointPage() {
     };
 
     fetchAccountDataAndSetState();
-  }, [isLoading, user]);
+  }, [isLoading, isAuthenticated, user]);
 
   useEffect(() => {
     const redirect = async () => {

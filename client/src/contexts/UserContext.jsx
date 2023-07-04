@@ -31,7 +31,7 @@ export const UserProvider = ({ children }) => {
         delete accountDataCopy.diagram;
       }
       Cookies.set('accountData', JSON.stringify(accountDataCopy), {
-        secure: REACT_APP_COOKIE_SECURE,
+        secure: REACT_APP_COOKIE_SECURE === 'true',
         sameSite: 'none',
       });
     } else {

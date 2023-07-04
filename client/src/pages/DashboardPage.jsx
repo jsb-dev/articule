@@ -44,49 +44,43 @@ function DashboardPage() {
   }, [isAuthenticated, isLoading, loginWithRedirect]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchDiagramData(
-          fetch,
-          REACT_APP_API_URL,
-          isAuthenticated,
-          isDataLoaded,
-          _id
-        );
-        if (data) {
-          setDiagramNodes(data.nodes);
-          setDiagramEdges(data.edges);
-          setIsDiagramLoaded(true);
+    if (isAuthenticated) {
+      const fetchData = async () => {
+        try {
+          const data = await fetchDiagramData(fetch, REACT_APP_API_URL, _id);
+          if (data) {
+            setDiagramNodes(data.nodes);
+            setDiagramEdges(data.edges);
+            setIsDiagramLoaded(true);
+          }
+        } catch (error) {
+          setMessage(
+            `We're having trouble recovering your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
+          );
         }
-      } catch (error) {
-        setMessage(
-          `We're having trouble recovering your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
-        );
-      }
-    };
+      };
 
-    fetchData();
+      fetchData();
+    }
   }, [isAuthenticated, isDataLoaded, REACT_APP_API_URL, _id]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchCategoryData(
-          fetch,
-          REACT_APP_API_URL,
-          isAuthenticated
-        );
-        if (data) {
-          setCategoryData(data);
+    if (isAuthenticated) {
+      const fetchData = async () => {
+        try {
+          const data = await fetchCategoryData(fetch, REACT_APP_API_URL);
+          if (data) {
+            setCategoryData(data);
+          }
+        } catch (error) {
+          setMessage(
+            `We're having trouble recovering the surveys for your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
+          );
         }
-      } catch (error) {
-        setMessage(
-          `We're having trouble recovering the surveys for your diagram, please log out and try again. If this issue persists, please contact support.\n\nError Message: ${error}`
-        );
-      }
-    };
+      };
 
-    fetchData();
+      fetchData();
+    }
   }, [isAuthenticated, REACT_APP_API_URL]);
 
   useEffect(() => {
@@ -106,9 +100,9 @@ function DashboardPage() {
   }, [isAuthenticated, categoryData]);
 
   useEffect(() => {
-    setIsDataReady(
-      checkDataReady(isAuthenticated, isDiagramLoaded, isCategoryListLoaded)
-    );
+    if (isAuthenticated) {
+      setIsDataReady(checkDataReady(isDiagramLoaded, isCategoryListLoaded));
+    }
   }, [isAuthenticated, isDiagramLoaded, isCategoryListLoaded]);
 
   return isLoading || !isDataLoaded ? (

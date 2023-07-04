@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import env from 'react-dotenv';
-import ToggleButton from './ToggleButton';
+import SurveyListToggleButton from './SurveyListToggleButton';
 import Drawer from './Drawer';
 import { useContext } from 'react';
 import { SurveyListContext } from '../../../../contexts/SurveyListContext';
@@ -44,7 +44,7 @@ function SurveyList({ surveys, nodeId }) {
 
   return (
     <div>
-      <ToggleButton isOpen={isOpen} toggleList={toggleList} />
+      <SurveyListToggleButton isOpen={isOpen} toggleList={toggleList} />
       <Drawer
         loading={loading}
         fetchedSurveys={fetchedSurveys}

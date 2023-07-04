@@ -7,7 +7,7 @@ const buttonStyle = {
 function ToggleSurveyListButton({ isOpen, toggleList }) {
   return (
     <button style={buttonStyle} onClick={toggleList}>
-      {isOpen ? 'Hide Surveys' : 'Show Surveys'}
+      {isOpen ? 'Hide' : 'Expand'}
     </button>
   );
 }

@@ -11,11 +11,13 @@ const StyledBox = styled(Box)({
   background: 'white',
 });
 
-function BlankNode() {
+function BlankNode({ data: initialData }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [data, setData] = useState('');
+  const [data, setData] = useState(initialData);
+  const [inputValue, setInputValue] = useState(initialData.content);
 
   const openModal = () => {
+    setInputValue(data.content); // reset inputValue when open the modal
     setModalIsOpen(true);
   };
 
@@ -23,23 +25,27 @@ function BlankNode() {
     setModalIsOpen(false);
   };
 
-  const confirmChanges = (newData) => {
-    setData(newData);
+  const handleInputChange = (value) => {
+    setInputValue(value);
+  };
+
+  const confirmChanges = () => {
+    setData({
+      ...data,
+      content: inputValue,
+    });
     closeModal();
   };
 
   return (
     <StyledBox>
       <Typography variant="h1" sx={{ fontSize: '2rem', fontWeight: 'bold' }}>
-        {data}
+        {data.content}
       </Typography>
-      <Button
-        size="small"
-        sx={{ fontSize: '1rem' }}
-        onClick={() => openModal()}
-      >
+      <Button size="small" sx={{ fontSize: '1rem' }} onClick={openModal}>
         Edit
       </Button>
+
       <Box>
         <Handle
           id="top"
@@ -82,8 +88,9 @@ function BlankNode() {
             id="modal-modal-description"
             multiline
             rows={4}
-            defaultValue={data}
-            onBlur={(e) => confirmChanges(e.target.value)}
+            defaultValue={data.content}
+            value={inputValue} // use the new inputValue state
+            onChange={(e) => handleInputChange(e.target.value)} // call handleInputChange instead
             fullWidth
           />
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
@@ -92,11 +99,7 @@ function BlankNode() {
             </Button>
             <Button
               variant="contained"
-              onClick={() =>
-                confirmChanges(
-                  document.getElementById('modal-modal-description').value
-                )
-              }
+              onClick={confirmChanges} // call confirmChanges when clicking Confirm button
               color="primary"
             >
               Confirm

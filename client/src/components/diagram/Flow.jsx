@@ -21,10 +21,8 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
   const [edges, setEdges] = useState(diagramEdges);
 
   const getOpenedNodePosition = (updatedNodes, nodeId) => {
-    // find node by nodeId
     const targetNode = updatedNodes.find((node) => node.id === nodeId);
 
-    // If node is found, update position in context
     if (targetNode) {
       updateNodePosition(targetNode.position);
     }

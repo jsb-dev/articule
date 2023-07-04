@@ -3,35 +3,21 @@ import CreateCategoryNodes from '../components/diagram/diagram-components/nodes/
 import RootNode from '../components/diagram/diagram-components/nodes/RootNode';
 import TopicNode from '../components/diagram/diagram-components/nodes/TopicNode';
 
-export async function fetchDiagramData(
-  fetch,
-  apiUrl,
-  isAuthenticated,
-  isDataLoaded,
-  _id
-) {
-  if (isAuthenticated && isDataLoaded) {
-    const response = await fetch(`${apiUrl}diagram/get?_id=${_id}`);
-    const data = await response.json();
+export async function fetchDiagramData(fetch, apiUrl, _id) {
+  const response = await fetch(`${apiUrl}diagram/get?_id=${_id}`);
+  const data = await response.json();
 
-    return {
-      nodes: data.nodes,
-      edges: data.edges,
-    };
-  }
-
-  return null;
+  return {
+    nodes: data.nodes,
+    edges: data.edges,
+  };
 }
 
-export async function fetchCategoryData(fetch, apiUrl, isAuthenticated) {
-  if (isAuthenticated) {
-    const response = await fetch(`${apiUrl}diagram/get/categories`);
-    const data = await response.json();
+export async function fetchCategoryData(fetch, apiUrl) {
+  const response = await fetch(`${apiUrl}diagram/get/categories`);
+  const data = await response.json();
 
-    return data.data;
-  }
-
-  return null;
+  return data.data;
 }
 
 export function generateNodeTypes(categoryData) {
@@ -49,10 +35,6 @@ export function generateNodeTypes(categoryData) {
   return null;
 }
 
-export function checkDataReady(
-  isAuthenticated,
-  isDiagramLoaded,
-  isCategoryListLoaded
-) {
-  return isAuthenticated && isDiagramLoaded && isCategoryListLoaded;
+export function checkDataReady(isDiagramLoaded, isCategoryListLoaded) {
+  return isDiagramLoaded && isCategoryListLoaded;
 }

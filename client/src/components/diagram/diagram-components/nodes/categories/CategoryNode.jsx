@@ -34,6 +34,7 @@ function CategoryNode({
       <h1>{categoryName}</h1>
       <p>{categoryBrief}</p>
       <SurveyList surveys={surveys} nodeId={id} />
+
       <Handle
         id="top"
         type={topType}
