@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useUserContext } from '../../contexts/UserContext';
-import Cookies from 'js-cookie';
+import logoutUser from '../../utils/logout-user';
 
 const AuthToggleButton = () => {
   const { accountData, setAccountData } = useUserContext();
@@ -15,17 +15,12 @@ const AuthToggleButton = () => {
     });
   };
 
-  const logoutUser = () => {
-    localStorage.removeItem('diagram');
-    Cookies.remove('accountData');
-    logout({ returnTo: window.location.origin });
-    setAccountData(null);
-  };
-
   const handleToggle = () => {
     const isAuthenticated =
       accountData && 'auth' in accountData ? accountData.auth : false;
-    isAuthenticated ? logoutUser() : loginUser();
+    isAuthenticated
+      ? logoutUser(logout, setAccountData, window.location.origin)
+      : loginUser();
   };
 
   let buttonText = 'Login';

@@ -4,6 +4,7 @@ import RootPage from './pages/RootPage';
 import CheckpointPage from './pages/CheckpointPage';
 import DashboardPage from './pages/DashboardPage';
 import IntroductionSurveyPage from './pages/IntroductionSurveyPage';
+import UserAccountPage from './pages/UserAccountPage';
 import { UserProvider } from './contexts/UserContext';
 import { NewNodeProvider } from './contexts/NewNodeContext';
 import { SurveyListProvider } from './contexts/SurveyListContext';
@@ -26,6 +27,7 @@ function App() {
                   path="/introduction"
                   element={<IntroductionSurveyPage />}
                 />
+                <Route path="/account" element={<UserAccountPage />} />
               </Routes>
             </SurveyListProvider>
           </NewNodeProvider>

@@ -20,7 +20,6 @@ const getAvailableId = async () => {
 const generateUserId = async () => {
   try {
     const id = await getAvailableId();
-    console.log('Generated User ID:', id);
     return id;
   } catch (error) {
     console.error('Error generating ID:', error);

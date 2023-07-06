@@ -30,6 +30,16 @@ const VerticalNavList = () => {
           </SharedButtonStyle>
         </ListItem>
       )}
+      {accountData?.auth && (
+        <ListItem>
+          <SharedButtonStyle
+            component={Link}
+            to={`/account?_id=${accountData._id}`}
+          >
+            Account
+          </SharedButtonStyle>
+        </ListItem>
+      )}
       <ListItem>
         <AuthToggleButton />
       </ListItem>
