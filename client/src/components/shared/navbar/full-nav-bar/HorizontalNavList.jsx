@@ -7,6 +7,7 @@ import { useUserContext } from '../../../../contexts/UserContext';
 import AuthToggleButton from '../../AuthToggleButton';
 import { SharedButtonStyle } from '../../SharedButtonStyle';
 import Logo from '../../Logo';
+import ComboContactButton from '../../contact-button/ComboContactButton';
 
 const HorizontalNavList = () => {
   const { accountData } = useUserContext();
@@ -27,6 +28,7 @@ const HorizontalNavList = () => {
           Home
         </SharedButtonStyle>
       </ListItem>
+
       {accountData?.auth && (
         <ListItem>
           <SharedButtonStyle
@@ -47,6 +49,9 @@ const HorizontalNavList = () => {
           </SharedButtonStyle>
         </ListItem>
       )}
+      <ListItem>
+        <ComboContactButton />
+      </ListItem>
       <ListItem>
         <AuthToggleButton />
       </ListItem>

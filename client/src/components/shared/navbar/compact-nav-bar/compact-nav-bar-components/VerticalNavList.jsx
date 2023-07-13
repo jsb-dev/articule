@@ -3,6 +3,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Link } from 'react-router-dom';
 import { useUserContext } from '../../../../../contexts/UserContext';
+import ComboContactButton from '../../../contact-button/ComboContactButton';
 import AuthToggleButton from '../../../AuthToggleButton';
 import { SharedButtonStyle } from '../../../SharedButtonStyle';
 import Logo from '../../../Logo';
@@ -40,6 +41,9 @@ const VerticalNavList = () => {
           </SharedButtonStyle>
         </ListItem>
       )}
+      <ListItem>
+        <ComboContactButton />
+      </ListItem>
       <ListItem>
         <AuthToggleButton />
       </ListItem>
