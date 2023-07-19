@@ -1,0 +1,22 @@
+1 -
+Flow onNodesChange, onEdgesChange and onConnect needs to invoke 
+requestSaveDiagram(), a function that makes a request to the 
+'diagram/post' endpoint, where a processSaveDiagram() function
+will be invoked. This function will save the diagram to the
+database.
+
+2 -
+This error appears when the blank node edit button is clicked 
+(opens modal with text area):
+
+"Warning: ForwardRef(TextareaAutosize) contains 
+a textarea with both value and defaultValue props. 
+Textarea elements must be either controlled or 
+uncontrolled (specify either the value prop, or the 
+defaultValue prop, but not both). Decide between 
+using a controlled or uncontrolled textarea and 
+remove one of these props. 
+
+More info: https://reactjs.org/link/controlled-components"
+
+3- 

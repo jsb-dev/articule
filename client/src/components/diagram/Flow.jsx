@@ -20,13 +20,16 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
   const [nodes, setNodes] = useState(diagramNodes);
   const [edges, setEdges] = useState(diagramEdges);
 
-  const getOpenedNodePosition = (updatedNodes, nodeId) => {
-    const targetNode = updatedNodes.find((node) => node.id === nodeId);
+  const getOpenedNodePosition = useCallback(
+    (updatedNodes, nodeId) => {
+      const targetNode = updatedNodes.find((node) => node.id === nodeId);
 
-    if (targetNode) {
-      updateNodePosition(targetNode.position);
-    }
-  };
+      if (targetNode) {
+        updateNodePosition(targetNode.position);
+      }
+    },
+    [updateNodePosition]
+  );
 
   const onNodesChange = useCallback(
     (changes) => {
@@ -36,7 +39,7 @@ function Flow({ diagramNodes, diagramEdges, nodeTypes }) {
 
       setNodes(updatedNodes);
     },
-    [nodes, nodeId, updateNodePosition]
+    [nodes, nodeId, getOpenedNodePosition]
   );
 
   const onEdgesChange = useCallback(

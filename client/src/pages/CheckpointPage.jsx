@@ -38,7 +38,7 @@ function CheckpointPage() {
     };
 
     fetchAccountDataAndSetState();
-  }, [isLoading, isAuthenticated, user]);
+  }, [isLoading, isAuthenticated, user, REACT_APP_API_URL, setAccountData]);
 
   useEffect(() => {
     const redirect = async () => {

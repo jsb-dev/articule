@@ -41,7 +41,7 @@ function DashboardPage() {
     };
 
     checkAuthentication();
-  }, [isAuthenticated, isLoading, loginWithRedirect]);
+  }, [isAuthenticated, isLoading, loginWithRedirect, accountData]);
 
   useEffect(() => {
     if (isAuthenticated) {

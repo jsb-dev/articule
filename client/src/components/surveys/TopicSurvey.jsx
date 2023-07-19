@@ -47,28 +47,40 @@ function TopicSurvey({ survey, handleClose }) {
     ],
   };
 
-  const surveyComplete = useCallback(async (sender) => {
-    const results = sender.data;
-    const sourceHandle = getSourceHandle(openedSurveyList);
-    const targetHandle = getTargetHandle(sourceHandle);
-    const nodeIds = accountData?.diagram?.nodes?.map((node) => node.id) || [];
-    const edgeIds = accountData?.diagram?.edges?.map((edge) => edge.id) || [];
+  const surveyComplete = useCallback(
+    async (sender) => {
+      const results = sender.data;
+      const sourceHandle = getSourceHandle(openedSurveyList);
+      const targetHandle = getTargetHandle(sourceHandle);
+      const nodeIds = accountData?.diagram?.nodes?.map((node) => node.id) || [];
+      const edgeIds = accountData?.diagram?.edges?.map((edge) => edge.id) || [];
 
-    const { node, edge } = await addTopicNode(
-      results,
-      survey,
+      const { node, edge } = await addTopicNode(
+        results,
+        survey,
+        nodePosition,
+        openedSurveyList,
+        sourceHandle,
+        targetHandle,
+        nodeIds,
+        edgeIds
+      );
+
+      addNewNode({ node, edge });
+
+      handleClose();
+    },
+    [
+      getSourceHandle,
+      getTargetHandle,
+      addNewNode,
+      handleClose,
       nodePosition,
       openedSurveyList,
-      sourceHandle,
-      targetHandle,
-      nodeIds,
-      edgeIds
-    );
-
-    addNewNode({ node, edge });
-
-    handleClose();
-  });
+      survey,
+      accountData,
+    ]
+  );
 
   const surveyModel = new Model(surveyJson);
   surveyModel.onComplete.add(surveyComplete);

@@ -32,7 +32,7 @@ function SurveyList({ surveys, nodeId }) {
     if (isOpen && fetchedSurveys.length === 0) {
       fetchSurveys();
     }
-  }, [surveys, isOpen]);
+  }, [surveys, isOpen, REACT_APP_API_URL, fetchedSurveys.length]);
 
   const toggleList = () => {
     if (isOpen) {

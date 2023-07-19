@@ -17,7 +17,7 @@ function BlankNode({ data: initialData }) {
   const [inputValue, setInputValue] = useState(initialData.content);
 
   const openModal = () => {
-    setInputValue(data.content); // reset inputValue when open the modal
+    setInputValue(data.content);
     setModalIsOpen(true);
   };
 
@@ -89,8 +89,8 @@ function BlankNode({ data: initialData }) {
             multiline
             rows={4}
             defaultValue={data.content}
-            value={inputValue} // use the new inputValue state
-            onChange={(e) => handleInputChange(e.target.value)} // call handleInputChange instead
+            value={inputValue}
+            onChange={(e) => handleInputChange(e.target.value)}
             fullWidth
           />
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
@@ -99,7 +99,7 @@ function BlankNode({ data: initialData }) {
             </Button>
             <Button
               variant="contained"
-              onClick={confirmChanges} // call confirmChanges when clicking Confirm button
+              onClick={confirmChanges}
               color="primary"
             >
               Confirm

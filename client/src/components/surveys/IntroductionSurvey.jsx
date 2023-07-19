@@ -4,10 +4,6 @@ import { Survey } from 'survey-react-ui';
 import env from 'react-dotenv';
 import { useNavigate } from 'react-router-dom';
 import defaultDiagram from '../diagram/DefaultDiagram';
-
-// Default V2 theme
-// import 'survey-core/defaultV2.min.css';
-// Modern theme
 import 'survey-core/modern.min.css';
 
 function IntroductionSurvey({ _id, userEmail }) {
@@ -37,23 +33,26 @@ function IntroductionSurvey({ _id, userEmail }) {
     ],
   };
 
-  const sendDataToServer = async (data) => {
-    try {
-      const response = await fetch(`${REACT_APP_API_URL}account/create`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+  const sendDataToServer = useCallback(
+    async (data) => {
+      try {
+        const response = await fetch(`${REACT_APP_API_URL}account/create`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error ${response.status}`);
+        }
+      } catch (error) {
+        console.error('Error sending data to server:', error);
       }
-    } catch (error) {
-      console.error('Error sending data to server:', error);
-    }
-  };
+    },
+    [REACT_APP_API_URL]
+  );
 
   const surveyComplete = useCallback(
     async (sender) => {
@@ -69,7 +68,7 @@ function IntroductionSurvey({ _id, userEmail }) {
 
       navigate(`/dashboard?_id=${_id}`);
     },
-    [userEmail, REACT_APP_API_URL, navigate]
+    [userEmail, navigate, _id, sendDataToServer]
   );
 
   const surveyModel = new Model(surveyJson);
