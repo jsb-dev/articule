@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
+import { useContext } from 'react';
+import { useUserContext } from '../../../../contexts/UserContext';
+import { EditNodeContext } from '../../../../contexts/EditNodeContext';
 import { Modal, Button, Typography, TextField, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
@@ -12,6 +15,8 @@ const StyledBox = styled(Box)({
 });
 
 function BlankNode({ data: initialData }) {
+  const { accountData, setAccountData } = useUserContext();
+  const { triggerEdit } = useContext(EditNodeContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [data, setData] = useState(initialData);
   const [inputValue, setInputValue] = useState(initialData.content);
@@ -29,12 +34,14 @@ function BlankNode({ data: initialData }) {
     setInputValue(value);
   };
 
+  // BlankNode
   const confirmChanges = () => {
     setData({
       ...data,
       content: inputValue,
     });
     closeModal();
+    triggerEdit();
   };
 
   return (
@@ -88,7 +95,6 @@ function BlankNode({ data: initialData }) {
             id="modal-modal-description"
             multiline
             rows={4}
-            defaultValue={data.content}
             value={inputValue}
             onChange={(e) => handleInputChange(e.target.value)}
             fullWidth

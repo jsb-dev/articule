@@ -8,6 +8,7 @@ import UserAccountPage from './pages/UserAccountPage';
 import { UserProvider } from './contexts/UserContext';
 import { NewNodeProvider } from './contexts/NewNodeContext';
 import { SurveyListProvider } from './contexts/SurveyListContext';
+import { EditNodeProvider } from './contexts/EditNodeContext';
 import { HandleTypesProvider } from './contexts/HandleTypesContext';
 
 import './styles.css';
@@ -19,16 +20,18 @@ function App() {
         <HandleTypesProvider>
           <NewNodeProvider>
             <SurveyListProvider>
-              <Routes>
-                <Route path="/" element={<RootPage />} />
-                <Route path="/checkpoint" element={<CheckpointPage />} />
-                <Route path="/dashboard" element={<DashboardPage />} />
-                <Route
-                  path="/introduction"
-                  element={<IntroductionSurveyPage />}
-                />
-                <Route path="/account" element={<UserAccountPage />} />
-              </Routes>
+              <EditNodeProvider>
+                <Routes>
+                  <Route path="/" element={<RootPage />} />
+                  <Route path="/checkpoint" element={<CheckpointPage />} />
+                  <Route path="/dashboard" element={<DashboardPage />} />
+                  <Route
+                    path="/introduction"
+                    element={<IntroductionSurveyPage />}
+                  />
+                  <Route path="/account" element={<UserAccountPage />} />
+                </Routes>
+              </EditNodeProvider>
             </SurveyListProvider>
           </NewNodeProvider>
         </HandleTypesProvider>

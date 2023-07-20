@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavDrawerToggle from './compact-nav-bar-components/NavDrawerToggle';
+import NavDrawerToggleButton from './compact-nav-bar-components/NavDrawerToggleButton';
 import NavDrawer from './compact-nav-bar-components/NavDrawer';
 
 const CompactNavBar = () => {
@@ -11,7 +11,7 @@ const CompactNavBar = () => {
 
   return (
     <>
-      <NavDrawerToggle toggleDrawer={toggleDrawer} />
+      <NavDrawerToggleButton toggleDrawer={toggleDrawer} />
       <NavDrawer isOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
     </>
   );

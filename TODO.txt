@@ -1,22 +1,82 @@
-1 -
-Flow onNodesChange, onEdgesChange and onConnect needs to invoke 
-requestSaveDiagram(), a function that makes a request to the 
-'diagram/post' endpoint, where a processSaveDiagram() function
-will be invoked. This function will save the diagram to the
-database.
+These are the current tasks at hand, separated into groups based on functionality and styling:
 
-2 -
-This error appears when the blank node edit button is clicked 
-(opens modal with text area):
+----- Functionality -----
+1- Update the user's diagram in the database on each change
+Implementation:
+    requestSaveDiagram() is a utility function which accepts the accountData.diagram 
+    object, accountData._id and makes a POST request to the 
+    `{REACT_APP_API_URL}diagram/post?_id=${_id}` endpoint. Flow.jsx onNodesChange,
+     onEdgesChange, and onConnect useCallbacks need to invoke requestSaveDiagram() 
+     with the appropriate arguments. `{REACT_APP_API_URL}diagram/post?_id=${_id}` 
+     endpoint invokes processSaveDiagram(), a controller function which accesses 
+     the request body for the diagram, and req.query._id, and updates the user's 
+     diagram in the database. The controller sends a response ok status or error 
+     message to the client, depending on the result of the database update.
 
-"Warning: ForwardRef(TextareaAutosize) contains 
-a textarea with both value and defaultValue props. 
-Textarea elements must be either controlled or 
-uncontrolled (specify either the value prop, or the 
-defaultValue prop, but not both). Decide between 
-using a controlled or uncontrolled textarea and 
-remove one of these props. 
+2- The RootNode component has 3 components that need to be editable:
+	- <h1>{data.artistName}</h1>
+	- <p>{data.primaryContent}</p>
+	- <p>{data.artistSummary}</p>
+Implementation:
+	The data prop is passed to RootNode, so all we need to do is configure
+	each of these elements based on BlankNode and TopicNode solutions.
+	NOTE: Make sure onNodesChange is invoked when the user edits these fields.
 
-More info: https://reactjs.org/link/controlled-components"
+3- All dialogs used as modals in each component need to be configured
+to use a single styled MUI Dialog, which has its own close icon:
+	- DeleteAccountButton
+	- UpdateAccountEmailButton
+	- SurveyListItem
+	- ContactButton
+	- GetHelpButton
 
-3- 
+4- Create a ChangeBackgroundColourButton component which opens up a colour
+picker dialog, and updates the background colour of the diagram when the
+user selects a colour. This can be set in a context and used to update Flow.
+
+Implementation:
+	Create a BackgroundColour context which gets updated but
+	ChangeBackgroundColourButton when the user selects a colour.
+	This context saves this colour to localStorage, so that it can be
+	retrieved on page load.
+	Flow.jsx needs to be updated to use this context to set the
+	backgroundColor value in ReactFlow's style prop.
+	The application needs to be wrapped in this context provider.
+
+5- import ObjectID from 'bson-objectid';
+
+const generateUniqueBsonId = () => new ObjectID().toString();
+
+export default generateUniqueBsonId;
+
+
+
+----- Styling ------
+1- All non-combination button components need to be configured to
+use a single styled MUI Button:
+	- DeleteAccountButton
+	- UpdateAccountEmailButton
+	- SurveyListToggleButton
+	- AddBlankNodeButton
+	- ContactButton
+	- GetHelpButton
+	- AuthToggleButton
+	- Each modal's buttons (see Functionality-3)
+
+2- Each Node component needs to be configured to use a single styled
+MUI Box component:
+	- BlankNode
+	- RootNode
+	- TopicNode
+	- CategoryNode
+
+3- FullNavBar needs to be built using AppBar, Toolbar, IconButton (for
+'/Home' on Logo) and Typography. CompactNavBar needs to be built using
+a box component and other semantically correct child elements.
+
+4- Adjust Flow component styles
+
+5- Decide on a colour scheme for the application
+
+6- Apply color scheme and variant styles to all components, using
+the most semantically accurate MUI component for each case.

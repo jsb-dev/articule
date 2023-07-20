@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Handle, Position } from 'reactflow';
+import { useContext } from 'react';
+import { useUserContext } from '../../../../contexts/UserContext';
+import { EditNodeContext } from '../../../../contexts/EditNodeContext';
 import {
   Modal,
   Button,
@@ -19,6 +22,7 @@ const StyledBox = styled(Box)({
 });
 
 function TopicNode({ data: initialData }) {
+  const { triggerEdit } = useContext(EditNodeContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [editingKey, setEditingKey] = useState(null);
   const [tempValue, setTempValue] = useState('');
@@ -34,6 +38,7 @@ function TopicNode({ data: initialData }) {
     setModalIsOpen(false);
   };
 
+  // TopicNode
   const confirmChanges = () => {
     setData({
       ...data,
@@ -43,6 +48,7 @@ function TopicNode({ data: initialData }) {
       },
     });
     closeModal();
+    triggerEdit();
   };
 
   const ListItem = ({ keyName }) => (

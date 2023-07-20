@@ -1,10 +1,10 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Link } from 'react-router-dom';
 import { useUserContext } from '../../../../contexts/UserContext';
 import AuthToggleButton from '../../AuthToggleButton';
-import { SharedButtonStyle } from '../../SharedButtonStyle';
 import Logo from '../../Logo';
 import ComboContactButton from '../../contact-button/ComboContactButton';
 
@@ -23,29 +23,23 @@ const HorizontalNavList = () => {
         <Logo />
       </ListItem>
       <ListItem>
-        <SharedButtonStyle component={Link} to="/">
+        <Button component={Link} to="/">
           Home
-        </SharedButtonStyle>
+        </Button>
       </ListItem>
 
       {accountData?.auth && (
         <ListItem>
-          <SharedButtonStyle
-            component={Link}
-            to={`/dashboard?_id=${accountData._id}`}
-          >
+          <Button component={Link} to={`/dashboard?_id=${accountData._id}`}>
             Dashboard
-          </SharedButtonStyle>
+          </Button>
         </ListItem>
       )}
       {accountData?.auth && (
         <ListItem>
-          <SharedButtonStyle
-            component={Link}
-            to={`/account?_id=${accountData._id}`}
-          >
+          <Button component={Link} to={`/account?_id=${accountData._id}`}>
             Account
-          </SharedButtonStyle>
+          </Button>
         </ListItem>
       )}
       <ListItem>
