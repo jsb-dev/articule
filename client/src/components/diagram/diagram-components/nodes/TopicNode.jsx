@@ -21,12 +21,15 @@ const StyledBox = styled(Box)({
   background: 'white',
 });
 
-function TopicNode({ data: initialData }) {
+function TopicNode({ id, data: initialData }) {
+  const { updateDiagramNode } = useUserContext();
   const { triggerEdit } = useContext(EditNodeContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [editingKey, setEditingKey] = useState(null);
   const [tempValue, setTempValue] = useState('');
   const [data, setData] = useState(initialData);
+
+  console.log(data);
 
   const openModal = (key) => {
     setEditingKey(key);
@@ -38,9 +41,15 @@ function TopicNode({ data: initialData }) {
     setModalIsOpen(false);
   };
 
-  // TopicNode
   const confirmChanges = () => {
     setData({
+      ...data,
+      results: {
+        ...data.results,
+        [editingKey]: tempValue,
+      },
+    });
+    updateDiagramNode(id, {
       ...data,
       results: {
         ...data.results,

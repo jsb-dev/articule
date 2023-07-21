@@ -14,12 +14,14 @@ const StyledBox = styled(Box)({
   background: 'white',
 });
 
-function BlankNode({ data: initialData }) {
-  const { accountData, setAccountData } = useUserContext();
+function BlankNode({ id, data: initialData }) {
+  const { accountData, setAccountData, updateDiagramNode } = useUserContext();
   const { triggerEdit } = useContext(EditNodeContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [data, setData] = useState(initialData);
   const [inputValue, setInputValue] = useState(initialData.content);
+
+  console.log(data);
 
   const openModal = () => {
     setInputValue(data.content);
@@ -34,12 +36,12 @@ function BlankNode({ data: initialData }) {
     setInputValue(value);
   };
 
-  // BlankNode
   const confirmChanges = () => {
     setData({
       ...data,
       content: inputValue,
     });
+    updateDiagramNode(id, { ...data, content: inputValue });
     closeModal();
     triggerEdit();
   };

@@ -40,8 +40,23 @@ export const UserProvider = ({ children }) => {
     }
   }, [accountData, REACT_APP_COOKIE_SECURE]);
 
+  const updateDiagramNode = (nodeId, updatedNodeData) => {
+    setAccountData((prevAccountData) => {
+      const updatedDiagram = { ...prevAccountData.diagram };
+      const nodeIndex = updatedDiagram.nodes.findIndex(
+        (node) => node.id === nodeId
+      );
+      if (nodeIndex >= 0) {
+        updatedDiagram.nodes[nodeIndex].data = { ...updatedNodeData };
+      }
+      return { ...prevAccountData, diagram: updatedDiagram };
+    });
+  };
+
   return (
-    <UserContext.Provider value={{ accountData, setAccountData, isDataLoaded }}>
+    <UserContext.Provider
+      value={{ accountData, setAccountData, isDataLoaded, updateDiagramNode }}
+    >
       {children}
     </UserContext.Provider>
   );
